@@ -1,8 +1,11 @@
 import React from 'react';
+import {HomepageSection} from '../styles/index';
 
 function Homepage() {
   return (
-    <h1 data-testid="maratonei-logo-svg">Oi!</h1>
+    <HomepageSection>
+      <h1>Oi</h1>
+    </HomepageSection>
   );
 }
 
