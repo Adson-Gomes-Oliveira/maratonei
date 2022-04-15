@@ -3,7 +3,7 @@
 ## 🚀 Começando
 
 Website de Dados e Gerenciamento de Filmes e Séries.
-https://agdev.vercel.app
+https://maratonei.vercel.app
 
 Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
 
