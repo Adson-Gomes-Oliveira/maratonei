@@ -49,6 +49,7 @@ Funcionalidades:
 
 * [ReactJS](https://pt-br.reactjs.org/) - Framework Web
 * [React-Router](https://reactrouter.com/) - Gerenciador de Rotas React
+* [React Testing Library](https://testing-library.com/) - Biblioteca de Testes em React
 * [StyledComponents](https://styled-components.com/) - Biblioteca CSS-in-JS
 * [TMDB-API](https://developers.themoviedb.org/3/getting-started/introduction) - The Movie Database API
 * [Watchmode-API](https://api.watchmode.com/docs/) - WATCHMODE API
@@ -58,4 +59,4 @@ Funcionalidades:
 Git utilizado para versionamento de código.
 
 ---
-⌨️ com ❤️ por [Armstrong Lohãns](https://gist.github.com/lohhans) 😊
+Template de Readme desenvolvido com ❤️ por [Armstrong Lohãns](https://gist.github.com/lohhans) 😊
