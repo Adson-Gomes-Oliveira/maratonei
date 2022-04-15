@@ -7,15 +7,15 @@ import {HeaderStyled, MenuStyled, MenuLoginStyled} from '../styles/header';
 function MainHeader() {
   return (
     <HeaderStyled>
-      <img src={Logo} alt="Logotipo Maratonei" />
+      <Link to="/"><img src={Logo} alt="Logotipo Maratonei" /></Link>
       <MenuStyled>
-        <Link to=""><span>INICIO</span></Link>
-        <Link to=""><span>TV SERIES</span></Link>
-        <Link to=""><span>FILMES</span></Link>
-        <Link to=""><span>STREAMINGS</span></Link>
-        <Link to=""><span>BIBLIOTECA</span></Link>
+        <Link to="">INICIO</Link>
+        <Link to="">TV SERIES</Link>
+        <Link to="">FILMES</Link>
+        <Link to="">STREAMINGS</Link>
+        <Link to="">BIBLIOTECA</Link>
         <MenuLoginStyled>
-          <Link to=""><span>ENTRAR</span></Link>
+          <Link to="">ENTRAR</Link>
           <img src={LoginIcon} alt="Icone de Login" />
         </MenuLoginStyled>
       </MenuStyled>
