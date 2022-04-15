@@ -1,11 +1,12 @@
 import React from 'react';
-import {HomepageSection} from '../styles/index';
+import MainHeader from '../components/MainHeader';
+import {HomepageStyled} from '../styles/index';
 
 function Homepage() {
   return (
-    <HomepageSection>
-      <h1>Oi</h1>
-    </HomepageSection>
+    <HomepageStyled>
+      <MainHeader />
+    </HomepageStyled>
   );
 }
 

@@ -5,12 +5,7 @@ import Homepage from './pages/Homepage';
 function App() {
   return (
     <Routes>
-      <Route path='/' element={(
-        <>
-          {/* <Header /> */}
-          <Homepage />
-        </>
-      )} />
+      <Route path='/' element={<Homepage />} />
     </Routes>
   );
 }

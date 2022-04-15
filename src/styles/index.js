@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import backgroundHp from '../images/background-homepage.webp';
 
-export const HomepageSection = styled.section`
+export const HomepageStyled = styled.section`
   background: url(${backgroundHp});
   background-size: cover;
   display: flex;
