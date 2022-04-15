@@ -1,17 +1,17 @@
 :root {
   --main-project-color: #15151f;
   --yellow-project-color: #f7b801;
-  --sizing-1x: 0.25rem; //4px
-  --sizing-2x: 0.5rem; //8px
-  --sizing-3x: 1rem; //16px
-  --sizing-4x: 1.50rem; //24px
-  --sizing-5x: 2rem; //32px
-  --sizing-6x: 2.50rem; //48px
-  --sizing-7x: 3rem; //64px
-  --sizing-8x: 3.50rem; //96px
-  --sizing-9x: 4rem; //128px
-  --sizing-10x: 4.50rem; //192px
-  --sizing-11x: 5rem; //256px
+  --sizing-1x: 0.25rem; /*4px*/
+  --sizing-2x: 0.5rem; /*8px*/
+  --sizing-3x: 1rem; /*16px*/
+  --sizing-4x: 1.50rem; /*24px*/
+  --sizing-5x: 2rem; /*32px*/
+  --sizing-6x: 2.50rem; /*48px*/
+  --sizing-7x: 3rem; /*64px*/
+  --sizing-8x: 3.50rem; /*96px*/
+  --sizing-9x: 4rem; /*128px*/
+  --sizing-10x: 4.50rem; /*192px*/
+  --sizing-11x: 5rem; /*256px*/
 }
 
 * {
