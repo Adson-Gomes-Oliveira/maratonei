@@ -1,3 +1,23 @@
+:root {
+  --main-project-color: #15151f;
+  --yellow-project-color: #f7b801;
+  --sizing-1x: 0.25rem; /*4px*/
+  --sizing-2x: 0.5rem; /*8px*/
+  --sizing-3x: 1rem; /*16px*/
+  --sizing-4x: 1.50rem; /*24px*/
+  --sizing-5x: 2rem; /*32px*/
+  --sizing-6x: 3rem; /*48px*/
+  --sizing-7x: 4rem; /*64px*/
+  --sizing-8x: 8rem; /*128px*/
+  --sizing-8x: 8.25rem; /*192px*/
+  --sizing-9x: 16rem; /*256px*/
+}
+
+@font-face {
+  font-family: 'Bebas';
+  src: url('./fonts/Bebas_Neue/BebasNeue-Regular.ttf');
+}
+
 * {
   margin: 0;
   padding: 0;
