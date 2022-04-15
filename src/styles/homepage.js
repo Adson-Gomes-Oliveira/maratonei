@@ -3,20 +3,20 @@ import backgroundHp from '../images/background-homepage.webp';
 
 export const HomepageStyled = styled.section`
   background: rgba(21, 21, 31, 0.75) url(${backgroundHp});
-  background-size: cover;
   background-blend-mode: darken;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   height: 100vh;
 `;
 
 export const HeroBrandingStyled = styled.div`
+  align-items: center;
+  color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   height: 45%;
-  color: white;
+  justify-content: center;
 
   span:nth-child(1) {
     font-family: 'bebas', 'Arial', sans-serif;
@@ -30,46 +30,26 @@ export const HeroBrandingStyled = styled.div`
 `;
 
 export const HomepageButtonsStyled = styled.div`
-  display: flex;
   align-self: center;
+  display: flex;
 
   button {
-    padding: var(--sizing-4x) var(--sizing-6x);
-    margin: 0 var(--sizing-1x);
+    background-color: var(--main-project-color);
     border-radius: var(--sizing-2x);
+    border: 0.18rem solid var(--yellow-project-color);
+    color: white;
+    cursor: pointer;
     font-family: 'Bebas', sans-serif;
     font-size: 1.5rem;
-    cursor: pointer;
+    margin: 0 var(--sizing-1x);
+    min-width: 18.75rem;
+    padding: var(--sizing-4x) 0;
+    transition: ease 0.2s;
   }
 
-  a:nth-child(1) {
-    button {
-      transition: ease 0.2s;
-      background-color: var(--yellow-project-color);
-      border: 0.18rem solid var(--yellow-project-color);
-      color: black
-    }
-
-    button:hover {
-      transition: ease 0.2s;
-      background-color: var(--main-project-color);
-      border: 0.18rem solid var(--yellow-project-color);
-      color: white;
-    }
-  }
-
-  a:nth-child(2) {
-    button {
-      transition: ease 0.2s;
-      background-color: var(--main-project-color);
-      border: 0.18rem solid var(--yellow-project-color);
-      color: white;
-    }
-
-    button:hover {
-      transition: ease 0.2s;
-      background-color: var(--yellow-project-color);
-      color: black;
-    }
+  button:hover {
+    background-color: var(--yellow-project-color);
+    color: black;
+    transition: ease 0.2s;
   }
 `;

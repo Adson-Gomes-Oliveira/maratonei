@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const HeaderStyled = styled.header`
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: var(--sizing-3x);
 
   img {
-    width: 11.25rem;
     height: 6.12rem;
+    width: 11.25rem;
   }
 `;
 
@@ -37,9 +37,9 @@ export const MenuLoginStyled = styled.div`
   display: flex;
 
   img {
-    width: var(--sizing-5x);
-    height: var(--sizing-5x);
     align-self: center;
+    height: var(--sizing-5x);
+    width: var(--sizing-5x);
   }
 `;
 
@@ -49,7 +49,7 @@ export const StreamingsStyled = styled.div`
   margin-bottom: 2%;
   
   img {
-    width: 100px;
     opacity: 0.5;
+    width: 100px;
   }
 `;
