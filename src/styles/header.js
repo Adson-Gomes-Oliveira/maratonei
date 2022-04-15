@@ -27,6 +27,10 @@ export const MenuStyled = styled.nav`
     color: aliceblue;
     margin-left: var(--sizing-6x);
   }
+
+  a:hover {
+    color: var(--yellow-project-color);
+  }
 `;
 
 export const MenuLoginStyled = styled.div`
