@@ -15,13 +15,13 @@ function MainHeader() {
         />
       </Link>
       <MenuStyled aria-label="main-menu">
-        <Link to="">INICIO</Link>
-        <Link to="">TV SERIES</Link>
-        <Link to="">FILMES</Link>
-        <Link to="">STREAMINGS</Link>
-        <Link to="">BIBLIOTECA</Link>
+        <Link to="/home">INICIO</Link>
+        <Link to="/tv-series">TV SERIES</Link>
+        <Link to="/films">FILMES</Link>
+        <Link to="/streamings">STREAMINGS</Link>
+        <Link to="/library">BIBLIOTECA</Link>
         <MenuLoginStyled>
-          <Link to="">ENTRAR</Link>
+          <Link to="/sign-in">ENTRAR</Link>
           <img src={LoginIcon} alt="Icone de Login" />
         </MenuLoginStyled>
       </MenuStyled>

@@ -43,3 +43,13 @@ export const MenuLoginStyled = styled.div`
   }
 `;
 
+export const StreamingsStyled = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2%;
+  
+  img {
+    width: 100px;
+    opacity: 0.5;
+  }
+`;
