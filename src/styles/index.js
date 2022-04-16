@@ -12,6 +12,19 @@ export const HeaderStyled = styled.header`
   }
 `;
 
+export const SecondHeaderStyled = styled.header`
+  align-items: center;
+  background-color: var(--black-project-color);
+  display: flex;
+  justify-content: space-between;
+  padding: var(--sizing-2x) var(--sizing-2x);
+
+  img {
+    height: 5rem;
+    width: 9.5rem;
+  }
+`;
+
 export const MenuStyled = styled.nav`
   display: flex;
   font-family: 'Bebas', sans-serif;
@@ -46,7 +59,7 @@ export const MenuLoginStyled = styled.div`
 export const StreamingsStyled = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 2%;
+  margin-bottom: 2.5%;
   
   img {
     opacity: 0.5;

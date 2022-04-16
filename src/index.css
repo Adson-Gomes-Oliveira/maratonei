@@ -1,5 +1,6 @@
 :root {
-  --main-project-color: #15151f;
+  --black-project-color: #15151f;
+  --black-light-project-color: #161624;
   --yellow-project-color: #f7b801;
   --sizing-1x: 0.25rem; /*4px*/
   --sizing-2x: 0.5rem; /*8px*/

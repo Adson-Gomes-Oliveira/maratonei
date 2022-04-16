@@ -34,7 +34,7 @@ export const HomepageButtonsStyled = styled.div`
   display: flex;
 
   button {
-    background-color: var(--main-project-color);
+    background-color: var(--black-project-color);
     border-radius: var(--sizing-2x);
     border: 0.18rem solid var(--yellow-project-color);
     color: white;
@@ -43,7 +43,7 @@ export const HomepageButtonsStyled = styled.div`
     font-size: 1.5rem;
     margin: 0 var(--sizing-1x);
     min-width: 18.75rem;
-    padding: var(--sizing-4x) 0;
+    padding: var(--sizing-3x) 0;
     transition: ease 0.2s;
   }
 

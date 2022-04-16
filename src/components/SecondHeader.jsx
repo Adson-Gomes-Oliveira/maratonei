@@ -1,12 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Logo from '../images/svg/logotipo.svg';
-import {HeaderStyled} from '../styles/index';
 import MenuBar from './MenuBar';
+import {SecondHeaderStyled} from '../styles';
+import Logo from '../images/svg/logotipo.svg';
 
-function MainHeader() {
+function SecondHeader() {
   return (
-    <HeaderStyled>
+    <SecondHeaderStyled>
       <Link to="/">
         <img
           src={Logo}
@@ -15,8 +15,8 @@ function MainHeader() {
         />
       </Link>
       <MenuBar />
-    </HeaderStyled>
+    </SecondHeaderStyled>
   );
 }
 
-export default MainHeader;
+export default SecondHeader;
