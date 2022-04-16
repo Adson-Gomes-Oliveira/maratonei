@@ -26,4 +26,12 @@ describe('02. Testing Explore', () => {
 
     expect(adElement.length).toBe(AMOUNT_OF_ADS);
   });
+
+  test(`02.03 - Testing if Search Box exists`, () => {
+    renderWithRouter(<Explore />);
+
+    const searchBox = screen.getByTestId('search-box');
+
+    expect(searchBox).toBeInTheDocument();
+  });
 });
