@@ -2,7 +2,8 @@ import React from 'react';
 import {screen} from '@testing-library/react';
 import renderWithRouter from '../data/renderWithRouter';
 import Explore from '../pages/Explore';
-import {EXCLUDE_LINK_INDEX_EXPLORE, AMOUNT_OF_MENU_LINKS} from '../data/index';
+import {EXCLUDE_LINK_INDEX_EXPLORE,
+  AMOUNT_OF_MENU_LINKS, AMOUNT_OF_ADS} from '../data/index';
 import '@testing-library/jest-dom';
 
 describe('02. Testing Explore', () => {
@@ -21,8 +22,8 @@ describe('02. Testing Explore', () => {
   test(`02.02 - Testing if ad exists`, () => {
     renderWithRouter(<Explore />);
 
-    const adElement = screen.getByTestId('advisor');
+    const adElement = screen.getAllByTestId('advisor');
 
-    expect(adElement).toBeInTheDocument();
+    expect(adElement.length).toBe(AMOUNT_OF_ADS);
   });
 });

@@ -14,14 +14,14 @@ export const HeaderStyled = styled.header`
 
 export const SecondHeaderStyled = styled.header`
   align-items: center;
-  background-color: var(--black-project-color);
+  background-color: black;
   display: flex;
   justify-content: space-between;
-  padding: var(--sizing-2x) var(--sizing-2x);
+  padding: var(--sizing-2x) var(--sizing-3x);
 
   img {
-    height: 5rem;
-    width: 9.5rem;
+    height: 4rem;
+    width: 8rem;
   }
 `;
 
@@ -65,4 +65,16 @@ export const StreamingsStyled = styled.div`
     opacity: 0.5;
     width: 100px;
   }
+`;
+
+export const AdStyled = styled.div`
+  background-blend-mode: darken;
+  background-color: ${(props) => props.bgColor};
+  background-size: contain;
+  color: white;
+  display: flex;
+  font-family: 'Bebas', sans-serif;
+  font-size: var(--sizing-4x);
+  justify-content: center;
+  padding: var(--sizing-2x) 0;
 `;
