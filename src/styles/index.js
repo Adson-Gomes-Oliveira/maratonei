@@ -94,3 +94,34 @@ export const AdStyled = styled.div`
     font-size: var(--sizing-3x);
   }
 `;
+
+export const CardsStyled = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const CardStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 13rem;
+  margin-left: 1.5rem;
+
+  img {
+    width: 13rem;
+    height: 19.5rem;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.8rem;
+    margin-bottom: 2.5rem;
+    width: 12rem;
+
+    span {
+      font-size: var(--sizing-5x);
+      color: var(--yellow-project-color);
+    }
+  }
+`;

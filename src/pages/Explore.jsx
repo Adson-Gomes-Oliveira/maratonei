@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useContext} from 'react';
 import SecondHeader from '../components/SecondHeader';
 import {
   ExploreStyled,
@@ -10,8 +10,16 @@ import {
   FilmsToShow,
 } from '../styles/explore';
 import Advisor from '../components/Advisor';
+import MoviesCards from '../components/MoviesCards';
+import MaratoneiContext from '../context/MaratoneiContext';
 
 function Explore() {
+  const {popularMovies, fetchMoviesByPopularity} = useContext(MaratoneiContext);
+
+  useEffect(() => {
+    fetchMoviesByPopularity();
+  }, []);
+
   return (
     <ExploreStyled>
       <SecondHeader />
@@ -35,6 +43,7 @@ function Explore() {
 
           <FilmsToShow>
             <h3>FILMES E SERIES EM ALTA</h3>
+            <MoviesCards data={popularMovies} />
           </FilmsToShow>
         </ShowSectionStyled>
 

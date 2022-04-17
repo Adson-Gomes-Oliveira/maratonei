@@ -10,7 +10,6 @@ export const ExploreContentStyled = styled.div`
 `;
 
 export const ShowSectionStyled = styled.div`
-  border: 1px solid white;
   display: flex;
   flex-direction: column;
   padding: 0 var(--sizing-3x);
@@ -22,9 +21,8 @@ export const SearchLabel = styled.label`
   margin: var(--sizing-5x) 0;
 
   div {
-    background-color: var(--yellow-project-color);
-    border-radius: 0.3rem;
-    border: 0.10rem solid white;
+    border-radius: 0.5rem;
+    border: 0.15rem solid white;
     display: flex;
     justify-content: space-between;
     width: 40%;
@@ -57,6 +55,7 @@ export const SearchButton = styled.button`
   background: none;
   border-radius: 0 0.3rem 0.3rem 0;
   border: none;
+  color: var(--yellow-project-color);
   cursor: pointer;
   height: 100%;
   width: 10%;
@@ -68,12 +67,13 @@ export const SearchButton = styled.button`
 
 export const FilmsToShow = styled.div`
   display: flex;
-  margin-bottom: var(--sizing-5x);
+  flex-direction: column;
   
   h3 {
     color: white;
     font-family: 'bebas', sans-serif;
     font-size: var(--sizing-5x);
     font-weight: 100;
+    margin-bottom: var(--sizing-5x);
   }
 `;
