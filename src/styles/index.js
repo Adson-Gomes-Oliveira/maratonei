@@ -109,6 +109,7 @@ export const CardStyled = styled.div`
 
   img {
     width: 13rem;
+    height: 19.5rem;
   }
 
   div {
