@@ -48,11 +48,22 @@ export const MenuStyled = styled.nav`
 
 export const MenuLoginStyled = styled.div`
   display: flex;
+  justify-content: center;
 
-  img {
-    align-self: center;
-    height: var(--sizing-5x);
-    width: var(--sizing-5x);
+  a {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  span:nth-child(1) {
+    position: relative;
+    top: 0.05rem;
+  }
+
+  span:nth-child(2) {
+    font-size: 1.5rem;
+    margin-left: 1rem;
   }
 `;
 
@@ -68,13 +79,18 @@ export const StreamingsStyled = styled.div`
 `;
 
 export const AdStyled = styled.div`
-  background-blend-mode: darken;
-  background-color: ${(props) => props.bgColor};
-  background-size: contain;
+  align-items: center;
+  background-size: cover;
+  background: url(${(props) => props.bgImage});
   color: white;
   display: flex;
+  flex-direction: column;
   font-family: 'Bebas', sans-serif;
   font-size: var(--sizing-4x);
   justify-content: center;
-  padding: var(--sizing-2x) 0;
+  padding: var(--sizing-3x) 0;
+  min-height: 5rem;
+  span:nth-child(2) {
+    font-size: var(--sizing-3x);
+  }
 `;

@@ -7,9 +7,9 @@ import {
   SearchLabel,
   SearchInput,
   SearchButton,
+  FilmsToShow,
 } from '../styles/explore';
 import Advisor from '../components/Advisor';
-import SearchIcon from '../images/svg/search.svg';
 
 function Explore() {
   return (
@@ -25,19 +25,22 @@ function Explore() {
               <SearchInput
                 type="text"
                 placeholder="PESQUISAR TITULOS"
-                data-testId="search-box"
+                data-testid="search-box"
               />
               <SearchButton type="button">
-                <img src={SearchIcon} alt="" />
+                <span className='material-icons-outlined'>search</span>
               </SearchButton>
             </div>
           </SearchLabel>
+
+          <FilmsToShow>
+            <h3>FILMES E SERIES EM ALTA</h3>
+          </FilmsToShow>
         </ShowSectionStyled>
 
         {/* <GeekNotices /> */}
 
       </ExploreContentStyled>
-
     </ExploreStyled>
   );
 }

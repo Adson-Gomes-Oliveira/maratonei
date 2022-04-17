@@ -24,7 +24,7 @@ export const SearchLabel = styled.label`
   div {
     background-color: var(--yellow-project-color);
     border-radius: 0.3rem;
-    border: 0.15rem solid white;
+    border: 0.10rem solid white;
     display: flex;
     justify-content: space-between;
     width: 40%;
@@ -55,12 +55,25 @@ export const SearchInput = styled.input`
 
 export const SearchButton = styled.button`
   background: none;
+  border-radius: 0 0.3rem 0.3rem 0;
   border: none;
+  cursor: pointer;
   height: 100%;
   width: 10%;
-  cursor: pointer;
   
   img {
     width: var(--sizing-5x);
+  }
+`;
+
+export const FilmsToShow = styled.div`
+  display: flex;
+  margin-bottom: var(--sizing-5x);
+  
+  h3 {
+    color: white;
+    font-family: 'bebas', sans-serif;
+    font-size: var(--sizing-5x);
+    font-weight: 100;
   }
 `;

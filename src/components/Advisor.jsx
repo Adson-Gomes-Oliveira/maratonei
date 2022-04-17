@@ -8,7 +8,7 @@ function Advisor() {
   return (
     <CarouselProvider
       naturalSlideWidth={100}
-      naturalSlideHeight={3.5}
+      naturalSlideHeight={5.5}
       totalSlides={streamingAds.length}
       isPlaying={false}
       touchEnabled={false}
@@ -17,12 +17,24 @@ function Advisor() {
     >
       <Slider>
         {streamingAds.map((ad, index) => {
-          const {copy, bgColor} = ad;
+          const {copy, bgImage, freeTrial, streamingLink} = ad;
+          const message = freeTrial === 'yes' ?
+          `*Teste de 30 dias grátis disponível, verifique a disponibilidade` :
+          '';
+          console.log(bgImage);
           return (
             <Slide key={`slide-ad-element-${index}`}>
-              <AdStyled bgColor={bgColor} data-testId='advisor'>
-                <span>{copy}</span>
-              </AdStyled>
+              <a
+                href={streamingLink}
+                target="_blank"
+                rel='noreferrer'
+                style={{'textDecoration': 'none'}}
+              >
+                <AdStyled bgImage={bgImage} data-testid="advisor">
+                  <span>{copy}</span>
+                  <span>{message}</span>
+                </AdStyled>
+              </a>
             </Slide>
           );
         })}
