@@ -68,12 +68,13 @@ export const SearchButton = styled.button`
 
 export const FilmsToShow = styled.div`
   display: flex;
-  margin-bottom: var(--sizing-5x);
+  flex-direction: column;
   
   h3 {
     color: white;
     font-family: 'bebas', sans-serif;
     font-size: var(--sizing-5x);
     font-weight: 100;
+    margin-bottom: var(--sizing-5x);
   }
 `;

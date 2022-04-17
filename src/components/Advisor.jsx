@@ -21,7 +21,6 @@ function Advisor() {
           const message = freeTrial === 'yes' ?
           `*Teste de 30 dias grátis disponível, verifique a disponibilidade` :
           '';
-          console.log(bgImage);
           return (
             <Slide key={`slide-ad-element-${index}`}>
               <a
