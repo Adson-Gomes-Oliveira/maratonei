@@ -9,14 +9,11 @@ function Homepage() {
   return (
     <HomepageStyled>
       <MainHeader />
-
       <HeroBrandingStyled>
         <span>SUA WIKI DE FILMES E SERIES</span>
         <span>SAIBA ONDE ASSISTIR | SALVE SEUS FAVORITOS E MUITO MAIS...</span>
       </HeroBrandingStyled>
-
       <StreamingServices />
-
       <HomepageButtonsStyled>
         <Link to="/explore">
           <button
