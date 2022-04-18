@@ -130,3 +130,25 @@ export const CardStyled = styled.div`
     }
   }
 `;
+
+// --------- Footer Styles --------- //
+export const FooterStyled = styled.footer`
+  background: black;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const SocialMediaStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const DisclaimerStyled = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+`;
+
+export const DisclaimerText = styled.div``;

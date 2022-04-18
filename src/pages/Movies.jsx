@@ -14,6 +14,7 @@ import Advisor from '../components/Advisor';
 import MoviesCards from '../components/MoviesCards';
 import MaratoneiContext from '../context/MaratoneiContext';
 import Loading from '../components/Loading';
+import Footer from '../components/Footer';
 
 function Movies() {
   const {
@@ -67,6 +68,7 @@ function Movies() {
         {/* <GeekNotices /> */}
 
       </ExploreContentStyled>
+      <Footer />
     </ExploreStyled>
   );
 }
