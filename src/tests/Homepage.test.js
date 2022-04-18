@@ -71,7 +71,7 @@ describe('01. Testing Homepage', () => {
     await userEvent.click(buttonFindSearching);
 
     const {pathname} = history.location;
-    expect(pathname).toBe('/explore');
+    expect(pathname).toBe('/movies');
   });
 
   test(`01.07 - Testing buttons and, if when clicked, the buttons
