@@ -14,7 +14,7 @@ export async function moviesByPopularity() {
     const moviesByPopularityFiltered = firstRequestPopularity
         .concat(secondRequestPopularity)
         .filter((movie) => movie.poster_path !== null);
-a
+
 
     return moviesByPopularityFiltered;
   } catch (error) {
