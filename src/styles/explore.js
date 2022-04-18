@@ -16,7 +16,7 @@ export const ShowSectionStyled = styled.div`
   flex-direction: column;
   padding: 0 var(--sizing-3x);
   width: 75%;
-`;
+`;a
 
 // --------- Cards Section Styles ------------ //
 export const SearchLabel = styled.label`

@@ -17,6 +17,6 @@ function SecondHeader() {
       <MenuBar />
     </SecondHeaderStyled>
   );
-}
+}a
 
 export default SecondHeader;

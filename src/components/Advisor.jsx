@@ -14,7 +14,7 @@ function Advisor() {
       touchEnabled={false}
       dragEnabled={false}
       interval={10000}
-    >
+    >a
       <Slider>
         {streamingAds.map((ad, index) => {
           const {copy, bgImage, freeTrial, streamingLink} = ad;

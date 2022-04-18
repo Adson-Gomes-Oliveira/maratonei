@@ -24,7 +24,7 @@ function ExploreMovies() {
 
   useEffect(() => {
     fetchMoviesByPopularity();
-  }, []);
+  }, []);a
 
   if (loading) return <Loading />;
   return (
