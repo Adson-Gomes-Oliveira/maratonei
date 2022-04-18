@@ -25,7 +25,7 @@ function Footer() {
       <DisclaimerStyled>
         <DisclaimerText>
           <span>
-            Desenvolvido com paixão <b>♥</b> por Adson Gomes Oliveira
+            Desenvolvido com Paixão <b>♥</b> por Adson Gomes Oliveira
           </span>
           <span>
             Segue abaixo o link do repositório desse projeto além de outros
