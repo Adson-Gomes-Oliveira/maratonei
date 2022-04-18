@@ -15,7 +15,7 @@ import MoviesCards from '../components/MoviesCards';
 import MaratoneiContext from '../context/MaratoneiContext';
 import Loading from '../components/Loading';
 
-function ExploreMovies() {
+function Movies() {
   const {
     popularMovies,
     fetchMoviesByPopularity,
@@ -71,4 +71,4 @@ function ExploreMovies() {
   );
 }
 
-export default ExploreMovies;
+export default Movies;
