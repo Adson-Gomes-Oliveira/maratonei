@@ -15,6 +15,8 @@ import MoviesCards from '../components/MoviesCards';
 import MaratoneiContext from '../context/MaratoneiContext';
 import Loading from '../components/Loading';
 
+// oi
+
 function ExploreMovies() {
   const {
     popularMovies,
