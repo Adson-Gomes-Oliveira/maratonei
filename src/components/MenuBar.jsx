@@ -18,6 +18,6 @@ function MenuBar() {
       </MenuLoginStyled>
     </MenuStyled>
   );
-}a
+}
 
 export default MenuBar;

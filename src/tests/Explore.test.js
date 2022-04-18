@@ -18,7 +18,7 @@ describe('02. Testing Explore', () => {
     expect(menuElement).toBeInTheDocument();
     expect(links).toBe(AMOUNT_OF_MENU_LINKS);
   });
-a
+
   test(`02.02 - Testing if ad exists`, () => {
     renderWithRouter(<Explore />);
 

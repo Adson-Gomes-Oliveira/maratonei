@@ -23,7 +23,7 @@ function starsGenerator(amount) {
         <span key={uuidv4()} className="material-icons-outlined">{star}</span>
       ))}
     </div>
-  );a
+  );
 }
 
 function MoviesCards({data}) {
