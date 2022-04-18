@@ -7,28 +7,39 @@ import {
   SearchLabel,
   SearchInput,
   SearchButton,
-  FilmsToShow,
+  FilterButton,
+  CardsToShow,
 } from '../styles/explore';
 import Advisor from '../components/Advisor';
 import MoviesCards from '../components/MoviesCards';
 import MaratoneiContext from '../context/MaratoneiContext';
+import Loading from '../components/Loading';
 
-function Explore() {
-  const {popularMovies, fetchMoviesByPopularity} = useContext(MaratoneiContext);
+function ExploreMovies() {
+  const {
+    popularMovies,
+    fetchMoviesByPopularity,
+    loading,
+  } = useContext(MaratoneiContext);
 
   useEffect(() => {
     fetchMoviesByPopularity();
   }, []);
 
+  if (loading) return <Loading />;
   return (
-    <ExploreStyled>
+    <ExploreStyled> {/* Generic Component for Explore Sections */}
       <SecondHeader />
       <Advisor />
 
+      {/* Generic Component for the Content of Explore Sections */}
       <ExploreContentStyled>
 
-        <ShowSectionStyled>
+        <ShowSectionStyled> {/* Generic Component for Content Left */}
+
+          {/* Generic Component for search and filter Area */}
           <SearchLabel htmlFor="search-title">
+
             <div>
               <SearchInput
                 type="text"
@@ -39,12 +50,18 @@ function Explore() {
                 <span className='material-icons-outlined'>search</span>
               </SearchButton>
             </div>
+
+            <FilterButton>
+              <span className='material-icons-outlined'>filter_list</span>
+            </FilterButton>
+
           </SearchLabel>
 
-          <FilmsToShow>
-            <h3>FILMES E SERIES EM ALTA</h3>
+          <CardsToShow> {/* Generic Component for Cards Section */}
+            <h3>FILMES MAIS POPULARES</h3>
             <MoviesCards data={popularMovies} />
-          </FilmsToShow>
+          </CardsToShow>
+
         </ShowSectionStyled>
 
         {/* <GeekNotices /> */}
@@ -54,4 +71,4 @@ function Explore() {
   );
 }
 
-export default Explore;
+export default ExploreMovies;

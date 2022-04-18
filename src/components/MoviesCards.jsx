@@ -30,11 +30,11 @@ function MoviesCards({data}) {
   return (
     <CardsStyled>
       {data.map((movie) => {
-        const {id, poster_path: thumbNail, vote_average: voteAverage} = movie;
+        const {poster_path: thumbNail, vote_average: voteAverage} = movie;
         const thumb = `https://image.tmdb.org/t/p/w500/${thumbNail}`;
         const starsNumber = Math.round(voteAverage / 2);
         return (
-          <CardStyled key={id}>
+          <CardStyled key={uuidv4()}>
             <img src={thumb} alt="" />
             {starsGenerator(starsNumber)}
           </CardStyled>

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// --------- General Styles ------------ //
 export const ExploreStyled = styled.section`
   display: flex;
   flex-direction: column;
@@ -9,6 +10,7 @@ export const ExploreContentStyled = styled.div`
   display: flex;
 `;
 
+// --------- Left Section Styles ------------ //
 export const ShowSectionStyled = styled.div`
   display: flex;
   flex-direction: column;
@@ -16,6 +18,7 @@ export const ShowSectionStyled = styled.div`
   width: 75%;
 `;
 
+// --------- Cards Section Styles ------------ //
 export const SearchLabel = styled.label`
   display: flex;
   margin: var(--sizing-5x) 0;
@@ -53,19 +56,29 @@ export const SearchInput = styled.input`
 
 export const SearchButton = styled.button`
   background: none;
-  border-radius: 0 0.3rem 0.3rem 0;
   border: none;
-  color: var(--yellow-project-color);
   cursor: pointer;
-  height: 100%;
-  width: 10%;
-  
-  img {
-    width: var(--sizing-5x);
+  margin-right: 0.5rem;
+
+  span {
+    color: var(--yellow-project-color);
   }
 `;
 
-export const FilmsToShow = styled.div`
+export const FilterButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 1rem;
+
+  span {
+    align-self: center;
+    color: var(--yellow-project-color);
+    font-size: 2rem;
+  }
+`;
+
+export const CardsToShow = styled.div`
   display: flex;
   flex-direction: column;
   

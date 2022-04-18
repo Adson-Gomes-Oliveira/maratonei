@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// --------- Header Styles ------------ //
 export const HeaderStyled = styled.header`
   align-items: center;
   display: flex;
@@ -25,6 +26,7 @@ export const SecondHeaderStyled = styled.header`
   }
 `;
 
+// --------- Menu Styles ------------ //
 export const MenuStyled = styled.nav`
   display: flex;
   font-family: 'Bebas', sans-serif;
@@ -67,6 +69,7 @@ export const MenuLoginStyled = styled.div`
   }
 `;
 
+// --------- Streaming Styles ------------ //
 export const StreamingsStyled = styled.div`
   display: flex;
   justify-content: center;
@@ -78,6 +81,7 @@ export const StreamingsStyled = styled.div`
   }
 `;
 
+// --------- Ad Styles ------------ //
 export const AdStyled = styled.div`
   align-items: center;
   background-size: cover;
@@ -95,6 +99,7 @@ export const AdStyled = styled.div`
   }
 `;
 
+// --------- Card Styles --------- //
 export const CardsStyled = styled.div`
   display: flex;
   flex-wrap: wrap;

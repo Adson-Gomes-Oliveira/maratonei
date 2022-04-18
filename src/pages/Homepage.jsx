@@ -18,7 +18,7 @@ function Homepage() {
       <StreamingServices />
 
       <HomepageButtonsStyled>
-        <Link to="/explore">
+        <Link to="/explore-movies">
           <button
             type="button"
             data-testid="find-searching"

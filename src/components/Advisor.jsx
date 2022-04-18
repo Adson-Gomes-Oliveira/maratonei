@@ -10,10 +10,10 @@ function Advisor() {
       naturalSlideWidth={100}
       naturalSlideHeight={5.5}
       totalSlides={streamingAds.length}
-      isPlaying={false}
+      isPlaying
       touchEnabled={false}
       dragEnabled={false}
-      interval={8000}
+      interval={10000}
     >
       <Slider>
         {streamingAds.map((ad, index) => {
