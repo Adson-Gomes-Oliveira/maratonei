@@ -26,6 +26,8 @@ function ExploreMovies() {
     fetchMoviesByPopularity();
   }, []);
 
+  // test
+
   if (loading) return <Loading />;
   return (
     <ExploreStyled> {/* Generic Component for Explore Sections */}
