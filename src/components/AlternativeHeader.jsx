@@ -1,12 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import MenuBar from './MenuBar';
-import {SecondHeaderStyled} from '../styles';
+import {AlternativeHeaderStyled} from '../styles';
 import Logo from '../images/svg/logotipo.svg';
 
-function SecondHeader() {
+function AlternativeHeader() {
   return (
-    <SecondHeaderStyled>
+    <AlternativeHeaderStyled>
       <Link to="/">
         <img
           src={Logo}
@@ -15,8 +15,8 @@ function SecondHeader() {
         />
       </Link>
       <MenuBar />
-    </SecondHeaderStyled>
+    </AlternativeHeaderStyled>
   );
 }
 
-export default SecondHeader;
+export default AlternativeHeader;

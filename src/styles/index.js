@@ -13,7 +13,7 @@ export const HeaderStyled = styled.header`
   }
 `;
 
-export const SecondHeaderStyled = styled.header`
+export const AlternativeHeaderStyled = styled.header`
   align-items: center;
   background-color: black;
   display: flex;
