@@ -18,11 +18,11 @@ import {
   CardsToShow,
 } from '../styles/moviesAndSeries';
 
-function Movies() {
+function Series() {
   const [toggleFilter, setToggleFilter] = useState('none');
   const {pathname} = useLocation();
   const {
-    fetchMovies,
+    fetchSeries,
     loading,
     moviesAndSeriesData,
     handleChangeSearch,
@@ -33,7 +33,7 @@ function Movies() {
   } = useContext(MaratoneiContext);
 
   useEffect(() => {
-    fetchMovies();
+    fetchSeries();
   }, []);
 
   const handleToggle = () => {
@@ -94,7 +94,7 @@ function Movies() {
           </FilterStyled>
 
           <CardsToShow>
-            <h3>FILMES MAIS POPULARES</h3>
+            <h3>SERIES MAIS POPULARES</h3>
             <MoviesCards data={moviesAndSeriesData} />
           </CardsToShow>
 
@@ -105,4 +105,4 @@ function Movies() {
   );
 }
 
-export default Movies;
+export default Series;
