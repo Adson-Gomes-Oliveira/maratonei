@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
 // --------- General Styles ------------ //
-export const ExploreStyled = styled.section`
+export const MoviesAndSeriesStyled = styled.section`
   display: flex;
   flex-direction: column;
 `;
 
-export const ExploreContentStyled = styled.div`
+export const SectionStyled = styled.div`
   display: flex;
 `;
 
 // --------- Left Section Styles ------------ //
-export const ShowSectionStyled = styled.div`
+export const ContentStyled = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 var(--sizing-3x);
@@ -101,48 +101,35 @@ export const CardsToShow = styled.div`
 
 // --------- Filter Section Styles ------------ //
 export const FilterStyled = styled.form`
-  visibility: ${(props) => {
-    if (props.display === false) {
-      return 'hidden';
-    }
-  }};
   align-items: center;
   display: flex;
-  margin-left: var(--sizing-3x);
+  margin-bottom: var(--sizing-4x);
 
   label {
     margin-right: 1rem;
   }
 
-  label:nth-child(1) {
+  label {
+    color: white;
     display: flex;
     flex-direction: column;
-    color: var(--yellow-project-color);
     font-family: 'bebas', sans-serif;
 
     input {
       background: none;
       border: 0.1rem solid var(--yellow-project-color);
       color: white;
-      padding: 0.2rem;
+      padding: 0.3rem;
     }
   }
 
-  label:nth-child(2) {
-    display: flex;
-    flex-direction: column;
+  button {
+    align-self: flex-end;
+    background: none;
+    border: none;
     color: var(--yellow-project-color);
-    font-family: 'bebas', sans-serif;
-
-    select {
-      background: none;
-      border: 0.1rem solid var(--yellow-project-color);
-      color: white;
-      padding: 0.3rem;
-
-      option {
-        background-color: var(--black-light-project-color);
-      }
-    }
+    cursor: pointer;
+    font-size: var(--sizing-4x);
+    font-weight: 700;
   }
 `;

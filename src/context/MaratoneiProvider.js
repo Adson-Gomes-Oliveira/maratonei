@@ -5,60 +5,77 @@ import moviesByPopularity from '../services/moviesByPopularityAPI';
 import queryMovieSeries from '../services/queryMovieSeriesAPI';
 
 function MaratoneiProvider({children}) {
-  const [popularMovies, setPopularMovies] = useState([]);
+  const [moviesAndSeriesData, setmoviesAndSeriesData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [inputSearch, setInputSearch] = useState('');
+  const [filter, setFilter] = useState({
+    inputSearchFilter: '',
+    yearSearchFilter: '',
+  });
 
-  const fetchMoviesByPopularity = async () => {
+  const fetchMovies = async () => {
     setLoading(true);
 
     const moviesData = await moviesByPopularity();
-    setPopularMovies(moviesData);
+    setmoviesAndSeriesData(moviesData);
 
     setLoading(false);
   };
 
+  const removeFilters = () => {
+    setFilter((prev) => ({
+      inputSearchFilter: '',
+      yearSearchFilter: '',
+    }));
+
+    return fetchMovies();
+  };
+
   const handleChangeSearch = ({target}) => {
-    const {value} = target;
-    setInputSearch(value);
+    const {name, value} = target;
+    setFilter((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleEnterSearch = async (event) => {
     if (event.key === 'Enter') {
       event.preventDefault();
 
-      if (inputSearch === '') {
-        fetchMoviesByPopularity();
+      if (filter.inputSearchFilter === '' && filter.yearSearchFilter === '') {
+        return fetchMovies();
       }
 
-      const query = inputSearch.replace(/ /g, '+');
-      const queryData = await queryMovieSeries(query);
+      const query = filter.inputSearchFilter.replace(/ /g, '+');
+      const year = filter.yearSearchFilter;
 
-      setPopularMovies(queryData);
+      const queryData = await queryMovieSeries(query, year);
+
+      setmoviesAndSeriesData(queryData);
     }
   };
 
   const handleClickSearch = async () => {
-    if (inputSearch === '') {
-      fetchMoviesByPopularity();
-    }
+    if (filter.inputSearchFilter === '') return fetchMovies();
 
-    const query = inputSearch.replace(/ /g, '+');
-    const queryData = await queryMovieSeries(query);
+    const query = filter.inputSearchFilter.replace(/ /g, '+');
+    const year = filter.yearSearchFilter;
 
-    setPopularMovies(queryData);
+    const queryData = await queryMovieSeries(query, year);
+
+    return setmoviesAndSeriesData(queryData);
   };
 
   return (
     <MaratoneiContext.Provider value={ {
-      popularMovies,
-      fetchMoviesByPopularity,
+      moviesAndSeriesData,
+      fetchMovies,
       loading,
-      inputSearch,
-      setInputSearch,
+      filter,
       handleChangeSearch,
       handleClickSearch,
       handleEnterSearch,
+      removeFilters,
     } }>
       {children}
     </MaratoneiContext.Provider>

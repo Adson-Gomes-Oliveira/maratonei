@@ -1,105 +1,99 @@
-import React, {useEffect, useContext} from 'react';
-import SecondHeader from '../components/SecondHeader';
+import React, {useState, useEffect, useContext} from 'react';
+import Loading from '../components/Loading';
+import AlternativeHeader from '../components/AlternativeHeader';
+import Advisor from '../components/Advisor';
+import MoviesCards from '../components/MoviesCards';
+import Footer from '../components/Footer';
+import MaratoneiContext from '../context/MaratoneiContext';
 import {
-  ExploreStyled,
-  ExploreContentStyled,
-  ShowSectionStyled,
+  MoviesAndSeriesStyled,
+  SectionStyled,
+  ContentStyled,
   SearchLabel,
   SearchInput,
   SearchButton,
   FilterButton,
-  CardsToShow,
   FilterStyled,
-} from '../styles/explore';
-import Advisor from '../components/Advisor';
-import MoviesCards from '../components/MoviesCards';
-import MaratoneiContext from '../context/MaratoneiContext';
-import Loading from '../components/Loading';
-import Footer from '../components/Footer';
+  CardsToShow,
+} from '../styles/moviesAndSeries';
 
 function Movies() {
+  const [toggleFilter, setToggleFilter] = useState('none');
   const {
-    popularMovies,
-    fetchMoviesByPopularity,
+    fetchMovies,
     loading,
-    inputSearch,
+    moviesAndSeriesData,
     handleChangeSearch,
-    handleClickSearch,
     handleEnterSearch,
+    handleClickSearch,
+    filter,
+    removeFilters,
   } = useContext(MaratoneiContext);
 
   useEffect(() => {
-    fetchMoviesByPopularity();
+    fetchMovies();
   }, []);
+
+  const handleToggle = () => {
+    if (toggleFilter === 'flex') return setToggleFilter('none');
+    return setToggleFilter('flex');
+  };
 
   if (loading) return <Loading />;
   return (
-    <ExploreStyled> {/* Generic Component for Explore Sections */}
-      <SecondHeader />
+    <MoviesAndSeriesStyled>
+      <AlternativeHeader />
       <Advisor />
 
-      {/* Generic Component for the Content of Explore Sections */}
-      <ExploreContentStyled>
+      <SectionStyled>
+        <ContentStyled>
 
-        <ShowSectionStyled> {/* Generic Component for Content Left */}
-
-          {/* Generic Component for search and filter Area */}
           <SearchLabel htmlFor="search-title">
-
             <div>
               <SearchInput
                 type="text"
+                name="inputSearchFilter"
                 placeholder="PESQUISAR TITULOS"
                 data-testid="search-box"
                 onChange={handleChangeSearch}
                 onKeyDown={handleEnterSearch}
-                value={inputSearch}
+                value={filter.inputSearchFilter}
               />
-              <SearchButton
-                type="button"
-                onClick={handleClickSearch}
-              >
-                <span className='material-icons-outlined'>search</span>
+              <SearchButton type="button" onClick={handleClickSearch}>
+                <span className="material-icons-outlined">search</span>
               </SearchButton>
             </div>
 
-            <FilterButton>
+            <FilterButton type="button" onClick={handleToggle}>
               <span>Filtrar por:</span>
-              <span className='material-icons-outlined'>filter_list</span>
+              <span className="material-icons-outlined">filter_list</span>
             </FilterButton>
-            <FilterStyled display={false}>
-              <label htmlFor="date-filter">
-                <span>Data</span>
-                <input id="date-filter" type="date" />
-              </label>
-              <label htmlFor="checkbox-filter">
-                <span>Plataforma de Streaming</span>
-                <select id="checkbox-filter">
-                  <option value="netflix">Netflix</option>
-                  <option value="prime-video">Prime Video</option>
-                  <option value="hbo-max">HBO Max</option>
-                  <option value="paramount-plus">Paramount Plus</option>
-                  <option value="telecine">Telecine</option>
-                  <option value="disney-plus">Disney Plus</option>
-                  <option value="outras">Outras plataformas</option>
-                </select>
-              </label>
-            </FilterStyled>
-
           </SearchLabel>
 
-          <CardsToShow> {/* Generic Component for Cards Section */}
+          <FilterStyled style={{display: `${toggleFilter}`}}>
+            <label htmlFor="date-filter">
+              <span>Ano de lançamento</span>
+              <input
+                name="yearSearchFilter"
+                id="date-filter"
+                type="text"
+                onChange={handleChangeSearch}
+                onKeyDown={handleEnterSearch}
+                value={filter.yearSearchFilter}
+              />
+            </label>
+            <button type="button" onClick={removeFilters}>X</button>
+          </FilterStyled>
+
+          <CardsToShow>
             <h3>FILMES MAIS POPULARES</h3>
-            <MoviesCards data={popularMovies} />
+            <MoviesCards data={moviesAndSeriesData} />
           </CardsToShow>
 
-        </ShowSectionStyled>
-
-        {/* <GeekNotices /> */}
-
-      </ExploreContentStyled>
+        </ContentStyled>
+      </SectionStyled>
       <Footer />
-    </ExploreStyled>
+    </MoviesAndSeriesStyled>
   );
 }
 

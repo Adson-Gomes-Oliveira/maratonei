@@ -1,7 +1,7 @@
 import {TMDB_API_KEY} from '../data';
 
-async function queryMovieSeries(query) {
-  const requestMovieSeries = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${query}&language=pt-BR`)
+async function queryMovieSeries(query, year) {
+  const requestMovieSeries = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${query}&language=pt-BR&year=${year}&with_watch_monetization_types=flatrate`)
       .then((response) => response.json())
       .then((response) => response.results);
 
