@@ -34,13 +34,15 @@ function MoviesCards({data}) {
           poster_path: thumbNail,
           vote_average: voteAverage,
           title,
+          name,
         } = movie;
         const thumb = `https://image.tmdb.org/t/p/w500/${thumbNail}`;
         const starsNumber = Math.round(voteAverage / 2);
+        const ptBrTitle = title || name;
         return (
           <CardStyled key={uuidv4()}>
             <img src={thumb} alt="" />
-            <CardTitle>{title}</CardTitle>
+            <CardTitle>{ptBrTitle}</CardTitle>
             {starsGenerator(starsNumber)}
           </CardStyled>
         );

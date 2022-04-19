@@ -18,20 +18,20 @@ function Homepage() {
       <StreamingServices />
 
       <HomepageButtonsStyled>
-        <Link to="/movies">
+        <Link to="/surprise-me/movie">
           <button
             type="button"
             data-testid="find-searching"
           >
-            ENCONTRE SERIES E FILMES
+            ME RECOMENDA UM FILME AI!
           </button>
         </Link>
-        <Link to="/surprise-me">
+        <Link to="/surprise-me/serie">
           <button
             type="button"
             data-testid="find-random"
           >
-            ME RECOMENDA UMA AI!
+            ME RECOMENDA UMA SERIE AI!
           </button>
         </Link>
       </HomepageButtonsStyled>
