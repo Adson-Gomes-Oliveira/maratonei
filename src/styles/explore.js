@@ -66,15 +66,23 @@ export const SearchButton = styled.button`
 `;
 
 export const FilterButton = styled.button`
+  display: flex;
+  align-items: center;
   background: none;
   border: none;
   cursor: pointer;
-  margin-left: 1rem;
+  margin-left: var(--sizing-3x);
 
   span {
     align-self: center;
     color: var(--yellow-project-color);
-    font-size: 2rem;
+    font-size: var(--sizing-5x);
+  }
+
+  span:nth-child(1) {
+    font-family: 'bebas', sans-serif;
+    font-size: 1.2rem;
+    margin-right: var(--sizing-3x);
   }
 `;
 
@@ -88,5 +96,53 @@ export const CardsToShow = styled.div`
     font-size: var(--sizing-5x);
     font-weight: 100;
     margin-bottom: var(--sizing-5x);
+  }
+`;
+
+// --------- Filter Section Styles ------------ //
+export const FilterStyled = styled.form`
+  visibility: ${(props) => {
+    if (props.display === false) {
+      return 'hidden';
+    }
+  }};
+  align-items: center;
+  display: flex;
+  margin-left: var(--sizing-3x);
+
+  label {
+    margin-right: 1rem;
+  }
+
+  label:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    color: var(--yellow-project-color);
+    font-family: 'bebas', sans-serif;
+
+    input {
+      background: none;
+      border: 0.1rem solid var(--yellow-project-color);
+      color: white;
+      padding: 0.2rem;
+    }
+  }
+
+  label:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    color: var(--yellow-project-color);
+    font-family: 'bebas', sans-serif;
+
+    select {
+      background: none;
+      border: 0.1rem solid var(--yellow-project-color);
+      color: white;
+      padding: 0.3rem;
+
+      option {
+        background-color: var(--black-light-project-color);
+      }
+    }
   }
 `;

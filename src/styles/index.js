@@ -120,7 +120,6 @@ export const CardStyled = styled.div`
   div {
     display: flex;
     justify-content: space-between;
-    margin-top: 0.8rem;
     margin-bottom: 2.5rem;
     width: 12rem;
 
@@ -129,6 +128,16 @@ export const CardStyled = styled.div`
       color: var(--yellow-project-color);
     }
   }
+`;
+
+export const CardTitle = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 500;
+  width: 100%;
+  min-height: 4rem;
 `;
 
 // --------- Footer Styles --------- //

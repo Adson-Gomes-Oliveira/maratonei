@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {v4 as uuidv4} from 'uuid';
-import {CardsStyled, CardStyled} from '../styles';
+import {CardsStyled, CardStyled, CardTitle} from '../styles';
 import {ZERO} from '../data';
 
 function starsGenerator(amount) {
@@ -30,12 +30,17 @@ function MoviesCards({data}) {
   return (
     <CardsStyled>
       {data.map((movie) => {
-        const {poster_path: thumbNail, vote_average: voteAverage} = movie;
+        const {
+          poster_path: thumbNail,
+          vote_average: voteAverage,
+          title,
+        } = movie;
         const thumb = `https://image.tmdb.org/t/p/w500/${thumbNail}`;
         const starsNumber = Math.round(voteAverage / 2);
         return (
           <CardStyled key={uuidv4()}>
             <img src={thumb} alt="" />
+            <CardTitle>{title}</CardTitle>
             {starsGenerator(starsNumber)}
           </CardStyled>
         );
