@@ -21,6 +21,10 @@ function Movies() {
     popularMovies,
     fetchMoviesByPopularity,
     loading,
+    inputSearch,
+    handleChangeSearch,
+    handleClickSearch,
+    handleEnterSearch,
   } = useContext(MaratoneiContext);
 
   useEffect(() => {
@@ -46,8 +50,14 @@ function Movies() {
                 type="text"
                 placeholder="PESQUISAR TITULOS"
                 data-testid="search-box"
+                onChange={handleChangeSearch}
+                onKeyDown={handleEnterSearch}
+                value={inputSearch}
               />
-              <SearchButton type="button">
+              <SearchButton
+                type="button"
+                onClick={handleClickSearch}
+              >
                 <span className='material-icons-outlined'>search</span>
               </SearchButton>
             </div>
