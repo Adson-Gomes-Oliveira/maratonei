@@ -9,6 +9,7 @@ import {
   SearchButton,
   FilterButton,
   CardsToShow,
+  FilterStyled,
 } from '../styles/explore';
 import Advisor from '../components/Advisor';
 import MoviesCards from '../components/MoviesCards';
@@ -63,8 +64,27 @@ function Movies() {
             </div>
 
             <FilterButton>
+              <span>Filtrar por:</span>
               <span className='material-icons-outlined'>filter_list</span>
             </FilterButton>
+            <FilterStyled display={false}>
+              <label htmlFor="date-filter">
+                <span>Data</span>
+                <input id="date-filter" type="date" />
+              </label>
+              <label htmlFor="checkbox-filter">
+                <span>Plataforma de Streaming</span>
+                <select id="checkbox-filter">
+                  <option value="netflix">Netflix</option>
+                  <option value="prime-video">Prime Video</option>
+                  <option value="hbo-max">HBO Max</option>
+                  <option value="paramount-plus">Paramount Plus</option>
+                  <option value="telecine">Telecine</option>
+                  <option value="disney-plus">Disney Plus</option>
+                  <option value="outras">Outras plataformas</option>
+                </select>
+              </label>
+            </FilterStyled>
 
           </SearchLabel>
 

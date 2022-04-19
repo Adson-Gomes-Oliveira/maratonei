@@ -7,7 +7,7 @@ async function queryMovieSeries(query) {
 
   const queryResult = requestMovieSeries
       .filter((query) => query.poster_path !== null);
-  console.log(queryResult);
+
   queryResult.sort((a, b) => b.popularity - a.popularity);
 
   return queryResult;
