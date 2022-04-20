@@ -1,8 +1,8 @@
 import React from 'react';
 import Logo from '../images/svg/logotipo.svg';
-import github from '../images/github-icon.png';
-import linkedin from '../images/linkedin-icon.png';
-import whatsapp from '../images/whatsapp-icon.png';
+import github from '../images/github-icon.webp';
+import linkedin from '../images/linkedin-icon.webp';
+import whatsapp from '../images/whatsapp-icon.webp';
 import {
   FooterStyled,
   SocialMediaStyled,
