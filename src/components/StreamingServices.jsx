@@ -1,14 +1,14 @@
 import React from 'react';
-import Netflix from '../images/netflix-logo.png';
-import Prime from '../images/prime-logo.png';
-import Disney from '../images/disney-logo.jpg';
-import HBO from '../images/hbo-logo.jpg';
-import Telecine from '../images/telecine-logo.jpg';
-import Looke from '../images/looke-logo.jpg';
-import Star from '../images/star-logo.png';
-import Crunch from '../images/crunch-logo.png';
+import Netflix from '../images/netflix-logo.webp';
+import Prime from '../images/prime-logo.webp';
+import Disney from '../images/disney-logo.webp';
+import HBO from '../images/hbo-logo.webp';
+import Telecine from '../images/telecine-logo.webp';
+import Looke from '../images/looke-logo.webp';
+import Star from '../images/star-logo.webp';
+import Crunch from '../images/crunch-logo.webp';
 import Hulu from '../images/hulu-logo.webp';
-import Vudu from '../images/vudu-logo.png';
+import Vudu from '../images/vudu-logo.webp';
 import {StreamingsStyled} from '../styles/index';
 
 function StreamingServices() {

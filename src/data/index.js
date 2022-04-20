@@ -1,10 +1,10 @@
-import NetflixBanner from '../images/netflix-banner-ad.png';
-import PrimeBanner from '../images/prime-banner-ad.png';
-import DisneyBanner from '../images/disney-banner-ad.png';
-import HBOBanner from '../images/hbo-banner-ad.png';
-import ParamountBanner from '../images/paramount-banner-ad.png';
-import TmdbBanner from '../images/tmdb-banner-ad.png';
-import TelecineBanner from '../images/telecine-banner-ad.png';
+import NetflixBanner from '../images/netflix-banner-ad.webp';
+import PrimeBanner from '../images/prime-banner-ad.webp';
+import DisneyBanner from '../images/disney-banner-ad.webp';
+import HBOBanner from '../images/hbo-banner-ad.webp';
+import ParamountBanner from '../images/paramount-banner-ad.webp';
+import TmdbBanner from '../images/tmdb-banner-ad.webp';
+import TelecineBanner from '../images/telecine-banner-ad.webp';
 
 export const ZERO = 0;
 export const EXCLUDE_LINK_INDEX = 3;
