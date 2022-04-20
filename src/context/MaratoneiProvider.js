@@ -23,12 +23,8 @@ function MaratoneiProvider({children}) {
   };
 
   const fetchSeries = async () => {
-    setLoading(true);
-
     const seriesData = await seriesByPopularity();
-    setMoviesAndSeriesData(seriesData);
-
-    setLoading(false);
+    return setMoviesAndSeriesData(seriesData);
   };
 
   const removeFilters = (actualPath) => {
@@ -105,6 +101,7 @@ function MaratoneiProvider({children}) {
       handleClickSearch,
       handleEnterSearch,
       removeFilters,
+      setLoading,
     } }>
       {children}
     </MaratoneiContext.Provider>

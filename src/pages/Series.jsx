@@ -20,7 +20,7 @@ import {
 import '../styles/cssAnimations.css';
 
 function Series() {
-  const [toggleFilter, setToggleFilter] = useState('hiddenFilter');
+  const [toggleFilter, setToggleFilter] = useState('stand-by-toggle');
   const [rotateWhenClick, setRotate] = useState('stand-by');
   const {pathname} = useLocation();
   const {
@@ -32,16 +32,28 @@ function Series() {
     handleClickSearch,
     filter,
     removeFilters,
+    setLoading,
   } = useContext(MaratoneiContext);
 
   useEffect(() => {
     fetchSeries();
+    setLoading(true);
+    const showLoading = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
+    return () => {
+      clearInterval(showLoading);
+    };
   }, []);
 
   const handleToggle = () => {
     if (rotateWhenClick === 'stand-by') setRotate('filterActivated');
     if (rotateWhenClick === 'filterActivated') setRotate('filterDeactivated');
     if (rotateWhenClick === 'filterDeactivated') setRotate('filterActivated');
+    if (toggleFilter === 'stand-by-toggle') {
+      return setToggleFilter('showFilter');
+    }
     if (toggleFilter === 'hiddenFilter') return setToggleFilter('showFilter');
     return setToggleFilter('hiddenFilter');
   };

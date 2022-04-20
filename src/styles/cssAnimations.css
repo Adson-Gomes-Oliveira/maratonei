@@ -15,7 +15,7 @@
 }
 
 @keyframes hiddenFilter {
-  0% {visibility: visible; opacity: 1; position: relative; left: 0px}
+  0% {opacity: 1; position: relative; left: 0px}
   100% {visibility: hidden; opacity: 0; position: relative; left: -250px}
 }
 
@@ -33,4 +33,8 @@
 
 .hiddenFilter {
   animation: hiddenFilter 0.5s forwards;
+}
+
+.stand-by-toggle {
+  visibility: hidden;
 }

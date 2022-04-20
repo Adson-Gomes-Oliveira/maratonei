@@ -1,4 +1,24 @@
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
+
+const scaleUpDown = keyframes`
+  0% {transform: scale(1)}
+  100% {transform: scale(0.5)}
+`;
+
+// --------- Loading Styles --------- //
+export const LoadingStyled = styled.section`
+  align-items: center;
+  animation: ${scaleUpDown} 1s alternate infinite ease-in;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+
+  img {
+    height: 13rem;
+    width: 25rem;
+  }
+`;
 
 // --------- Header Styles ------------ //
 export const HeaderStyled = styled.header`
