@@ -14,12 +14,8 @@ function MaratoneiProvider({children}) {
   });
 
   const fetchMovies = async () => {
-    setLoading(true);
-
     const moviesData = await moviesByPopularity();
     setMoviesAndSeriesData(moviesData);
-
-    setLoading(false);
   };
 
   const fetchSeries = async () => {
