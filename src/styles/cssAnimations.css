@@ -1,0 +1,40 @@
+/* ------- Movies and Series Animations ------- */
+@keyframes rotate0to90deg {
+  0% {transform: rotate(0deg)}
+  100% {transform: rotate(90deg)}
+}
+
+@keyframes rotate90to0deg {
+  0% {transform: rotate(90deg)}
+  100% {transform: rotate(0deg)}
+}
+
+@keyframes showFilter {
+  0% {visibility: hidden; opacity: 0; position: relative; position: relative; left: -250px}
+  100% {visibility: visible; opacity: 1; position: relative; left: 0px}
+}
+
+@keyframes hiddenFilter {
+  0% {opacity: 1; position: relative; left: 0px}
+  100% {visibility: hidden; opacity: 0; position: relative; left: -250px}
+}
+
+.filterActivated {
+  animation: rotate0to90deg 0.5s forwards;
+}
+
+.filterDeactivated {
+  animation: rotate90to0deg 0.5s forwards;
+}
+
+.showFilter {
+  animation: showFilter 0.5s forwards;
+}
+
+.hiddenFilter {
+  animation: hiddenFilter 0.5s forwards;
+}
+
+.stand-by-toggle {
+  visibility: hidden;
+}

@@ -20,7 +20,9 @@ export const ContentStyled = styled.div`
 
 // --------- Cards Section Styles ------------ //
 export const SearchLabel = styled.label`
+  align-items: center;
   display: flex;
+  height: 2.5rem;
   margin: var(--sizing-5x) 0;
 
   div {
@@ -49,7 +51,8 @@ export const SearchInput = styled.input`
   color: white;
   font-family: 'Arial', sans-serif;
   font-size: var(--sizing-3x);
-  height: 2.3rem;
+  max-height: 2.3rem;
+  min-height: 2.3rem;
   padding: 0 var(--sizing-1x);
   width: 90%;
 `;
@@ -103,7 +106,7 @@ export const CardsToShow = styled.div`
 export const FilterStyled = styled.form`
   align-items: center;
   display: flex;
-  margin-bottom: var(--sizing-4x);
+  margin-left: 1rem;
 
   label {
     margin-right: 1rem;
