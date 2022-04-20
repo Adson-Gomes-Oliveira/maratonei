@@ -17,9 +17,11 @@ import {
   FilterStyled,
   CardsToShow,
 } from '../styles/moviesAndSeries';
+import '../styles/cssAnimations.css';
 
 function Movies() {
-  const [toggleFilter, setToggleFilter] = useState('none');
+  const [toggleFilter, setToggleFilter] = useState('hiddenFilter');
+  const [rotateWhenClick, setRotate] = useState('stand-by');
   const {pathname} = useLocation();
   const {
     fetchMovies,
@@ -37,13 +39,16 @@ function Movies() {
   }, []);
 
   const handleToggle = () => {
-    if (toggleFilter === 'flex') return setToggleFilter('none');
-    return setToggleFilter('flex');
+    if (rotateWhenClick === 'stand-by') setRotate('filterActivated');
+    if (rotateWhenClick === 'filterActivated') setRotate('filterDeactivated');
+    if (rotateWhenClick === 'filterDeactivated') setRotate('filterActivated');
+    if (toggleFilter === 'hiddenFilter') return setToggleFilter('showFilter');
+    return setToggleFilter('hiddenFilter');
   };
 
-  if (loading) return <Loading />;
   return (
     <MoviesAndSeriesStyled>
+      {loading && <Loading />}
       <AlternativeHeader />
       <Advisor />
 
@@ -71,27 +76,28 @@ function Movies() {
 
             <FilterButton type="button" onClick={handleToggle}>
               <span>Filtrar por:</span>
-              <span className="material-icons-outlined">filter_list</span>
+              <span
+                className={`material-icons-outlined ${rotateWhenClick}`}
+              >filter_list</span>
             </FilterButton>
+            <FilterStyled className={toggleFilter}>
+              <label htmlFor="date-filter">
+                <span>Ano de lançamento</span>
+                <input
+                  name="yearSearchFilter"
+                  id="date-filter"
+                  type="text"
+                  onChange={handleChangeSearch}
+                  onKeyDown={(event) => handleEnterSearch(event, pathname)}
+                  value={filter.yearSearchFilter}
+                />
+              </label>
+              <button
+                type="button"
+                onClick={() => removeFilters(pathname)}
+              >X</button>
+            </FilterStyled>
           </SearchLabel>
-
-          <FilterStyled style={{display: `${toggleFilter}`}}>
-            <label htmlFor="date-filter">
-              <span>Ano de lançamento</span>
-              <input
-                name="yearSearchFilter"
-                id="date-filter"
-                type="text"
-                onChange={handleChangeSearch}
-                onKeyDown={(event) => handleEnterSearch(event, pathname)}
-                value={filter.yearSearchFilter}
-              />
-            </label>
-            <button
-              type="button"
-              onClick={() => removeFilters(pathname)}
-            >X</button>
-          </FilterStyled>
 
           <CardsToShow>
             <h3>FILMES MAIS POPULARES</h3>
