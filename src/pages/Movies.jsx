@@ -51,74 +51,76 @@ function Movies() {
   }, []);
 
   return (
-    <MoviesAndSeriesStyled>
-      {loading && <Loading />}
+    <>
       <AlternativeHeader />
       <Advisor />
+      <MoviesAndSeriesStyled>
+        {loading && <Loading />}
 
-      <SectionStyled>
+        <SectionStyled>
 
-        <ContentStyled>
+          <ContentStyled>
 
-          <SearchLabel htmlFor="search-title">
-            <div>
-              <SearchInput
-                type="text"
-                name="inputSearchFilter"
-                placeholder="PESQUISAR TITULOS"
-                data-testid="search-box"
-                onChange={handleChangeSearch}
-                onKeyDown={(event) => handleEnterSearch(event, pathname)}
-                value={filter.inputSearchFilter}
-              />
-              <SearchButton
-                type="button"
-                onClick={() => handleClickSearch(pathname)}
-              >
-                <span className="material-icons-outlined">search</span>
-              </SearchButton>
-            </div>
-
-            <FilterButton type="button" onClick={handleToggle}>
-              <span>Filtrar por:</span>
-              <span
-                className={`material-icons-outlined ${rotateWhenClick}`}
-              >filter_list</span>
-            </FilterButton>
-            <FilterStyled className={toggleFilter}>
-              <label htmlFor="date-filter">
-                <span>Ano de lançamento</span>
-                <input
-                  name="yearSearchFilter"
-                  id="date-filter"
+            <SearchLabel htmlFor="search-title">
+              <div>
+                <SearchInput
                   type="text"
+                  name="inputSearchFilter"
+                  placeholder="PESQUISAR TITULOS"
+                  data-testid="search-box"
                   onChange={handleChangeSearch}
                   onKeyDown={(event) => handleEnterSearch(event, pathname)}
-                  value={filter.yearSearchFilter}
+                  value={filter.inputSearchFilter}
                 />
-              </label>
-              <button
-                type="button"
-                onClick={() => removeFilters(pathname)}
-              >X</button>
-            </FilterStyled>
-          </SearchLabel>
+                <SearchButton
+                  type="button"
+                  onClick={() => handleClickSearch(pathname)}
+                >
+                  <span className="material-icons-outlined">search</span>
+                </SearchButton>
+              </div>
 
-          <CardsToShow>
-            <h3>FILMES MAIS POPULARES</h3>
-            <MoviesCards data={moviesAndSeriesData} />
-          </CardsToShow>
-          <DisclaimerResults>
-            * Resultados limitados de 20 a 40 por busca, para mais resultados
-            utilize a caixa de pesquisa ou os filtros disponiveis no site.
-          </DisclaimerResults>
-        </ContentStyled>
+              <FilterButton type="button" onClick={handleToggle}>
+                <span>Filtrar por:</span>
+                <span
+                  className={`material-icons-outlined ${rotateWhenClick}`}
+                >filter_list</span>
+              </FilterButton>
+              <FilterStyled className={toggleFilter}>
+                <label htmlFor="date-filter">
+                  <span>Ano de lançamento</span>
+                  <input
+                    name="yearSearchFilter"
+                    id="date-filter"
+                    type="text"
+                    onChange={handleChangeSearch}
+                    onKeyDown={(event) => handleEnterSearch(event, pathname)}
+                    value={filter.yearSearchFilter}
+                  />
+                </label>
+                <button
+                  type="button"
+                  onClick={() => removeFilters(pathname)}
+                >X</button>
+              </FilterStyled>
+            </SearchLabel>
 
-        <GeekArticles />
+            <CardsToShow>
+              <h3>FILMES MAIS POPULARES</h3>
+              <MoviesCards data={moviesAndSeriesData} />
+            </CardsToShow>
+            <DisclaimerResults>
+              * Resultados limitados de 20 a 40 por busca, para mais resultados
+              utilize a caixa de pesquisa ou os filtros disponiveis no site.
+            </DisclaimerResults>
+          </ContentStyled>
 
-      </SectionStyled>
+          <GeekArticles />
+
+        </SectionStyled>
+      </MoviesAndSeriesStyled>
       <Footer />
-    </MoviesAndSeriesStyled>
+    </>
   );
 }
 

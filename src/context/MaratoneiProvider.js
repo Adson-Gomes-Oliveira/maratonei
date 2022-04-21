@@ -1,19 +1,30 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import MaratoneiContext from './MaratoneiContext';
 import moviesByPopularity from '../services/moviesByPopularityAPI';
 import seriesByPopularity from '../services/seriesByPopularityAPI';
 import queryMovieSeries from '../services/queryMovieSeriesAPI';
+import watchProviders from '../services/watchProvidersAPI';
 
 function MaratoneiProvider({children}) {
   const [moviesAndSeriesData, setMoviesAndSeriesData] = useState([]);
   const [toggleFilter, setToggleFilter] = useState('stand-by-toggle');
   const [rotateWhenClick, setRotate] = useState('stand-by');
+  const [providersData, setProvidersData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [filter, setFilter] = useState({
     inputSearchFilter: '',
     yearSearchFilter: '',
   });
+
+  const fetchProviders = async () => {
+    const data = await watchProviders();
+    setProvidersData(data);
+  };
+
+  useEffect(() => {
+    fetchProviders();
+  }, []);
 
   const fetchMovies = async () => {
     const moviesData = await moviesByPopularity();
@@ -107,6 +118,7 @@ function MaratoneiProvider({children}) {
       fetchSeries,
       handleToggle,
       toggleFilter,
+      providersData,
       rotateWhenClick,
       loading,
       filter,
