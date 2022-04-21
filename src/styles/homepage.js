@@ -7,6 +7,7 @@ export const HomepageStyled = styled.section`
   background-size: cover;
   display: flex;
   flex-direction: column;
+  user-select: none;
   height: 100vh;
 `;
 

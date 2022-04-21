@@ -1,19 +1,36 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import MaratoneiContext from './MaratoneiContext';
 import moviesByPopularity from '../services/moviesByPopularityAPI';
 import seriesByPopularity from '../services/seriesByPopularityAPI';
 import queryMovieSeries from '../services/queryMovieSeriesAPI';
+import watchProviders from '../services/watchProvidersAPI';
+import moviesByProvider from '../services/moviesByProviderAPI';
 
 function MaratoneiProvider({children}) {
   const [moviesAndSeriesData, setMoviesAndSeriesData] = useState([]);
   const [toggleFilter, setToggleFilter] = useState('stand-by-toggle');
   const [rotateWhenClick, setRotate] = useState('stand-by');
+  const [providersData, setProvidersData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [filter, setFilter] = useState({
     inputSearchFilter: '',
     yearSearchFilter: '',
   });
+
+  const fetchProviders = async () => {
+    const data = await watchProviders();
+    setProvidersData(data);
+  };
+
+  const fetchByProvider = async (providerId) => {
+    const data = await moviesByProvider(providerId);
+    setMoviesAndSeriesData(data);
+  };
+
+  useEffect(() => {
+    fetchProviders();
+  }, []);
 
   const fetchMovies = async () => {
     const moviesData = await moviesByPopularity();
@@ -67,36 +84,47 @@ function MaratoneiProvider({children}) {
       const query = filter.inputSearchFilter.replace(/ /g, '+');
       const year = filter.yearSearchFilter;
 
-      if (actualPath === '/movies') {
-        const dataTarget = 'movies';
-        const queryData = await queryMovieSeries(query, year, dataTarget);
-        return setMoviesAndSeriesData(queryData);
-      }
+      switch (actualPath) {
+        case '/movies':
+          const dataMovies = 'movies';
+          const queryDataMovies = await
+          queryMovieSeries(query, year, dataMovies);
+          return setMoviesAndSeriesData(queryDataMovies);
 
-      if (actualPath === '/series') {
-        const dataTarget = 'series';
-        const queryData = await queryMovieSeries(query, year, dataTarget);
-        return setMoviesAndSeriesData(queryData);
+        case '/series':
+          const dataSeries = 'series';
+          const queryDataSeries = await
+          queryMovieSeries(query, year, dataSeries);
+          return setMoviesAndSeriesData(queryDataSeries);
+        default:
+          break;
       }
     }
   };
 
   const handleClickSearch = async (actualPath) => {
-    if (filter.inputSearchFilter === '') return fetchMovies();
+    if (filter.inputSearchFilter === '') {
+      if (actualPath === '/movies') return fetchMovies();
+      if (actualPath === '/series') return fetchSeries();
+    }
 
     const query = filter.inputSearchFilter.replace(/ /g, '+');
     const year = filter.yearSearchFilter;
 
-    if (actualPath === '/movies') {
-      const dataTarget = 'movies';
-      const queryData = await queryMovieSeries(query, year, dataTarget);
-      return setMoviesAndSeriesData(queryData);
-    }
+    switch (actualPath) {
+      case '/movies':
+        const dataMovies = 'movies';
+        const queryDataMovies = await
+        queryMovieSeries(query, year, dataMovies);
+        return setMoviesAndSeriesData(queryDataMovies);
 
-    if (actualPath === '/series') {
-      const dataTarget = 'series';
-      const queryData = await queryMovieSeries(query, year, dataTarget);
-      return setMoviesAndSeriesData(queryData);
+      case '/series':
+        const dataSeries = 'series';
+        const queryDataSeries = await
+        queryMovieSeries(query, year, dataSeries);
+        return setMoviesAndSeriesData(queryDataSeries);
+      default:
+        break;
     }
   };
 
@@ -107,12 +135,14 @@ function MaratoneiProvider({children}) {
       fetchSeries,
       handleToggle,
       toggleFilter,
+      providersData,
       rotateWhenClick,
       loading,
       filter,
       handleChangeSearch,
       handleClickSearch,
       handleEnterSearch,
+      fetchByProvider,
       removeFilters,
       setLoading,
     } }>
