@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useEffect, useContext} from 'react';
 import {useLocation} from 'react-router-dom';
 import Loading from '../components/Loading';
 import AlternativeHeader from '../components/AlternativeHeader';
@@ -16,12 +16,12 @@ import {
   FilterButton,
   FilterStyled,
   CardsToShow,
+  DisclaimerResults,
 } from '../styles/moviesAndSeries';
 import '../styles/cssAnimations.css';
+import GeekArticles from '../components/GeekArticles';
 
 function Series() {
-  const [toggleFilter, setToggleFilter] = useState('stand-by-toggle');
-  const [rotateWhenClick, setRotate] = useState('stand-by');
   const {pathname} = useLocation();
   const {
     fetchSeries,
@@ -33,6 +33,9 @@ function Series() {
     filter,
     removeFilters,
     setLoading,
+    handleToggle,
+    rotateWhenClick,
+    toggleFilter,
   } = useContext(MaratoneiContext);
 
   useEffect(() => {
@@ -47,17 +50,6 @@ function Series() {
     };
   }, []);
 
-  const handleToggle = () => {
-    if (rotateWhenClick === 'stand-by') setRotate('filterActivated');
-    if (rotateWhenClick === 'filterActivated') setRotate('filterDeactivated');
-    if (rotateWhenClick === 'filterDeactivated') setRotate('filterActivated');
-    if (toggleFilter === 'stand-by-toggle') {
-      return setToggleFilter('showFilter');
-    }
-    if (toggleFilter === 'hiddenFilter') return setToggleFilter('showFilter');
-    return setToggleFilter('hiddenFilter');
-  };
-
   return (
     <MoviesAndSeriesStyled>
       {loading && <Loading />}
@@ -65,6 +57,7 @@ function Series() {
       <Advisor />
 
       <SectionStyled>
+
         <ContentStyled>
 
           <SearchLabel htmlFor="search-title">
@@ -115,8 +108,15 @@ function Series() {
             <h3>SERIES MAIS POPULARES</h3>
             <MoviesCards data={moviesAndSeriesData} />
           </CardsToShow>
+          <DisclaimerResults>
+            * Resultados limitados de 20 a 40 por busca, para mais resultados
+            utilize a caixa de pesquisa ou os filtros disponiveis no site.
+          </DisclaimerResults>
 
         </ContentStyled>
+
+        <GeekArticles />
+
       </SectionStyled>
       <Footer />
     </MoviesAndSeriesStyled>

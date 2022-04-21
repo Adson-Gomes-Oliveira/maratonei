@@ -7,6 +7,8 @@ import queryMovieSeries from '../services/queryMovieSeriesAPI';
 
 function MaratoneiProvider({children}) {
   const [moviesAndSeriesData, setMoviesAndSeriesData] = useState([]);
+  const [toggleFilter, setToggleFilter] = useState('stand-by-toggle');
+  const [rotateWhenClick, setRotate] = useState('stand-by');
   const [loading, setLoading] = useState(false);
   const [filter, setFilter] = useState({
     inputSearchFilter: '',
@@ -23,12 +25,24 @@ function MaratoneiProvider({children}) {
     return setMoviesAndSeriesData(seriesData);
   };
 
+  const handleToggle = () => {
+    if (rotateWhenClick === 'stand-by') setRotate('filterActivated');
+    if (rotateWhenClick === 'filterActivated') setRotate('filterDeactivated');
+    if (rotateWhenClick === 'filterDeactivated') setRotate('filterActivated');
+    if (toggleFilter === 'stand-by-toggle') {
+      return setToggleFilter('showFilter');
+    }
+    if (toggleFilter === 'hiddenFilter') return setToggleFilter('showFilter');
+    return setToggleFilter('hiddenFilter');
+  };
+
   const removeFilters = (actualPath) => {
     setFilter((prev) => ({
       inputSearchFilter: '',
       yearSearchFilter: '',
     }));
 
+    handleToggle();
     if (actualPath === '/movies') return fetchMovies();
     if (actualPath === '/series') return fetchSeries();
   };
@@ -91,6 +105,9 @@ function MaratoneiProvider({children}) {
       moviesAndSeriesData,
       fetchMovies,
       fetchSeries,
+      handleToggle,
+      toggleFilter,
+      rotateWhenClick,
       loading,
       filter,
       handleChangeSearch,

@@ -10,6 +10,12 @@ export const SectionStyled = styled.div`
   display: flex;
 `;
 
+export const DisclaimerResults = styled.span`
+  align-self: center;
+  color: var(--yellow-project-color);
+  margin-bottom: var(--sizing-5x);
+`;
+
 // --------- Left Section Styles ------------ //
 export const ContentStyled = styled.div`
   display: flex;
