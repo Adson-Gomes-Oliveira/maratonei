@@ -4,6 +4,7 @@ import Homepage from './pages/Homepage';
 import Movies from './pages/Movies';
 import Series from './pages/Series';
 import Streamings from './pages/Streamings';
+import StreamingsResults from './pages/StreamingsResults';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Route path="/series" element={<Series />} />
       <Route path="/series/:id" element={<h1>oi</h1>} />
       <Route path="/streamings" element={<Streamings />} />
-      <Route path="/streamings/:id" element={<h1>oi</h1>} />
+      <Route path="/streamings/:id" element={<StreamingsResults />} />
       <Route path="*" element={<h1>oi</h1>} />
     </Routes>
   );

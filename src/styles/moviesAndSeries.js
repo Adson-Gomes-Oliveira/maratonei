@@ -25,11 +25,26 @@ export const ContentStyled = styled.div`
 `;
 
 // --------- Cards Section Styles ------------ //
+export const CardsToShow = styled.div`
+  display: flex;
+  flex-direction: column;
+  
+  h3 {
+    color: white;
+    font-family: 'bebas', sans-serif;
+    font-size: var(--sizing-5x);
+    font-weight: 100;
+    margin: var(--sizing-5x) 0;
+  }
+`;
+
+// --------- Filter Section Styles ------------ //
 export const SearchLabel = styled.label`
   align-items: center;
   display: flex;
   height: 2.5rem;
-  margin: var(--sizing-5x) 0;
+  margin-top: var(--sizing-5x);
+  user-select: none;
 
   div {
     border-radius: 0.5rem;
@@ -74,41 +89,6 @@ export const SearchButton = styled.button`
   }
 `;
 
-export const FilterButton = styled.button`
-  display: flex;
-  align-items: center;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-left: var(--sizing-3x);
-
-  span {
-    align-self: center;
-    color: var(--yellow-project-color);
-    font-size: var(--sizing-5x);
-  }
-
-  span:nth-child(1) {
-    font-family: 'bebas', sans-serif;
-    font-size: 1.2rem;
-    margin-right: var(--sizing-3x);
-  }
-`;
-
-export const CardsToShow = styled.div`
-  display: flex;
-  flex-direction: column;
-  
-  h3 {
-    color: white;
-    font-family: 'bebas', sans-serif;
-    font-size: var(--sizing-5x);
-    font-weight: 100;
-    margin-bottom: var(--sizing-5x);
-  }
-`;
-
-// --------- Filter Section Styles ------------ //
 export const FilterStyled = styled.form`
   align-items: center;
   display: flex;
@@ -140,5 +120,26 @@ export const FilterStyled = styled.form`
     cursor: pointer;
     font-size: var(--sizing-4x);
     font-weight: 700;
+  }
+`;
+
+export const FilterButton = styled.button`
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: var(--sizing-3x);
+
+  span {
+    align-self: center;
+    color: var(--yellow-project-color);
+    font-size: var(--sizing-5x);
+  }
+
+  span:nth-child(1) {
+    font-family: 'bebas', sans-serif;
+    font-size: 1.2rem;
+    margin-right: var(--sizing-3x);
   }
 `;

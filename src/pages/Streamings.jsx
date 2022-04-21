@@ -15,8 +15,8 @@ function Streamings() {
       <Advisor />
       <StreamingsPageStyled>
         <h2>Serviços de Streamings disponíveis</h2>
-        <h3>Clique em um dos streamings e veja
-          os filmes e séries disponiveis</h3>
+        <h3>Clique em um dos streamings e confira
+          os filmes mais populares</h3>
         <StreamingImages>
           {providersData.map((provider) => {
             const {

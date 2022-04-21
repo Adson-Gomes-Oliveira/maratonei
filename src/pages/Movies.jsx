@@ -1,8 +1,8 @@
 import React, {useEffect, useContext} from 'react';
 import {useLocation} from 'react-router-dom';
-import Loading from '../components/Loading';
 import AlternativeHeader from '../components/AlternativeHeader';
 import Advisor from '../components/Advisor';
+import Loading from '../components/Loading';
 import MoviesCards from '../components/MoviesCards';
 import GeekArticles from '../components/GeekArticles';
 import Footer from '../components/Footer';
@@ -118,6 +118,7 @@ function Movies() {
           <GeekArticles />
 
         </SectionStyled>
+
       </MoviesAndSeriesStyled>
       <Footer />
     </>
