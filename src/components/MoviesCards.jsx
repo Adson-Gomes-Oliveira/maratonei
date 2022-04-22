@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid';
 import {CardsStyled, CardStyled, CardTitle} from '../styles';
 import {ZERO} from '../data';
 
-function starsGenerator(amount) {
+export function starsGenerator(amount) {
   const starsNoChecked = ['star_border', 'star_border',
     'star_border', 'star_border', 'star_border'];
   const starsChecked = [];
@@ -31,6 +32,7 @@ function MoviesCards({data}) {
     <CardsStyled>
       {data.map((movie) => {
         const {
+          id,
           poster_path: thumbNail,
           vote_average: voteAverage,
           title,
@@ -41,9 +43,11 @@ function MoviesCards({data}) {
         const ptBrTitle = title || name;
         return (
           <CardStyled key={uuidv4()}>
-            <img src={thumb} alt="" />
-            <CardTitle>{ptBrTitle}</CardTitle>
-            {starsGenerator(starsNumber)}
+            <Link to={`/movies/${id}`}>
+              <img src={thumb} alt="" />
+              <CardTitle>{ptBrTitle}</CardTitle>
+              {starsGenerator(starsNumber)}
+            </Link>
           </CardStyled>
         );
       })}

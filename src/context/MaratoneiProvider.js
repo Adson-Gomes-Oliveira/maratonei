@@ -6,9 +6,19 @@ import seriesByPopularity from '../services/seriesByPopularityAPI';
 import queryMovieSeries from '../services/queryMovieSeriesAPI';
 import watchProviders from '../services/watchProvidersAPI';
 import moviesByProvider from '../services/moviesByProviderAPI';
+import movieDetails from '../services/movieDetailsAPI';
+import castAndCrew from '../services/castAndCrewAPI';
 
 function MaratoneiProvider({children}) {
   const [moviesAndSeriesData, setMoviesAndSeriesData] = useState([]);
+  const [moviesAndSeriesDetails, setMoviesAndSeriesDetails] = useState({
+    genres: [],
+    release_date: '00-00-0000',
+  });
+  const [castAndCrewData, setCastAndCrewData] = useState({
+    cast: [],
+    crew: [],
+  });
   const [toggleFilter, setToggleFilter] = useState('stand-by-toggle');
   const [rotateWhenClick, setRotate] = useState('stand-by');
   const [providersData, setProvidersData] = useState([]);
@@ -31,6 +41,17 @@ function MaratoneiProvider({children}) {
   useEffect(() => {
     fetchProviders();
   }, []);
+
+  const fetchCastAndCrew = async (movieId) => {
+    const data = await castAndCrew(movieId);
+
+    setCastAndCrewData(data);
+  };
+
+  const fetchDetails = async (movieId) => {
+    const data = await movieDetails(movieId);
+    setMoviesAndSeriesDetails(data);
+  };
 
   const fetchMovies = async () => {
     const moviesData = await moviesByPopularity();
@@ -131,9 +152,12 @@ function MaratoneiProvider({children}) {
   return (
     <MaratoneiContext.Provider value={ {
       moviesAndSeriesData,
+      moviesAndSeriesDetails,
       fetchMovies,
       fetchSeries,
+      fetchCastAndCrew,
       handleToggle,
+      fetchDetails,
       toggleFilter,
       providersData,
       rotateWhenClick,
@@ -145,6 +169,7 @@ function MaratoneiProvider({children}) {
       fetchByProvider,
       removeFilters,
       setLoading,
+      castAndCrewData,
     } }>
       {children}
     </MaratoneiContext.Provider>
