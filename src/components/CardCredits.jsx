@@ -19,15 +19,11 @@ function CardCredits() {
     <CardCreditsStyled>
       <h2>Quem ta participando?</h2>
       <CastAndCrew>
-        {castAndCrewData.cast.map((person, index) => {
-          if (index > 3) {
-            return null;
-          }
-
+        {castAndCrewData.map((person) => {
           const {
             name,
-            profile_path: thumbNail,
             character,
+            profile_path: thumbNail,
             known_for_department: department,
           } = person;
           const thumb = `https://image.tmdb.org/t/p/w185/${thumbNail}`;

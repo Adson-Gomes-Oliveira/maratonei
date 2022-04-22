@@ -23,10 +23,7 @@ function MaratoneiProvider({children}) {
       rent: [],
     },
   });
-  const [castAndCrewData, setCastAndCrewData] = useState({
-    cast: [],
-    crew: [],
-  });
+  const [castAndCrewData, setCastAndCrewData] = useState([]);
   const [toggleFilter, setToggleFilter] = useState('stand-by-toggle');
   const [rotateWhenClick, setRotate] = useState('stand-by');
   const [providersData, setProvidersData] = useState([]);
@@ -52,7 +49,7 @@ function MaratoneiProvider({children}) {
 
   const fetchCastAndCrew = async (movieId) => {
     const data = await castAndCrew(movieId);
-
+    console.log(data);
     setCastAndCrewData(data);
   };
 
