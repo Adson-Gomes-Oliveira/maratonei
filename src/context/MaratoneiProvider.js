@@ -14,6 +14,9 @@ function MaratoneiProvider({children}) {
   const [moviesAndSeriesDetails, setMoviesAndSeriesDetails] = useState({
     genres: [],
     release_date: '00-00-0000',
+    trailer_key: {},
+    production_companies: [],
+    recomendations: [],
   });
   const [castAndCrewData, setCastAndCrewData] = useState({
     cast: [],

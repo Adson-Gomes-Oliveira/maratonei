@@ -5,7 +5,6 @@ async function castAndCrew(movieId) {
     const requestCastAndCrew = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${TMDB_API_KEY}&language=pt-BR`)
         .then((response) => response.json());
 
-    console.log(requestCastAndCrew);
     return requestCastAndCrew;
   } catch (error) {
     console.log(error);
