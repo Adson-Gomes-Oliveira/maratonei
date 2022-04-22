@@ -13,8 +13,13 @@ async function movieDetails(movieId) {
         .then((response) => response.json())
         .then((response) => response.results);
 
+    const requestProviders = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/watch/providers?api_key=${TMDB_API_KEY}`)
+        .then((response) => response.json())
+        .then((response) => response.results.BR);
+
     requestMovieDetails['trailer_key'] = requestTrailerVideo;
     requestMovieDetails['recomendations'] = requestRecomendations.slice(0, 4);
+    requestMovieDetails['providers'] = requestProviders;
     requestMovieDetails.production_companies = requestMovieDetails
         .production_companies.filter((comp) => comp.logo_path !== null);
 

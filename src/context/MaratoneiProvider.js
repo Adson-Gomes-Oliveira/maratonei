@@ -17,6 +17,11 @@ function MaratoneiProvider({children}) {
     trailer_key: {},
     production_companies: [],
     recomendations: [],
+    providers: {
+      buy: [],
+      flatrate: [],
+      rent: [],
+    },
   });
   const [castAndCrewData, setCastAndCrewData] = useState({
     cast: [],
