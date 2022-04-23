@@ -137,6 +137,10 @@ export const CardStyled = styled.div`
   width: 13rem;
   margin-left: 1.5rem;
 
+  a {
+    text-decoration: none;
+  }
+
   img {
     width: 13rem;
     height: 19.5rem;
@@ -236,7 +240,7 @@ export const SocialMediaStyled = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: aliceblue;
+  background-color: white;
   height: 100%;
 
   img {
@@ -307,5 +311,100 @@ export const StreamingImages = styled.div`
 
   img:hover {
     animation: ${focusOnHover} 0.5s forwards;
+  }
+`;
+
+// --------- Card Credits Styles --------- //
+export const CardCreditsStyled = styled.div`
+  background-color: #0d0d14;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+
+  h2 {
+    color: white;
+    margin: var(--sizing-5x);
+  }
+`;
+
+export const CastAndCrew = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: var(--sizing-3x);
+`;
+
+export const PersonStyled = styled.div`
+  align-items: center;
+  color: white;
+  display: flex;
+
+  img {
+    border: 0.2rem solid var(--black-project-color);
+    margin-bottom: 2rem;
+    width: 5.5rem;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-left: 1rem;
+
+    span:nth-child(1) {
+      margin-top: var(--sizing-2x);
+      margin-bottom: var(--sizing-4x);
+    }
+  }
+`;
+
+// --------- Reviews Styles --------- //
+export const MovieReviewStyled = styled.div`
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: 'bebas', sans-serif;
+  margin-top: var(--sizing-6x);
+
+  h3 {
+    align-self: center;
+    font-size: var(--sizing-5x);
+    font-weight: 500;
+  }
+
+  span {
+    align-self: center;
+  }
+`;
+
+export const ReviewStyled = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: var(--sizing-5x) 0;
+  width: 100%;
+
+  div {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      color: var(--yellow-project-color);
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    span {
+      align-self: self-start;
+    }
+
+    span:nth-child(1) {
+      font-size: 1.2rem;
+      margin-bottom: var(--sizing-2x);
+    }
+
+    span:nth-child(2) {
+      font-family: 'bebas', sans-serif;
+      margin-bottom: var(--sizing-2x);
+    }
   }
 `;

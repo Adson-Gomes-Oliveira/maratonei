@@ -41,26 +41,34 @@ function StreamingsResults() {
     <>
       <AlternativeHeader />
       <Advisor />
-      <MoviesAndSeriesStyled>
-        {loading && <Loading />}
-        <SectionStyled>
+      {loading ? <Loading /> : (
+        <>
+          <MoviesAndSeriesStyled>
 
-          <ContentStyled>
-            <CardsToShow>
-              <h3>FILMES MAIS POPULARES DO STREAMING</h3>
-              <MoviesCards data={moviesAndSeriesData} />
-            </CardsToShow>
-            <DisclaimerResults>
-              * Resultados limitados de 20 a 40 por busca, para mais resultados
-              utilize a caixa de pesquisa ou os filtros disponiveis no site.
-            </DisclaimerResults>
-          </ContentStyled>
+            <SectionStyled>
 
-          <GeekArticles />
+              <ContentStyled>
 
-        </SectionStyled>
-      </MoviesAndSeriesStyled>
-      <Footer />
+                <CardsToShow>
+                  <h3>FILMES MAIS POPULARES DO STREAMING</h3>
+                  <MoviesCards data={moviesAndSeriesData} />
+                </CardsToShow>
+
+                <DisclaimerResults>
+                  * Resultados limitados de 20 a 40 por busca,
+                  para mais resultados utilize a caixa de pesquisa
+                  ou os filtros disponiveis no site.
+                </DisclaimerResults>
+
+              </ContentStyled>
+
+              <GeekArticles />
+
+            </SectionStyled>
+          </MoviesAndSeriesStyled>
+          <Footer />
+        </>
+      )}
     </>
   );
 }
