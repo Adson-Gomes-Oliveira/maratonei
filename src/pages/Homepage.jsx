@@ -1,11 +1,28 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import MainHeader from '../components/MainHeader';
 import StreamingServices from '../components/StreamingServices';
 import {HomepageStyled, HeroBrandingStyled,
   HomepageButtonsStyled} from '../styles/homepage';
 
 function Homepage() {
+  // PARA IMPLEMENTAR:
+
+  // const navigate = useNavigate();
+
+  // const randomNumber = (min, max) => {
+  //   return Math.round(Math.random() * (max - min) + min);
+  // };
+
+  // const randomMovie = () => {
+  //   const randomId = randomNumber(0, 37500);
+  //   navigate(`/movies/${randomId}`);
+  // };
+
+  // const randomSerie = () => {
+  //   const randomId = randomNumber(0, 20000);
+  //   navigate(`/series/${randomId}`);
+  // };
+
   return (
     <HomepageStyled>
       <MainHeader />
@@ -18,22 +35,18 @@ function Homepage() {
       <StreamingServices />
 
       <HomepageButtonsStyled>
-        <Link to="/surprise-me/movie">
-          <button
-            type="button"
-            data-testid="find-searching"
-          >
-            ME RECOMENDA UM FILME AI!
-          </button>
-        </Link>
-        <Link to="/surprise-me/serie">
-          <button
-            type="button"
-            data-testid="find-random"
-          >
-            ME RECOMENDA UMA SERIE AI!
-          </button>
-        </Link>
+        <button
+          type="button"
+          data-testid="find-searching"
+        >
+          ME RECOMENDA UM FILME AI!
+        </button>
+        <button
+          type="button"
+          data-testid="find-random"
+        >
+          ME RECOMENDA UMA SERIE AI!
+        </button>
       </HomepageButtonsStyled>
     </HomepageStyled>
   );
