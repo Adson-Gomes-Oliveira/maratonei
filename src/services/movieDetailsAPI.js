@@ -23,7 +23,6 @@ async function movieDetails(movieId) {
     requestMovieDetails.production_companies = requestMovieDetails
         .production_companies.filter((comp) => comp.logo_path !== null);
 
-    console.log(requestMovieDetails);
     return requestMovieDetails;
   } catch (error) {
     console.log(error);

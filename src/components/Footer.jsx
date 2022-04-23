@@ -17,9 +17,15 @@ function Footer() {
       <img src={Logo} alt="Logotipo Maratonei" />
 
       <SocialMediaStyled>
-        <img src={github} alt="Icone para acessar o github" />
-        <img src={linkedin} alt="Icone para acessar o linkedin" />
-        <img src={whatsapp} alt="Icone para acessar o whatsapp" />
+        <a href="https://github.com/Adson-Gomes-Oliveira" target="_blank" rel="noreferrer">
+          <img src={github} alt="Icone para acessar o github" />
+        </a>
+        <a href="https://www.linkedin.com/in/adson-gomes-oliveira" target="_blank" rel="noreferrer">
+          <img src={linkedin} alt="Icone para acessar o linkedin" />
+        </a>
+        <a href="https://wa.me/77988191797" target="_blank" rel="noreferrer">
+          <img src={whatsapp} alt="Icone para acessar o whatsapp" />
+        </a>
       </SocialMediaStyled>
 
       <DisclaimerStyled>

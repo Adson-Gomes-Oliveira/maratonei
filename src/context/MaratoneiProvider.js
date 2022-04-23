@@ -8,6 +8,7 @@ import watchProviders from '../services/watchProvidersAPI';
 import moviesByProvider from '../services/moviesByProviderAPI';
 import movieDetails from '../services/movieDetailsAPI';
 import castAndCrew from '../services/castAndCrewAPI';
+import movieReviews from '../services/movieReviewsAPI';
 
 function MaratoneiProvider({children}) {
   const [moviesAndSeriesData, setMoviesAndSeriesData] = useState([]);
@@ -24,6 +25,7 @@ function MaratoneiProvider({children}) {
     },
   });
   const [castAndCrewData, setCastAndCrewData] = useState([]);
+  const [reviews, setReviews] = useState([]);
   const [toggleFilter, setToggleFilter] = useState('stand-by-toggle');
   const [rotateWhenClick, setRotate] = useState('stand-by');
   const [providersData, setProvidersData] = useState([]);
@@ -47,9 +49,15 @@ function MaratoneiProvider({children}) {
     fetchProviders();
   }, []);
 
+  const fetchReviews = async (movieId) => {
+    const data = await movieReviews(movieId);
+
+    return setReviews(data);
+  };
+
   const fetchCastAndCrew = async (movieId) => {
     const data = await castAndCrew(movieId);
-    console.log(data);
+
     setCastAndCrewData(data);
   };
 
@@ -161,8 +169,10 @@ function MaratoneiProvider({children}) {
       fetchMovies,
       fetchSeries,
       fetchCastAndCrew,
+      fetchReviews,
       handleToggle,
       fetchDetails,
+      reviews,
       toggleFilter,
       providersData,
       rotateWhenClick,

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {useLocation} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid';
 import {CardsStyled, CardStyled, CardTitle} from '../styles';
@@ -28,6 +29,8 @@ export function starsGenerator(amount) {
 }
 
 function MoviesCards({data}) {
+  const {pathname} = useLocation();
+
   return (
     <CardsStyled>
       {data.map((movie) => {
@@ -43,11 +46,19 @@ function MoviesCards({data}) {
         const ptBrTitle = title || name;
         return (
           <CardStyled key={uuidv4()}>
-            <Link to={`/movies/${id}`}>
-              <img src={thumb} alt="" />
-              <CardTitle>{ptBrTitle}</CardTitle>
-              {starsGenerator(starsNumber)}
-            </Link>
+            {pathname === '/movies' ? (
+              <Link to={`/movies/${id}`}>
+                <img src={thumb} alt="" />
+                <CardTitle>{ptBrTitle}</CardTitle>
+                {starsGenerator(starsNumber)}
+              </Link>
+            ) : (
+              <Link to={`/series`}>
+                <img src={thumb} alt="" />
+                <CardTitle>{ptBrTitle}</CardTitle>
+                {starsGenerator(starsNumber)}
+              </Link>
+            )}
           </CardStyled>
         );
       })}

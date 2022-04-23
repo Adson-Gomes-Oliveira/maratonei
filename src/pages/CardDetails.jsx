@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom';
 import {starsGenerator} from '../components/MoviesCards';
 import MovieDetailsLeftSide from '../components/MovieDetailsLeftSide';
 import CardCredits from '../components/CardCredits';
+import MovieReviews from '../components/MovieReviews';
 import MovieDetailsCenter from '../components/MovieDetailsCenter';
 import AlternativeHeader from '../components/AlternativeHeader';
 import Advisor from '../components/Advisor';
@@ -70,6 +71,7 @@ function CardDetails() {
               <CardCenterStyled>
 
                 <MovieDetailsCenter />
+                <MovieReviews />
 
               </CardCenterStyled>
 
