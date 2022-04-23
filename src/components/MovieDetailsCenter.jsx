@@ -13,6 +13,7 @@ function MovieDetailsCenter() {
 
   const {
     moviesAndSeriesDetails,
+    fetchDetails,
   } = useContext(MaratoneiContext);
 
   const {
