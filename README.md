@@ -47,7 +47,7 @@ Funcionalidades:
 
 Pendências:
 
-- _Algumas pendencias levarão algum tempo para serem realizadas visto que envolvem refatoração do código e estou desenvolvendo o projeto individualmente no meu tempo livre do curso de Desenvolvimento de Software da Trybe, mas tenho consciência de que existem melhorias a serem feitas. (Para recrutadores: O curso da Trybe oferece flexibilização do curso, para que o aluno que trabalhar com desenvolvimento possa ter o tempo necessário de qualidade para se dedicar as suas atividades profissionais)_
+_Algumas pendencias levarão algum tempo para serem realizadas visto que envolvem refatoração do código e estou desenvolvendo o projeto individualmente no meu tempo livre do curso de Desenvolvimento de Software da Trybe, mas tenho consciência de que existem melhorias a serem feitas. (Para recrutadores: O curso da Trybe oferece flexibilização do curso, para que o aluno que trabalhar com desenvolvimento possa ter o tempo necessário de qualidade para se dedicar as suas atividades profissionais.)_
 
 - Hooks personalizados
 - Aprimoramento e diminuição do código
