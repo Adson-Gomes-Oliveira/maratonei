@@ -34,16 +34,24 @@ Google ESLinter utilizado como Code Pattern.
 
 :white_large_square: Middle Version
 
-:white_large_square: Desktop Version
+☑️ Desktop Version
 
 Funcionalidades:
 
-- :hourglass_flowing_sand: Procurar titulos, onde assistir, ver informações dos titulos
+- ✔️ Procurar titulos, onde assistir, ver informações dos titulos
 - :hourglass_flowing_sand: Cadastro / Login
 - :hourglass_flowing_sand: Salvar titulos favoritos
 - :hourglass_flowing_sand: Perfil
 - :hourglass_flowing_sand: Badges de acordo com o perfil
 - :hourglass_flowing_sand: Comentários
+
+Pendências:
+
+- _Algumas pendencias levarão algum tempo para serem realizadas visto que envolvem refatoração do código e estou desenvolvendo o projeto individualmente no meu tempo livre do curso de Desenvolvimento de Software da Trybe, mas tenho consciência de que existem melhorias a serem feitas. (Para recrutadores: O curso da Trybe oferece flexibilização do curso, para que o aluno que trabalhar com desenvolvimento possa ter o tempo necessário de qualidade para se dedicar as suas atividades profissionais)_
+
+- Hooks personalizados
+- Aprimoramento e diminuição do código
+- Correção de Bugs CSS
 
 ## 🛠️ Construído com
 
@@ -52,7 +60,6 @@ Funcionalidades:
 * [React Testing Library](https://testing-library.com/) - Biblioteca de Testes em React
 * [StyledComponents](https://styled-components.com/) - Biblioteca CSS-in-JS
 * [TMDB-API](https://developers.themoviedb.org/3/getting-started/introduction) - The Movie Database API
-* [Watchmode-API](https://api.watchmode.com/docs/) - WATCHMODE API
 
 ## 📌 Versão
 
