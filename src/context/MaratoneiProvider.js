@@ -11,70 +11,61 @@ import castAndCrew from '../services/castAndCrewAPI';
 import movieReviews from '../services/movieReviewsAPI';
 
 function MaratoneiProvider({children}) {
-  const [moviesAndSeriesData, setMoviesAndSeriesData] = useState([]);
-  const [moviesAndSeriesDetails, setMoviesAndSeriesDetails] = useState({
-    genres: [],
-    release_date: '00-00-0000',
-    trailer_key: {},
-    production_companies: [],
-    recomendations: [],
-    providers: {
-      buy: [],
-      flatrate: [],
-      rent: [],
-    },
-  });
-  const [castAndCrewData, setCastAndCrewData] = useState([]);
-  const [reviews, setReviews] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [toggleFilter, setToggleFilter] = useState('stand-by-toggle');
   const [rotateWhenClick, setRotate] = useState('stand-by');
-  const [providersData, setProvidersData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [filter, setFilter] = useState({
-    inputSearchFilter: '',
-    yearSearchFilter: '',
+  const [input, setInput] = useState({
+    inputSearch: '',
+    inputYear: '',
   });
 
-  const fetchProviders = async () => {
-    const data = await watchProviders();
-    setProvidersData(data);
-  };
+  // const [moviesAndSeriesData, setMoviesAndSeriesData] = useState([]);
+  // const [moviesAndSeriesDetails, setMoviesAndSeriesDetails] = useState({
+  //   genres: [],
+  //   release_date: '00-00-0000',
+  //   trailer_key: {},
+  //   production_companies: [],
+  //   recomendations: [],
+  //   providers: {
+  //     buy: [],
+  //     flatrate: [],
+  //     rent: [],
+  //   },
+  // });
+  // const [castAndCrewData, setCastAndCrewData] = useState([]);
+  // const [reviews, setReviews] = useState([]);
+  // const [providersData, setProvidersData] = useState([]);
 
-  const fetchByProvider = async (providerId) => {
-    const data = await moviesByProvider(providerId);
-    setMoviesAndSeriesData(data);
-  };
+  // const fetchProviders = async () => {
+  //   const data = await watchProviders();
+  //   setProvidersData(data);
+  // };
 
-  useEffect(() => {
-    fetchProviders();
-  }, []);
+  // const fetchByProvider = async (providerId) => {
+  //   const data = await moviesByProvider(providerId);
+  //   setMoviesAndSeriesData(data);
+  // };
 
-  const fetchReviews = async (movieId) => {
-    const data = await movieReviews(movieId);
+  // useEffect(() => {
+  //   fetchProviders();
+  // }, []);
 
-    return setReviews(data);
-  };
+  // const fetchReviews = async (movieId) => {
+  //   const data = await movieReviews(movieId);
 
-  const fetchCastAndCrew = async (movieId) => {
-    const data = await castAndCrew(movieId);
+  //   return setReviews(data);
+  // };
 
-    setCastAndCrewData(data);
-  };
+  // const fetchCastAndCrew = async (movieId) => {
+  //   const data = await castAndCrew(movieId);
 
-  const fetchDetails = async (movieId) => {
-    const data = await movieDetails(movieId);
-    setMoviesAndSeriesDetails(data);
-  };
+  //   setCastAndCrewData(data);
+  // };
 
-  const fetchMovies = async () => {
-    const moviesData = await moviesByPopularity();
-    setMoviesAndSeriesData(moviesData);
-  };
-
-  const fetchSeries = async () => {
-    const seriesData = await seriesByPopularity();
-    return setMoviesAndSeriesData(seriesData);
-  };
+  // const fetchDetails = async (movieId) => {
+  //   const data = await movieDetails(movieId);
+  //   setMoviesAndSeriesDetails(data);
+  // };
 
   const handleToggle = () => {
     if (rotateWhenClick === 'stand-by') setRotate('filterActivated');

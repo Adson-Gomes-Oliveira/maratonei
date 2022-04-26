@@ -1,4 +1,5 @@
 import React, {useEffect, useContext} from 'react';
+import {useLocation} from 'react-router-dom';
 import AlternativeHeader from '../components/AlternativeHeader';
 import Advisor from '../components/Advisor';
 import Loading from '../components/Loading';
@@ -6,6 +7,8 @@ import MoviesCards from '../components/MoviesCards';
 import GeekArticles from '../components/GeekArticles';
 import Footer from '../components/Footer';
 import MaratoneiContext from '../context/MaratoneiContext';
+import useRequestTMDb from '../hooks/useRequestTMDb';
+import SearchArea from '../components/SearchArea';
 import {
   MoviesAndSeriesStyled,
   SectionStyled,
@@ -13,19 +16,14 @@ import {
   CardsToShow,
   DisclaimerResults,
 } from '../styles/moviesAndSeries';
-import SearchArea from '../components/SearchArea';
 
-
-function Movies() {
-  const {
-    fetchMovies,
-    loading,
-    moviesAndSeriesData,
-    setLoading,
-  } = useContext(MaratoneiContext);
+function Shows() {
+  const {pathname} = useLocation();
+  const [result, setRequest] = useRequestTMDb();
+  const {loading, setLoading} = useContext(MaratoneiContext);
 
   useEffect(() => {
-    fetchMovies();
+    setRequest(pathname);
     setLoading(true);
     const showLoading = setTimeout(() => {
       setLoading(false);
@@ -34,7 +32,7 @@ function Movies() {
     return () => {
       clearInterval(showLoading);
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <>
@@ -52,7 +50,7 @@ function Movies() {
 
                 <CardsToShow>
                   <h3>FILMES MAIS POPULARES</h3>
-                  <MoviesCards data={moviesAndSeriesData} />
+                  <MoviesCards data={result} />
                 </CardsToShow>
 
                 <DisclaimerResults>
@@ -74,4 +72,4 @@ function Movies() {
   );
 }
 
-export default Movies;
+export default Shows;
