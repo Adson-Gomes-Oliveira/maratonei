@@ -41,13 +41,13 @@ function CardDetails() {
           <CardCenterStyled>
 
             <MovieDetailsCenter detailsData={result} />
-            <MovieReviews />
+            <MovieReviews detailsData={result} />
 
           </CardCenterStyled>
 
         </CardsSectionStyled>
 
-        <CardCredits />
+        <CardCredits detailsData={result} />
 
       </CardDetailStyled>
       <Footer />

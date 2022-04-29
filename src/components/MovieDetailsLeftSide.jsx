@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {v4 as uuidv4} from 'uuid';
 import {starsGenerator} from './MoviesCards';
 import {
   CardVoteStyled,
@@ -32,7 +33,6 @@ function movieDetailsLeftSide({detailsData}) {
   const thumb = `https://image.tmdb.org/t/p/w500/${thumbNail}`;
   const starsNumber = Math.round(voteAverage / 2);
   const stars = starsGenerator(starsNumber);
-
   return (
     <>
       <img src={thumb} alt="" />
@@ -49,7 +49,7 @@ function movieDetailsLeftSide({detailsData}) {
       <CardCategoryStyled>
         <span>Categorias:</span>
         {genres.map((genre) => (
-          <span key={genre.id}>{genre.name}</span>
+          <span key={uuidv4()}>{genre.name}</span>
         ))}
       </CardCategoryStyled>
 
@@ -73,14 +73,14 @@ function movieDetailsLeftSide({detailsData}) {
           if (index === 0) {
             return (
               <>
-                <img key={`${name}`} src={thumb} alt={name} />
+                <img key={uuidv4()} src={thumb} alt={name} />
                 <span>Outras Produtoras</span>
               </>
             );
           }
 
           return (
-            <span key={`${name}`}>{name}</span>
+            <span key={uuidv4()}>{name}</span>
           );
         })}
       </CardCompanieStyled>
@@ -98,7 +98,7 @@ function movieDetailsLeftSide({detailsData}) {
                 const thumb = `https://image.tmdb.org/t/p/w500/${thumbNail}`;
 
                 return (
-                  <img key={name} src={thumb} alt={name} />
+                  <img key={uuidv4()} src={thumb} alt={name} />
                 );
               })}
             </div>

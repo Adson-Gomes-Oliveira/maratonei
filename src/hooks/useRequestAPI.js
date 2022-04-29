@@ -43,16 +43,18 @@ export const useProvidersAPI = () => {
 export const useDetailsAPI = (request) => {
   const [showId, setShowId] = useState('');
   const [result, setResult] = useState({
+    cast_and_crew: [],
     genres: [],
-    release_date: '00-00-0000',
-    trailer_key: {},
-    production_companies: [],
     recomendations: [],
+    release_date: '00-00-0000',
+    reviews: [],
+    production_companies: [],
     providers: {
       buy: [],
       flatrate: [],
       rent: [],
     },
+    trailer_key: {},
   });
 
   const path = request.split('/', 2)[1];

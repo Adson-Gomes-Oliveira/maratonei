@@ -17,7 +17,6 @@ import {
 
 
 function Shows() {
-  console.log('Componente renderizado');
   const {pathname} = useLocation();
   const {result, setRequest} = useContext(MaratoneiContext);
 
