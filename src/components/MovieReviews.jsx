@@ -1,5 +1,6 @@
 import React, {useEffect, useContext} from 'react';
 import {useParams} from 'react-router-dom';
+import {v4 as uuidv4} from 'uuid';
 import {MovieReviewStyled, ReviewStyled} from '../styles';
 import MaratoneiContext from '../context/MaratoneiContext';
 
@@ -27,7 +28,7 @@ function MovieReviews() {
               } = reviews;
 
               return (
-                <>
+                <div key={uuidv4()}>
                   <div>
                     <span>{author}</span>
                     <span>{`${authorDetails.rating}/10`}</span>
@@ -40,7 +41,7 @@ function MovieReviews() {
                     </a>
                   </div>
                   <span>{createdAt}</span>
-                </>
+                </div>
               );
             })}
           </ReviewStyled>

@@ -1,5 +1,6 @@
-import React, {useContext} from 'react';
-import MaratoneiContext from '../context/MaratoneiContext';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {starsGenerator} from './MoviesCards';
 import {
   CardVoteStyled,
   CardRealeaseStyled,
@@ -9,30 +10,34 @@ import {
   CardProviderStyled,
 } from '../styles/cardDetails';
 
-function movieDetailsLeftSide() {
-  const {
-    moviesAndSeriesDetails,
-  } = useContext(MaratoneiContext);
-
+function movieDetailsLeftSide({detailsData}) {
   const {
     genres,
     budget,
     revenue,
     providers,
+    poster_path: thumbNail,
     release_date: release,
     vote_average: voteAverage,
     production_companies: companies,
-  } = moviesAndSeriesDetails;
+  } = detailsData;
 
-  const releaseDate = release.split('-').reverse().join('-');
+  const releaseDate = release;
   const movieConvertCurrency = (number) => {
     return new Intl.NumberFormat('en-US',
         {style: 'currency', currency: 'USD', minimumFractionDigits: 2})
         .format(number);
   };
 
+  const thumb = `https://image.tmdb.org/t/p/w500/${thumbNail}`;
+  const starsNumber = Math.round(voteAverage / 2);
+  const stars = starsGenerator(starsNumber);
+
   return (
     <>
+      <img src={thumb} alt="" />
+      <div>{stars}</div>
+
       <CardVoteStyled>
         {`Nota popular: ${voteAverage}/10`}
       </CardVoteStyled>
@@ -105,5 +110,9 @@ function movieDetailsLeftSide() {
     </>
   );
 }
+
+movieDetailsLeftSide.propTypes = {
+  detailsData: PropTypes.object,
+};
 
 export default movieDetailsLeftSide;

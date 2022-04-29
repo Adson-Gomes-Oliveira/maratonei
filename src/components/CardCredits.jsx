@@ -1,6 +1,7 @@
 import React, {useContext, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import MaratoneiContext from '../context/MaratoneiContext';
+import {v4 as uuidv4} from 'uuid';
 import {
   CardCreditsStyled,
   CastAndCrew,
@@ -29,7 +30,7 @@ function CardCredits() {
           const thumb = `https://image.tmdb.org/t/p/w185/${thumbNail}`;
 
           return (
-            <PersonStyled key={name}>
+            <PersonStyled key={uuidv4()}>
               <img src={thumb} alt={`Ator ${name}`} />
               <div>
                 <span>{department}</span>

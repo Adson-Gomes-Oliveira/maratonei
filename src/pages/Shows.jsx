@@ -1,11 +1,12 @@
-import React, {useEffect} from 'react';
-import {useParams} from 'react-router-dom';
+import React, {useEffect, useContext} from 'react';
+import {useLocation} from 'react-router-dom';
 import AlternativeHeader from '../components/AlternativeHeader';
 import Advisor from '../components/Advisor';
 import MoviesCards from '../components/MoviesCards';
 import GeekArticles from '../components/GeekArticles';
 import Footer from '../components/Footer';
-import {useProvidersAPI} from '../hooks/useRequestAPI';
+import SearchArea from '../components/SearchArea';
+import MaratoneiContext from '../context/MaratoneiContext';
 import {
   MoviesAndSeriesStyled,
   SectionStyled,
@@ -13,15 +14,16 @@ import {
   CardsToShow,
   DisclaimerResults,
 } from '../styles/moviesAndSeries';
-import '../styles/cssAnimations.css';
 
-function StreamingsResults() {
-  const {id} = useParams();
-  const {setProviderId, providerResult} = useProvidersAPI();
+
+function Shows() {
+  console.log('Componente renderizado');
+  const {pathname} = useLocation();
+  const {result, setRequest} = useContext(MaratoneiContext);
 
   useEffect(() => {
-    setProviderId(id);
-  }, []);
+    setRequest(pathname);
+  }, [pathname]);
 
   return (
     <>
@@ -33,9 +35,11 @@ function StreamingsResults() {
 
           <ContentStyled>
 
+            <SearchArea />
+
             <CardsToShow>
-              <h3>FILMES MAIS POPULARES DO STREAMING</h3>
-              <MoviesCards data={providerResult} />
+              <h3>FILMES MAIS POPULARES</h3>
+              <MoviesCards data={result} />
             </CardsToShow>
 
             <DisclaimerResults>
@@ -55,4 +59,4 @@ function StreamingsResults() {
   );
 }
 
-export default StreamingsResults;
+export default Shows;

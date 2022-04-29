@@ -1,20 +1,15 @@
-import React, {useContext} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import {useNavigate} from 'react-router-dom';
 import ReactPlayer from 'react-player/youtube';
-import MaratoneiContext from '../context/MaratoneiContext';
 import {
   CardHeadlineStyled,
   CardVideoStyled,
   CardRecomendationStyled,
 } from '../styles/cardDetails';
 
-function MovieDetailsCenter() {
+function MovieDetailsCenter({detailsData}) {
   const navigate = useNavigate();
-
-  const {
-    moviesAndSeriesDetails,
-    fetchDetails,
-  } = useContext(MaratoneiContext);
 
   const {
     title,
@@ -22,11 +17,10 @@ function MovieDetailsCenter() {
     overview,
     recomendations,
     trailer_key: trailer,
-  } = moviesAndSeriesDetails;
+  } = detailsData;
 
   const redirectToDetails = (id) => {
-    navigate(`/movies/${id}`);
-    return fetchDetails(id);
+    return navigate(`/movies/${id}`);
   };
 
   return (
@@ -73,5 +67,9 @@ function MovieDetailsCenter() {
     </>
   );
 }
+
+MovieDetailsCenter.propTypes = {
+  detailsData: PropTypes.object,
+};
 
 export default MovieDetailsCenter;

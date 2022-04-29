@@ -1,14 +1,14 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid';
 import Advisor from '../components/Advisor';
 import AlternativeHeader from '../components/AlternativeHeader';
-import MaratoneiContext from '../context/MaratoneiContext';
 import {StreamingsPageStyled, StreamingImages} from '../styles/index';
 import Footer from '../components/Footer';
+import {useProvidersAPI} from '../hooks/useRequestAPI';
 
 function Streamings() {
-  const {providersData} = useContext(MaratoneiContext);
+  const {result} = useProvidersAPI();
   return (
     <>
       <AlternativeHeader />
@@ -18,7 +18,7 @@ function Streamings() {
         <h3>Clique em um dos streamings e confira
           os filmes mais populares</h3>
         <StreamingImages>
-          {providersData.map((provider) => {
+          {result.map((provider) => {
             const {
               provider_name: name,
               logo_path: thumbNail,
