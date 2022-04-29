@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import MaratoneiContext from './MaratoneiContext';
 import useRequestAPI, {useQueryAPI} from '../hooks/useRequestAPI';
@@ -13,6 +13,24 @@ function MaratoneiProvider({children}) {
     inputSearchFilter: '',
     yearSearchFilter: '',
   });
+  const [login, setLogin] = useState({
+    username: '',
+    password: '',
+    isButtonDisabled: true,
+  });
+
+  useEffect(() => { // Login validation
+    setLogin({...login, isButtonDisabled: true});
+    if (login.username.length > 3 &&
+    login.password.length > 7) {
+      setLogin({...login, isButtonDisabled: false});
+    }
+  }, [login]);
+
+  const handleLogin = ({target}) => {
+    const {name, value} = target;
+    setLogin({...login, [name]: value});
+  };
 
   const handleToggle = () => {
     if (rotateWhenClick === 'stand-by') setRotate('filterActivated');
@@ -72,6 +90,8 @@ function MaratoneiProvider({children}) {
       handleClickSearch,
       handleEnterSearch,
       removeFilters,
+      handleLogin,
+      login,
     } }>
       {children}
     </MaratoneiContext.Provider>
