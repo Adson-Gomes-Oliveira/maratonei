@@ -47,8 +47,6 @@ Funcionalidades:
 
 Pendências:
 
-- Hooks personalizados
-- Refatoração do código para aprimoramento
 - Correção de Bugs CSS
 
 ## 🛠️ Construído com
