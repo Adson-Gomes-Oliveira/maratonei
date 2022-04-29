@@ -5,7 +5,7 @@ import CardCredits from '../components/CardCredits';
 import MovieReviews from '../components/MovieReviews';
 import MovieDetailsCenter from '../components/MovieDetailsCenter';
 import AlternativeHeader from '../components/AlternativeHeader';
-import Advisor from '../components/Advisor';
+import Advertising from '../components/Advertising';
 import Footer from '../components/Footer';
 import {useDetailsAPI} from '../hooks/useRequestAPI';
 import {
@@ -27,7 +27,7 @@ function CardDetails() {
   return (
     <>
       <AlternativeHeader />
-      <Advisor />
+      <Advertising />
       <CardDetailStyled>
 
         <CardsSectionStyled>

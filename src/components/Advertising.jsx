@@ -2,34 +2,34 @@ import React from 'react';
 import {AdStyled} from '../styles';
 import {CarouselProvider, Slider, Slide} from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
-import {streamingAds} from '../data';
+import {ads} from '../data';
 
-function Advisor() {
+function Advertising() {
   return (
     <CarouselProvider
       naturalSlideWidth={100}
       naturalSlideHeight={5.5}
-      totalSlides={streamingAds.length}
+      totalSlides={ads.length}
       isPlaying
       touchEnabled={false}
       dragEnabled={false}
       interval={10000}
     >
       <Slider>
-        {streamingAds.map((ad, index) => {
-          const {copy, bgImage, freeTrial, streamingLink} = ad;
+        {ads.map((ad, index) => {
+          const {copy, bgImage, freeTrial, adLink} = ad;
           const message = freeTrial === 'yes' ?
           `*Teste de 30 dias grátis disponível, verifique a disponibilidade` :
           '';
           return (
             <Slide key={`slide-ad-element-${index}`}>
               <a
-                href={streamingLink}
+                href={adLink}
                 target="_blank"
                 rel='noreferrer'
                 style={{'textDecoration': 'none'}}
               >
-                <AdStyled bgImage={bgImage} data-testid="advisor">
+                <AdStyled bgImage={bgImage} data-testid="advertising">
                   <span>{copy}</span>
                   <span>{message}</span>
                 </AdStyled>
@@ -42,4 +42,4 @@ function Advisor() {
   );
 }
 
-export default Advisor;
+export default Advertising;

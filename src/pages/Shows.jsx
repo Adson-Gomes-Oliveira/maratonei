@@ -1,7 +1,7 @@
 import React, {useEffect, useContext} from 'react';
 import {useLocation} from 'react-router-dom';
 import AlternativeHeader from '../components/AlternativeHeader';
-import Advisor from '../components/Advisor';
+import Advertising from '../components/Advertising';
 import MoviesCards from '../components/MoviesCards';
 import GeekArticles from '../components/GeekArticles';
 import Footer from '../components/Footer';
@@ -27,7 +27,7 @@ function Shows() {
   return (
     <>
       <AlternativeHeader />
-      <Advisor />
+      <Advertising />
       <MoviesAndSeriesStyled>
 
         <SectionStyled>

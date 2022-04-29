@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid';
-import Advisor from '../components/Advisor';
+import Advertising from '../components/Advertising';
 import AlternativeHeader from '../components/AlternativeHeader';
 import {StreamingsPageStyled, StreamingImages} from '../styles/index';
 import Footer from '../components/Footer';
@@ -12,7 +12,7 @@ function Streamings() {
   return (
     <>
       <AlternativeHeader />
-      <Advisor />
+      <Advertising />
       <StreamingsPageStyled>
         <h2>Serviços de Streamings disponíveis</h2>
         <h3>Clique em um dos streamings e confira
