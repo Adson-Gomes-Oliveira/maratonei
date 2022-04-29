@@ -43,7 +43,7 @@ function MaratoneiProvider({children}) {
     return setToggleFilter('hiddenFilter');
   };
 
-  const removeFilters = (actualPath) => {
+  const removeFilters = () => {
     setFilter({
       inputSearchFilter: '',
       yearSearchFilter: '',

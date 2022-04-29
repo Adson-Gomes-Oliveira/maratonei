@@ -1,4 +1,5 @@
 import React, {useContext} from 'react';
+import {useNavigate} from 'react-router-dom';
 import Logo from '../images/svg/logotipo.svg';
 import MaratoneiContext from '../context/MaratoneiContext';
 import {
@@ -11,6 +12,11 @@ import {
 
 function Login() {
   const {login, handleLogin} = useContext(MaratoneiContext);
+  const navigate = useNavigate();
+
+  const handleClickSignUp = () => {
+    return navigate('/sign-up');
+  };
 
   return (
     <LoginStyled>
@@ -51,8 +57,9 @@ function Login() {
             </button>
             <button
               type="button"
+              onClick={handleClickSignUp}
             >
-              Cadastre-se
+                Cadastre-se
             </button>
           </LoginButtons>
         </LoginForm>
