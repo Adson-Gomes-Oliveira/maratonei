@@ -1,5 +1,7 @@
-import React, {useContext} from 'react';
-import MaratoneiContext from '../context/MaratoneiContext';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {v4 as uuidv4} from 'uuid';
+import {starsGenerator} from './MoviesCards';
 import {
   CardVoteStyled,
   CardRealeaseStyled,
@@ -9,30 +11,33 @@ import {
   CardProviderStyled,
 } from '../styles/cardDetails';
 
-function movieDetailsLeftSide() {
-  const {
-    moviesAndSeriesDetails,
-  } = useContext(MaratoneiContext);
-
+function movieDetailsLeftSide({detailsData}) {
   const {
     genres,
     budget,
     revenue,
     providers,
+    poster_path: thumbNail,
     release_date: release,
     vote_average: voteAverage,
     production_companies: companies,
-  } = moviesAndSeriesDetails;
+  } = detailsData;
 
-  const releaseDate = release.split('-').reverse().join('-');
+  const releaseDate = release;
   const movieConvertCurrency = (number) => {
     return new Intl.NumberFormat('en-US',
         {style: 'currency', currency: 'USD', minimumFractionDigits: 2})
         .format(number);
   };
 
+  const thumb = `https://image.tmdb.org/t/p/w500/${thumbNail}`;
+  const starsNumber = Math.round(voteAverage / 2);
+  const stars = starsGenerator(starsNumber);
   return (
     <>
+      <img src={thumb} alt="" />
+      <div>{stars}</div>
+
       <CardVoteStyled>
         {`Nota popular: ${voteAverage}/10`}
       </CardVoteStyled>
@@ -44,7 +49,7 @@ function movieDetailsLeftSide() {
       <CardCategoryStyled>
         <span>Categorias:</span>
         {genres.map((genre) => (
-          <span key={genre.id}>{genre.name}</span>
+          <span key={uuidv4()}>{genre.name}</span>
         ))}
       </CardCategoryStyled>
 
@@ -68,14 +73,14 @@ function movieDetailsLeftSide() {
           if (index === 0) {
             return (
               <>
-                <img key={`${name}`} src={thumb} alt={name} />
+                <img key={uuidv4()} src={thumb} alt={name} />
                 <span>Outras Produtoras</span>
               </>
             );
           }
 
           return (
-            <span key={`${name}`}>{name}</span>
+            <span key={uuidv4()}>{name}</span>
           );
         })}
       </CardCompanieStyled>
@@ -93,7 +98,7 @@ function movieDetailsLeftSide() {
                 const thumb = `https://image.tmdb.org/t/p/w500/${thumbNail}`;
 
                 return (
-                  <img key={name} src={thumb} alt={name} />
+                  <img key={uuidv4()} src={thumb} alt={name} />
                 );
               })}
             </div>
@@ -105,5 +110,9 @@ function movieDetailsLeftSide() {
     </>
   );
 }
+
+movieDetailsLeftSide.propTypes = {
+  detailsData: PropTypes.object,
+};
 
 export default movieDetailsLeftSide;

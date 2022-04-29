@@ -1,25 +1,20 @@
-import React, {useContext, useEffect} from 'react';
-import {useParams} from 'react-router-dom';
-import MaratoneiContext from '../context/MaratoneiContext';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {v4 as uuidv4} from 'uuid';
 import {
   CardCreditsStyled,
   CastAndCrew,
   PersonStyled,
 } from '../styles/index';
 
-function CardCredits() {
-  const {castAndCrewData, fetchCastAndCrew} = useContext(MaratoneiContext);
-  const {id} = useParams();
-
-  useEffect(() => {
-    fetchCastAndCrew(id);
-  }, []);
+function CardCredits({detailsData}) {
+  const {cast_and_crew: castAndCrew} = detailsData;
 
   return (
     <CardCreditsStyled>
       <h2>Quem ta participando?</h2>
       <CastAndCrew>
-        {castAndCrewData.map((person) => {
+        {castAndCrew.map((person) => {
           const {
             name,
             character,
@@ -29,7 +24,7 @@ function CardCredits() {
           const thumb = `https://image.tmdb.org/t/p/w185/${thumbNail}`;
 
           return (
-            <PersonStyled key={name}>
+            <PersonStyled key={uuidv4()}>
               <img src={thumb} alt={`Ator ${name}`} />
               <div>
                 <span>{department}</span>
@@ -43,5 +38,9 @@ function CardCredits() {
     </CardCreditsStyled>
   );
 }
+
+CardCredits.propTypes = {
+  detailsData: PropTypes.object,
+};
 
 export default CardCredits;

@@ -1,15 +1,10 @@
-import React, {useEffect, useContext} from 'react';
-import {useParams} from 'react-router-dom';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {v4 as uuidv4} from 'uuid';
 import {MovieReviewStyled, ReviewStyled} from '../styles';
-import MaratoneiContext from '../context/MaratoneiContext';
 
-function MovieReviews() {
-  const {fetchReviews, reviews} = useContext(MaratoneiContext);
-  const {id} = useParams();
-
-  useEffect(() => {
-    fetchReviews(id);
-  }, []);
+function MovieReviews({detailsData}) {
+  const {reviews} = detailsData;
 
   return (
     <MovieReviewStyled>
@@ -27,7 +22,7 @@ function MovieReviews() {
               } = reviews;
 
               return (
-                <>
+                <div key={uuidv4()}>
                   <div>
                     <span>{author}</span>
                     <span>{`${authorDetails.rating}/10`}</span>
@@ -40,7 +35,7 @@ function MovieReviews() {
                     </a>
                   </div>
                   <span>{createdAt}</span>
-                </>
+                </div>
               );
             })}
           </ReviewStyled>
@@ -49,5 +44,9 @@ function MovieReviews() {
     </MovieReviewStyled>
   );
 }
+
+MovieReviews.propTypes = {
+  detailsData: PropTypes.object,
+};
 
 export default MovieReviews;
