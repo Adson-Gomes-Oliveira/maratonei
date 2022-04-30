@@ -3,21 +3,21 @@ import {Link} from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid';
 import Advertising from '../components/Advertising';
 import AlternativeHeader from '../components/AlternativeHeader';
-import {StreamingsPageStyled, StreamingImages} from '../styles/index';
+import {ProvidersPageStyled, ProviderImages} from '../styles/index';
 import Footer from '../components/Footer';
 import {useProvidersAPI} from '../hooks/useRequestAPI';
 
-function Streamings() {
+function Providers() {
   const {result} = useProvidersAPI();
   return (
     <>
       <AlternativeHeader />
       <Advertising />
-      <StreamingsPageStyled>
+      <ProvidersPageStyled>
         <h2>Serviços de Streamings disponíveis</h2>
         <h3>Clique em um dos streamings e confira
           os filmes mais populares</h3>
-        <StreamingImages>
+        <ProviderImages>
           {result.map((provider) => {
             const {
               provider_name: name,
@@ -32,11 +32,11 @@ function Streamings() {
               </Link>
             );
           })}
-        </StreamingImages>
-      </StreamingsPageStyled>
+        </ProviderImages>
+      </ProvidersPageStyled>
       <Footer />
     </>
   );
 }
 
-export default Streamings;
+export default Providers;
