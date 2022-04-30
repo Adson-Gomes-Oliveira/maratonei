@@ -7,11 +7,11 @@ import GeekArticles from '../components/GeekArticles';
 import Footer from '../components/Footer';
 import {useProvidersAPI} from '../hooks/useRequestAPI';
 import {
-  MoviesAndSeriesStyled,
-  SectionStyled,
-  ContentStyled,
-  CardsToShow,
-  DisclaimerResults,
+  MediaStyled,
+  MediaSectionStyled,
+  MediaContentStyled,
+  MediaToShow,
+  MediaDisclaimer,
 } from '../styles/moviesAndSeries';
 import '../styles/cssAnimations.css';
 
@@ -27,29 +27,29 @@ function StreamingsResults() {
     <>
       <AlternativeHeader />
       <Advertising />
-      <MoviesAndSeriesStyled>
+      <MediaStyled>
 
-        <SectionStyled>
+        <MediaSectionStyled>
 
-          <ContentStyled>
+          <MediaContentStyled>
 
-            <CardsToShow>
+            <MediaToShow>
               <h3>FILMES MAIS POPULARES DO STREAMING</h3>
               <MediaCards data={providerResult} />
-            </CardsToShow>
+            </MediaToShow>
 
-            <DisclaimerResults>
+            <MediaDisclaimer>
               * Resultados limitados de 20 a 40 por busca,
               para mais resultados utilize a caixa de pesquisa
               ou os filtros disponiveis no site.
-            </DisclaimerResults>
+            </MediaDisclaimer>
 
-          </ContentStyled>
+          </MediaContentStyled>
 
           <GeekArticles />
 
-        </SectionStyled>
-      </MoviesAndSeriesStyled>
+        </MediaSectionStyled>
+      </MediaStyled>
       <Footer />
     </>
   );

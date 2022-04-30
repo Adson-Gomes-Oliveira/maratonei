@@ -8,15 +8,15 @@ import Footer from '../components/Footer';
 import SearchArea from '../components/SearchArea';
 import MaratoneiContext from '../context/MaratoneiContext';
 import {
-  MoviesAndSeriesStyled,
-  SectionStyled,
-  ContentStyled,
-  CardsToShow,
-  DisclaimerResults,
+  MediaStyled,
+  MediaSectionStyled,
+  MediaContentStyled,
+  MediaToShow,
+  MediaDisclaimer,
 } from '../styles/moviesAndSeries';
 
 
-function Shows() {
+function Media() {
   const {pathname} = useLocation();
   const {result, setRequest} = useContext(MaratoneiContext);
 
@@ -28,34 +28,34 @@ function Shows() {
     <>
       <AlternativeHeader />
       <Advertising />
-      <MoviesAndSeriesStyled>
+      <MediaStyled>
 
-        <SectionStyled>
+        <MediaSectionStyled>
 
-          <ContentStyled>
+          <MediaContentStyled>
 
             <SearchArea />
 
-            <CardsToShow>
+            <MediaToShow>
               <h3>FILMES MAIS POPULARES</h3>
               <MediaCards data={result} />
-            </CardsToShow>
+            </MediaToShow>
 
-            <DisclaimerResults>
+            <MediaDisclaimer>
               * Resultados limitados de 20 a 40 por busca,
               para mais resultados utilize a caixa de pesquisa
               ou os filtros disponiveis no site.
-            </DisclaimerResults>
+            </MediaDisclaimer>
 
-          </ContentStyled>
+          </MediaContentStyled>
 
           <GeekArticles />
 
-        </SectionStyled>
-      </MoviesAndSeriesStyled>
+        </MediaSectionStyled>
+      </MediaStyled>
       <Footer />
     </>
   );
 }
 
-export default Shows;
+export default Media;
