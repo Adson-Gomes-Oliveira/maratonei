@@ -2,7 +2,7 @@ import React from 'react';
 import {Routes, Route} from 'react-router-dom';
 import MediaDetails from './pages/MediaDetails';
 import Homepage from './pages/Homepage';
-import Login from './pages/Login';
+import SignIn from './pages/SignIn';
 import Media from './pages/Media';
 import Providers from './pages/Providers';
 import ProviderResults from './pages/ProviderResults';
@@ -17,7 +17,7 @@ function App() {
       <Route path="/series/:id" element={<h1>oi</h1>} />
       <Route path="/providers" element={<Providers />} />
       <Route path="/providers/:id" element={<ProviderResults />} />
-      <Route path="/sign-in" element={<Login />} />
+      <Route path="/sign-in" element={<SignIn />} />
       <Route path="*" element={<h1>oi</h1>} />
     </Routes>
   );

@@ -8,9 +8,9 @@ import {
   RightSideStyled,
   LoginForm,
   LoginButtons,
-} from '../styles/loginAndSignUp';
+} from '../styles/signInUp';
 
-function Login() {
+function SignIn() {
   const {login, handleLogin} = useContext(MaratoneiContext);
   const navigate = useNavigate();
 
@@ -68,4 +68,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default SignIn;

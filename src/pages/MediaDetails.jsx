@@ -13,7 +13,7 @@ import {
   MediaSectionStyled,
   MediaCenterStyled,
   MediaPrimaryInfoStyled,
-} from '../styles/cardDetails';
+} from '../styles/mediaDetails';
 
 function MediaDetails() {
   const {id} = useParams();

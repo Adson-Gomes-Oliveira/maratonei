@@ -13,7 +13,7 @@ import {
   MediaContentStyled,
   MediaToShow,
   MediaDisclaimer,
-} from '../styles/moviesAndSeries';
+} from '../styles/media';
 
 
 function Media() {

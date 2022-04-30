@@ -6,7 +6,7 @@ import {
   MediaHeadlineStyled,
   MediaVideoStyled,
   MediaRecomendationStyled,
-} from '../styles/cardDetails';
+} from '../styles/mediaDetails';
 
 function MediaDetailsCenter({detailsData}) {
   const navigate = useNavigate();

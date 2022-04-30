@@ -9,7 +9,7 @@ import {
   MediaRevenueStyled,
   MediaCompanieStyled,
   MediaProviderStyled,
-} from '../styles/cardDetails';
+} from '../styles/mediaDetails';
 
 function MediaDetailsLeft({detailsData}) {
   const {

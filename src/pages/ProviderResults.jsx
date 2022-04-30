@@ -12,7 +12,7 @@ import {
   MediaContentStyled,
   MediaToShow,
   MediaDisclaimer,
-} from '../styles/moviesAndSeries';
+} from '../styles/media';
 import '../styles/cssAnimations.css';
 
 function ProviderResults() {
