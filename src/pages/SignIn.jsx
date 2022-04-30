@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
-import Logo from '../images/svg/logotipo.svg';
 import MaratoneiContext from '../context/MaratoneiContext';
+import Logo from '../images/svg/logotipo.svg';
 import {
   LoginStyled,
   LeftSideStyled,

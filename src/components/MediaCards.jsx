@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useLocation} from 'react-router-dom';
-import {Link} from 'react-router-dom';
+import {useLocation, Link} from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid';
-import {CardsStyled, CardStyled, CardTitle} from '../styles';
 import {ZERO} from '../data';
+import {CardsStyled, CardStyled, CardTitle} from '../styles';
 
 export function starsGenerator(amount) {
   const starsNoChecked = ['star_border', 'star_border',

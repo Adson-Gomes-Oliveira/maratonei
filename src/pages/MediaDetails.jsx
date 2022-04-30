@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
 import {useParams, useLocation} from 'react-router-dom';
+import AlternativeHeader from '../components/AlternativeHeader';
+import Advertising from '../components/Advertising';
 import MediaDetailsLeft from '../components/MediaDetailsLeft';
 import MediaDetailsCenter from '../components/MediaDetailsCenter';
 import CastAndCrew from '../components/CastAndCrew';
 import MediaReviews from '../components/MediaReviews';
-import AlternativeHeader from '../components/AlternativeHeader';
-import Advertising from '../components/Advertising';
 import Footer from '../components/Footer';
 import {useDetailsAPI} from '../hooks/useRequestAPI';
 import {

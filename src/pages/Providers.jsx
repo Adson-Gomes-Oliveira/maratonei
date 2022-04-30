@@ -3,9 +3,9 @@ import {Link} from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid';
 import Advertising from '../components/Advertising';
 import AlternativeHeader from '../components/AlternativeHeader';
-import {ProvidersPageStyled, ProviderImages} from '../styles/index';
 import Footer from '../components/Footer';
 import {useProvidersAPI} from '../hooks/useRequestAPI';
+import {ProvidersPageStyled, ProviderImages} from '../styles/index';
 
 function Providers() {
   const {result} = useProvidersAPI();
