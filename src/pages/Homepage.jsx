@@ -1,6 +1,6 @@
 import React from 'react';
 import MainHeader from '../components/MainHeader';
-import StreamingServices from '../components/StreamingServices';
+import ProviderServices from '../components/ProviderServices';
 import {HomepageStyled, HeroBrandingStyled,
   HomepageButtonsStyled} from '../styles/homepage';
 
@@ -32,7 +32,7 @@ function Homepage() {
         <span>SAIBA ONDE ASSISTIR | SALVE SEUS FAVORITOS E MUITO MAIS...</span>
       </HeroBrandingStyled>
 
-      <StreamingServices />
+      <ProviderServices />
 
       <HomepageButtonsStyled>
         <button

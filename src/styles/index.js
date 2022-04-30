@@ -95,7 +95,7 @@ export const MenuLoginStyled = styled.div`
 `;
 
 // --------- Streaming Styles ------------ //
-export const StreamingsStyled = styled.div`
+export const ProvidersStyled = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 2.5%;
