@@ -1,5 +1,5 @@
 import React from 'react';
-import MainHeader from '../components/MainHeader';
+import Header from '../components/Header';
 import ProviderServices from '../components/ProviderServices';
 import {HomepageStyled, HeroBrandingStyled,
   HomepageButtonsStyled} from '../styles/homepage';
@@ -25,7 +25,7 @@ function Homepage() {
 
   return (
     <HomepageStyled>
-      <MainHeader />
+      <Header />
 
       <HeroBrandingStyled>
         <span>SUA WIKI DE FILMES E SERIES</span>

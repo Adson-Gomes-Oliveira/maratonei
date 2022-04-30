@@ -4,7 +4,7 @@ import Logo from '../images/svg/logotipo.svg';
 import {HeaderStyled} from '../styles/index';
 import MenuBar from './MenuBar';
 
-function MainHeader() {
+function Header() {
   return (
     <HeaderStyled>
       <Link to="/">
@@ -19,4 +19,4 @@ function MainHeader() {
   );
 }
 
-export default MainHeader;
+export default Header;
