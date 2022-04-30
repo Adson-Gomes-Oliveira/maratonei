@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {v4 as uuidv4} from 'uuid';
-import {starsGenerator} from './MoviesCards';
+import {starsGenerator} from '../components/MediaCards';
 import {
-  CardVoteStyled,
-  CardRealeaseStyled,
-  CardCategoryStyled,
-  CardRevenueStyled,
-  CardCompanieStyled,
-  CardProviderStyled,
-} from '../styles/cardDetails';
+  MediaVoteStyled,
+  MediaRealeaseStyled,
+  MediaCategoryStyled,
+  MediaRevenueStyled,
+  MediaCompanieStyled,
+  MediaProviderStyled,
+} from '../styles/mediaDetails';
 
-function movieDetailsLeftSide({detailsData}) {
+function MediaDetailsLeft({detailsData}) {
   const {
     genres,
     budget,
@@ -38,22 +38,22 @@ function movieDetailsLeftSide({detailsData}) {
       <img src={thumb} alt="" />
       <div>{stars}</div>
 
-      <CardVoteStyled>
+      <MediaVoteStyled>
         {`Nota popular: ${voteAverage}/10`}
-      </CardVoteStyled>
+      </MediaVoteStyled>
 
-      <CardRealeaseStyled>
+      <MediaRealeaseStyled>
         {`Data de lançamento: ${releaseDate}`}
-      </CardRealeaseStyled>
+      </MediaRealeaseStyled>
 
-      <CardCategoryStyled>
+      <MediaCategoryStyled>
         <span>Categorias:</span>
         {genres.map((genre) => (
           <span key={uuidv4()}>{genre.name}</span>
         ))}
-      </CardCategoryStyled>
+      </MediaCategoryStyled>
 
-      <CardRevenueStyled>
+      <MediaRevenueStyled>
         <span>Resultados Financeiros</span>
         <span>
           <span>Orçamento:</span>
@@ -63,9 +63,9 @@ function movieDetailsLeftSide({detailsData}) {
           <span>Receita:</span>
           {`USD ${movieConvertCurrency(revenue)}`}
         </span>
-      </CardRevenueStyled>
+      </MediaRevenueStyled>
 
-      <CardCompanieStyled>
+      <MediaCompanieStyled>
         {companies.map((comp, index) => {
           const {logo_path: thumbNail, name} = comp;
           const thumb = `https://image.tmdb.org/t/p/w500/${thumbNail}`;
@@ -83,9 +83,9 @@ function movieDetailsLeftSide({detailsData}) {
             <span key={uuidv4()}>{name}</span>
           );
         })}
-      </CardCompanieStyled>
+      </MediaCompanieStyled>
 
-      <CardProviderStyled>
+      <MediaProviderStyled>
         {providers && providers.flatrate ? (
           <>
             <span>Em qual streaming assistir?</span>
@@ -106,13 +106,13 @@ function movieDetailsLeftSide({detailsData}) {
         ): (
           <span>Ainda não disponível em Streamings</span>
         )}
-      </CardProviderStyled>
+      </MediaProviderStyled>
     </>
   );
 }
 
-movieDetailsLeftSide.propTypes = {
+MediaDetailsLeft.propTypes = {
   detailsData: PropTypes.object,
 };
 
-export default movieDetailsLeftSide;
+export default MediaDetailsLeft;

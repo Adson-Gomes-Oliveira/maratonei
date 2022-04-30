@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import MenuBar from './MenuBar';
-import {AlternativeHeaderStyled} from '../styles';
 import Logo from '../images/svg/logotipo.svg';
+import {AlternativeHeaderStyled} from '../styles';
 
 function AlternativeHeader() {
   return (

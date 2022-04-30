@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useLocation} from 'react-router-dom';
-import {Link} from 'react-router-dom';
+import {useLocation, Link} from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid';
-import {CardsStyled, CardStyled, CardTitle} from '../styles';
 import {ZERO} from '../data';
+import {CardsStyled, CardStyled, CardTitle} from '../styles';
 
 export function starsGenerator(amount) {
   const starsNoChecked = ['star_border', 'star_border',
@@ -28,7 +27,7 @@ export function starsGenerator(amount) {
   );
 }
 
-function MoviesCards({data}) {
+function MediaCards({data}) {
   const {pathname} = useLocation();
 
   return (
@@ -66,8 +65,8 @@ function MoviesCards({data}) {
   );
 };
 
-MoviesCards.propTypes = {
+MediaCards.propTypes = {
   data: PropTypes.array,
 };
 
-export default MoviesCards;
+export default MediaCards;

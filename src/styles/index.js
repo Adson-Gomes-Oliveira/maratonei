@@ -95,7 +95,7 @@ export const MenuLoginStyled = styled.div`
 `;
 
 // --------- Streaming Styles ------------ //
-export const StreamingsStyled = styled.div`
+export const ProvidersStyled = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 2.5%;
@@ -276,7 +276,7 @@ export const DisclaimerText = styled.div`
 `;
 
 // --------- Streamings Page Styles --------- //
-export const StreamingsPageStyled = styled.section`
+export const ProvidersPageStyled = styled.section`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -298,7 +298,7 @@ export const StreamingsPageStyled = styled.section`
   }
 `;
 
-export const StreamingImages = styled.div`
+export const ProviderImages = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: var(--sizing-7x) 0;
@@ -315,7 +315,7 @@ export const StreamingImages = styled.div`
 `;
 
 // --------- Card Credits Styles --------- //
-export const CardCreditsStyled = styled.div`
+export const CastAndCrewStyled = styled.div`
   background-color: #0d0d14;
   display: flex;
   flex-direction: column;
@@ -327,7 +327,7 @@ export const CardCreditsStyled = styled.div`
   }
 `;
 
-export const CastAndCrew = styled.div`
+export const CastStyled = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: var(--sizing-3x);
@@ -358,7 +358,7 @@ export const PersonStyled = styled.div`
 `;
 
 // --------- Reviews Styles --------- //
-export const MovieReviewStyled = styled.div`
+export const MediaReviewStyled = styled.div`
   color: white;
   display: flex;
   flex-direction: column;

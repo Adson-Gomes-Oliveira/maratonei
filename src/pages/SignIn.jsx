@@ -1,16 +1,16 @@
 import React, {useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
-import Logo from '../images/svg/logotipo.svg';
 import MaratoneiContext from '../context/MaratoneiContext';
+import Logo from '../images/svg/logotipo.svg';
 import {
   LoginStyled,
   LeftSideStyled,
   RightSideStyled,
   LoginForm,
   LoginButtons,
-} from '../styles/loginAndSignUp';
+} from '../styles/signInUp';
 
-function Login() {
+function SignIn() {
   const {login, handleLogin} = useContext(MaratoneiContext);
   const navigate = useNavigate();
 
@@ -68,4 +68,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default SignIn;

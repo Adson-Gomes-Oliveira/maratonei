@@ -1,23 +1,23 @@
 import styled from 'styled-components';
 
 // --------- General Styles ------------ //
-export const MoviesAndSeriesStyled = styled.section`
+export const MediaStyled = styled.section`
   display: flex;
   flex-direction: column;
 `;
 
-export const SectionStyled = styled.div`
+export const MediaSectionStyled = styled.div`
   display: flex;
 `;
 
-export const DisclaimerResults = styled.span`
+export const MediaDisclaimer = styled.span`
   align-self: center;
   color: var(--yellow-project-color);
   margin-bottom: var(--sizing-5x);
 `;
 
 // --------- Left Section Styles ------------ //
-export const ContentStyled = styled.div`
+export const MediaContentStyled = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 var(--sizing-3x);
@@ -25,7 +25,7 @@ export const ContentStyled = styled.div`
 `;
 
 // --------- Cards Section Styles ------------ //
-export const CardsToShow = styled.div`
+export const MediaToShow = styled.div`
   display: flex;
   flex-direction: column;
   

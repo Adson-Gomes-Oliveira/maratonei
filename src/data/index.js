@@ -13,47 +13,47 @@ export const AMOUNT_OF_MENU_LINKS = 6;
 export const AMOUNT_OF_ADS = 6;
 export const TMDB_API_KEY = 'db9c402babc1fd076e9e70dc34460d2a';
 
-export const streamingAds = [
+export const ads = [
   {
     copy: 'TMDB | Milhões de Filmes, Séries e Pessoas para Descobrir',
     bgImage: TmdbBanner,
     freeTrial: 'no',
-    streamingLink: 'https://www.themoviedb.org/',
+    adLink: 'https://www.themoviedb.org/',
   },
   {
     copy: 'ASSINE NETFLIX | FILMES, SERIES, E MUITO MAIS, SEM LIMITES',
     bgImage: NetflixBanner,
     freeTrial: 'no',
-    streamingLink: 'https://www.netflix.com/',
+    adLink: 'https://www.netflix.com/',
   },
   {
     copy: 'ASSINE PRIME VIDEO | TESTE 30 DIAS GRÁTIS!',
     bgImage: PrimeBanner,
     freeTrial: 'no',
-    streamingLink: 'https://www.primevideo.com/',
+    adLink: 'https://www.primevideo.com/',
   },
   {
     copy: 'ASSINE HBO | O MELHOR DO ENTRETENIMENTO',
     bgImage: HBOBanner,
     freeTrial: 'no',
-    streamingLink: 'https://www.hbomax.com/',
+    adLink: 'https://www.hbomax.com/',
   },
   {
     copy: 'ASSINE DISNEY | DESCUBRA UMA NOVA HISTÓRIA TODOS OS DIAS',
     bgImage: DisneyBanner,
     freeTrial: 'no',
-    streamingLink: 'https://www.disneyplus.com/',
+    adLink: 'https://www.disneyplus.com/',
   },
   {
     copy: 'ASSINE PARAMOUNT | MILHARES DE HORAS DAS MELHORES HISTÓRIAS',
     bgImage: ParamountBanner,
     freeTrial: 'no',
-    streamingLink: 'https://www.paramountplus.com/',
+    adLink: 'https://www.paramountplus.com/',
   },
   {
     copy: 'ASSINE TELECINE | O MELHOR DO STREAMING TA AQUI',
     bgImage: TelecineBanner,
     freeTrial: 'no',
-    streamingLink: 'https://www.telecine.com/',
+    adLink: 'https://www.telecine.com/',
   },
 ];

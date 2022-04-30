@@ -7,7 +7,7 @@ import {
   SearchButton,
   FilterButton,
   FilterStyled,
-} from '../styles/moviesAndSeries';
+} from '../styles/media';
 import '../styles/cssAnimations.css';
 
 function SearchArea() {

@@ -1,22 +1,22 @@
 import React, {useEffect, useContext} from 'react';
 import {useLocation} from 'react-router-dom';
+import MaratoneiContext from '../context/MaratoneiContext';
 import AlternativeHeader from '../components/AlternativeHeader';
-import Advisor from '../components/Advisor';
-import MoviesCards from '../components/MoviesCards';
+import Advertising from '../components/Advertising';
+import SearchArea from '../components/SearchArea';
+import MediaCards from '../components/MediaCards';
 import GeekArticles from '../components/GeekArticles';
 import Footer from '../components/Footer';
-import SearchArea from '../components/SearchArea';
-import MaratoneiContext from '../context/MaratoneiContext';
 import {
-  MoviesAndSeriesStyled,
-  SectionStyled,
-  ContentStyled,
-  CardsToShow,
-  DisclaimerResults,
-} from '../styles/moviesAndSeries';
+  MediaStyled,
+  MediaSectionStyled,
+  MediaContentStyled,
+  MediaToShow,
+  MediaDisclaimer,
+} from '../styles/media';
 
 
-function Shows() {
+function Media() {
   const {pathname} = useLocation();
   const {result, setRequest} = useContext(MaratoneiContext);
 
@@ -27,35 +27,35 @@ function Shows() {
   return (
     <>
       <AlternativeHeader />
-      <Advisor />
-      <MoviesAndSeriesStyled>
+      <Advertising />
+      <MediaStyled>
 
-        <SectionStyled>
+        <MediaSectionStyled>
 
-          <ContentStyled>
+          <MediaContentStyled>
 
             <SearchArea />
 
-            <CardsToShow>
+            <MediaToShow>
               <h3>FILMES MAIS POPULARES</h3>
-              <MoviesCards data={result} />
-            </CardsToShow>
+              <MediaCards data={result} />
+            </MediaToShow>
 
-            <DisclaimerResults>
+            <MediaDisclaimer>
               * Resultados limitados de 20 a 40 por busca,
               para mais resultados utilize a caixa de pesquisa
               ou os filtros disponiveis no site.
-            </DisclaimerResults>
+            </MediaDisclaimer>
 
-          </ContentStyled>
+          </MediaContentStyled>
 
           <GeekArticles />
 
-        </SectionStyled>
-      </MoviesAndSeriesStyled>
+        </MediaSectionStyled>
+      </MediaStyled>
       <Footer />
     </>
   );
 }
 
-export default Shows;
+export default Media;
