@@ -16,6 +16,7 @@ import {
 import '../styles/cssAnimations.css';
 
 function ProviderResults() {
+  console.log('render');
   const {id} = useParams();
   const {setProviderId, providerResult} = useProvidersAPI();
 

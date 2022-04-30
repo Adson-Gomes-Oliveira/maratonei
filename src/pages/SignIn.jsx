@@ -1,6 +1,5 @@
-import React, {useContext} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
-import MaratoneiContext from '../context/MaratoneiContext';
 import Logo from '../images/svg/logotipo.svg';
 import {
   LoginStyled,
@@ -10,12 +9,29 @@ import {
   LoginButtons,
 } from '../styles/signInUp';
 
-function SignIn() {
-  const {login, handleLogin} = useContext(MaratoneiContext);
+function Login() {
   const navigate = useNavigate();
+  const [login, setLogin] = useState({
+    username: '',
+    password: '',
+    isButtonDisabled: true,
+  });
 
   const handleClickSignUp = () => {
     return navigate('/sign-up');
+  };
+
+  useEffect(() => { // Login validation
+    setLogin({...login, isButtonDisabled: true});
+    if (login.username.length > 3 &&
+    login.password.length > 7) {
+      setLogin({...login, isButtonDisabled: false});
+    }
+  }, [login]);
+
+  const handleLogin = ({target}) => {
+    const {name, value} = target;
+    setLogin({...login, [name]: value});
   };
 
   return (
@@ -33,6 +49,7 @@ function SignIn() {
               onChange={handleLogin}
               value={login.username}
               placeholder="Digite seu nome de usuário"
+              autoComplete="off"
             />
             <span>Digite um usuário valido</span>
           </label>
@@ -68,4 +85,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default Login;

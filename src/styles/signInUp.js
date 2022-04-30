@@ -34,7 +34,7 @@ export const LoginForm = styled.form`
 
   input {
     border-radius: 0.4rem;
-    border: 0.2rem solid var(--black-light-project-color);
+    border: 0.2rem solid var(--yellow-project-color);
     height: var(--sizing-6x);
     margin: var(--sizing-2x) 0;
     padding: var(--sizing-1x);
@@ -46,7 +46,7 @@ export const LoginForm = styled.form`
     flex-direction: column;
 
     span {
-      color: var(--black-light-project-color);
+      color: var(--yellow-project-color);
       font-size: var(--sizing-3x);
       margin: 0;
       cursor: auto;
@@ -59,7 +59,7 @@ export const LoginForm = styled.form`
 
   input:focus {
     outline: 0;
-    border: 0.2rem solid var(--yellow-project-color);
+    border: 0.2rem solid var(--black-light-project-color);
   }
 
   span {

@@ -8,7 +8,7 @@ function MenuBar() {
       <Link to="/">INICIO</Link>
       <Link to="/movies">FILMES</Link>
       <Link to="/series">SERIES</Link>
-      <Link to="/streamings">STREAMINGS</Link>
+      <Link to="/providers">STREAMINGS</Link>
       <Link to="/library">BIBLIOTECA</Link>
       <MenuLoginStyled>
         <Link to="/sign-in">

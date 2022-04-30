@@ -1,6 +1,6 @@
-import React, {useEffect, useContext} from 'react';
+import React, {useEffect} from 'react';
 import {useLocation} from 'react-router-dom';
-import MaratoneiContext from '../context/MaratoneiContext';
+import useRequestAPI from '../hooks/useRequestAPI';
 import AlternativeHeader from '../components/AlternativeHeader';
 import Advertising from '../components/Advertising';
 import SearchArea from '../components/SearchArea';
@@ -15,10 +15,9 @@ import {
   MediaDisclaimer,
 } from '../styles/media';
 
-
 function Media() {
   const {pathname} = useLocation();
-  const {result, setRequest} = useContext(MaratoneiContext);
+  const {result, setRequest, setResult} = useRequestAPI();
 
   useEffect(() => {
     setRequest(pathname);
@@ -34,7 +33,7 @@ function Media() {
 
           <MediaContentStyled>
 
-            <SearchArea />
+            <SearchArea stateUpdate={setResult} />
 
             <MediaToShow>
               <h3>FILMES MAIS POPULARES</h3>
