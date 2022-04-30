@@ -28,7 +28,7 @@ export function starsGenerator(amount) {
   );
 }
 
-function MoviesCards({data}) {
+function MediaCards({data}) {
   const {pathname} = useLocation();
 
   return (
@@ -66,8 +66,8 @@ function MoviesCards({data}) {
   );
 };
 
-MoviesCards.propTypes = {
+MediaCards.propTypes = {
   data: PropTypes.array,
 };
 
-export default MoviesCards;
+export default MediaCards;

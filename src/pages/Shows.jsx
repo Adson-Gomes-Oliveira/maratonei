@@ -2,7 +2,7 @@ import React, {useEffect, useContext} from 'react';
 import {useLocation} from 'react-router-dom';
 import AlternativeHeader from '../components/AlternativeHeader';
 import Advertising from '../components/Advertising';
-import MoviesCards from '../components/MoviesCards';
+import MediaCards from '../components/MediaCards';
 import GeekArticles from '../components/GeekArticles';
 import Footer from '../components/Footer';
 import SearchArea from '../components/SearchArea';
@@ -38,7 +38,7 @@ function Shows() {
 
             <CardsToShow>
               <h3>FILMES MAIS POPULARES</h3>
-              <MoviesCards data={result} />
+              <MediaCards data={result} />
             </CardsToShow>
 
             <DisclaimerResults>

@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import AlternativeHeader from '../components/AlternativeHeader';
 import Advertising from '../components/Advertising';
-import MoviesCards from '../components/MoviesCards';
+import MediaCards from '../components/MediaCards';
 import GeekArticles from '../components/GeekArticles';
 import Footer from '../components/Footer';
 import {useProvidersAPI} from '../hooks/useRequestAPI';
@@ -35,7 +35,7 @@ function StreamingsResults() {
 
             <CardsToShow>
               <h3>FILMES MAIS POPULARES DO STREAMING</h3>
-              <MoviesCards data={providerResult} />
+              <MediaCards data={providerResult} />
             </CardsToShow>
 
             <DisclaimerResults>
