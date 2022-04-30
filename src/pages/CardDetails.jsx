@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useParams, useLocation} from 'react-router-dom';
 import MovieDetailsLeftSide from '../components/MovieDetailsLeftSide';
-import CardCredits from '../components/CardCredits';
+import CastAndCrew from '../components/CastAndCrew';
 import MovieReviews from '../components/MovieReviews';
 import MovieDetailsCenter from '../components/MovieDetailsCenter';
 import AlternativeHeader from '../components/AlternativeHeader';
@@ -47,7 +47,7 @@ function CardDetails() {
 
         </CardsSectionStyled>
 
-        <CardCredits detailsData={result} />
+        <CastAndCrew detailsData={result} />
 
       </CardDetailStyled>
       <Footer />

@@ -315,7 +315,7 @@ export const StreamingImages = styled.div`
 `;
 
 // --------- Card Credits Styles --------- //
-export const CardCreditsStyled = styled.div`
+export const CastAndCrewStyled = styled.div`
   background-color: #0d0d14;
   display: flex;
   flex-direction: column;
@@ -327,7 +327,7 @@ export const CardCreditsStyled = styled.div`
   }
 `;
 
-export const CastAndCrew = styled.div`
+export const CastStyled = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: var(--sizing-3x);

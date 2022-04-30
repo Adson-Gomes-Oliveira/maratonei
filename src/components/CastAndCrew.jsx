@@ -2,19 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {v4 as uuidv4} from 'uuid';
 import {
-  CardCreditsStyled,
-  CastAndCrew,
+  CastAndCrewStyled,
+  CastStyled,
   PersonStyled,
 } from '../styles/index';
 
-function CardCredits({detailsData}) {
-  const {cast_and_crew: castAndCrew} = detailsData;
+function CastAndCrew({detailsData}) {
+  const {cast_and_crew: cast} = detailsData;
 
   return (
-    <CardCreditsStyled>
+    <CastAndCrewStyled>
       <h2>Quem ta participando?</h2>
-      <CastAndCrew>
-        {castAndCrew.map((person) => {
+      <CastStyled>
+        {cast.map((person) => {
           const {
             name,
             character,
@@ -34,13 +34,13 @@ function CardCredits({detailsData}) {
             </PersonStyled>
           );
         })}
-      </CastAndCrew>
-    </CardCreditsStyled>
+      </CastStyled>
+    </CastAndCrewStyled>
   );
 }
 
-CardCredits.propTypes = {
+CastAndCrew.propTypes = {
   detailsData: PropTypes.object,
 };
 
-export default CardCredits;
+export default CastAndCrew;
