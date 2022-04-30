@@ -27,7 +27,7 @@ function Providers() {
             const thumb = `https://image.tmdb.org/t/p/w500/${thumbNail}`;
 
             return (
-              <Link key={uuidv4()} to={`/streamings/${id}`}>
+              <Link key={uuidv4()} to={`/providers/${id}`}>
                 <img src={thumb} alt={`${name} logo`} />
               </Link>
             );

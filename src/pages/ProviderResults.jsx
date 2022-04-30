@@ -15,7 +15,7 @@ import {
 } from '../styles/moviesAndSeries';
 import '../styles/cssAnimations.css';
 
-function StreamingsResults() {
+function ProviderResults() {
   const {id} = useParams();
   const {setProviderId, providerResult} = useProvidersAPI();
 
@@ -55,4 +55,4 @@ function StreamingsResults() {
   );
 }
 
-export default StreamingsResults;
+export default ProviderResults;
