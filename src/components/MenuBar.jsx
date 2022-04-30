@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {MenuStyled, MenuLoginStyled} from '../styles/index';
+import {MenuStyled, MenuLoginStyled} from '../styles/menu';
 
 function MenuBar() {
   return (

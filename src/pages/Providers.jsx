@@ -5,7 +5,7 @@ import Advertising from '../components/Advertising';
 import AlternativeHeader from '../components/AlternativeHeader';
 import Footer from '../components/Footer';
 import {useProvidersAPI} from '../hooks/useRequestAPI';
-import {ProvidersPageStyled, ProviderImages} from '../styles/index';
+import {ProvidersPageStyled, ProviderImages} from '../styles/providers';
 
 function Providers() {
   const {result} = useProvidersAPI();

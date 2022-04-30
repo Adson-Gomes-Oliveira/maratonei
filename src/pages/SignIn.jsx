@@ -7,6 +7,7 @@ import {
   RightSideStyled,
   LoginForm,
   LoginButtons,
+  LoginDisclaimer,
 } from '../styles/signInUp';
 
 function Login() {
@@ -41,6 +42,11 @@ function Login() {
       <RightSideStyled>
         <LoginForm>
           <img src={Logo} alt="Logotipo Maratonei" />
+          <LoginDisclaimer>
+              *Funcionalidade de cadastro ainda não desenvolvida,
+              digite qualquer nome de usuario e uma senha, que as
+              funcionalidades adicionais serão desbloqueadas.
+          </LoginDisclaimer>
           <label htmlFor="username">
             <input
               id="username"
@@ -74,6 +80,7 @@ function Login() {
             </button>
             <button
               type="button"
+              disabled={login.isButtonDisabled}
               onClick={handleClickSignUp}
             >
                 Cadastre-se

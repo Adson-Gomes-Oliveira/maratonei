@@ -8,7 +8,7 @@ import {
   SocialMediaStyled,
   DisclaimerStyled,
   DisclaimerText,
-} from '../styles/index';
+} from '../styles/footer';
 
 function Footer() {
   return (

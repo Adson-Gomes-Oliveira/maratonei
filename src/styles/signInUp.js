@@ -47,9 +47,9 @@ export const LoginForm = styled.form`
 
     span {
       color: var(--yellow-project-color);
+      cursor: auto;
       font-size: var(--sizing-3x);
       margin: 0;
-      cursor: auto;
     }
   }
 
@@ -58,16 +58,16 @@ export const LoginForm = styled.form`
   }
 
   input:focus {
-    outline: 0;
     border: 0.2rem solid var(--black-light-project-color);
+    outline: 0;
   }
 
   span {
+    color: var(--yellow-project-color);
+    cursor: pointer;
     font-family: 'bebas', sans-serif;
     font-size: 1.3rem;
-    color: var(--yellow-project-color);
     margin: var(--sizing-3x) 0;
-    cursor: pointer;
   }
 `;
 
@@ -77,15 +77,15 @@ export const LoginButtons = styled.div`
   width: 80%;
 
   button {
+    background-color: var(--yellow-project-color);
     border: none;
     color: white;
-    background-color: var(--yellow-project-color);
+    cursor: pointer;
     font-family: 'bebas', sans-serif;
     font-size: 1.1rem;
-    cursor: pointer;
+    margin: var(--sizing-2x);
     padding: 0.8rem 0;
     width: 50%;
-    margin: var(--sizing-2x);
   }
 
   button:disabled {
@@ -95,4 +95,12 @@ export const LoginButtons = styled.div`
   a {
     width: auto;
   }
+`;
+
+export const LoginDisclaimer = styled.p`
+  color: var(--black-light-project-color);
+  font-size: 1rem;
+  font-family: 'bebas', sans-serif;
+  margin: var(--sizing-2x) 0;
+  text-align: center;
 `;

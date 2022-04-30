@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import MenuBar from './MenuBar';
 import Logo from '../images/svg/logotipo.svg';
-import {HeaderStyled} from '../styles/index';
+import {HeaderStyled} from '../styles/headers';
 
 function Header() {
   return (
