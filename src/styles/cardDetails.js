@@ -5,7 +5,7 @@ export const CardDetailStyled = styled.section`
 `;
 
 // --------- Left Side --------- //
-export const CardsSectionStyled = styled.div`
+export const MediaSectionStyled = styled.div`
   display: flex;
   margin: var(--sizing-4x);
   width: 75%;
@@ -16,7 +16,7 @@ export const CardsSectionStyled = styled.div`
   }
 `;
 
-export const CardPrimaryInfoStyled = styled.div`
+export const MediaPrimaryInfoStyled = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -34,21 +34,21 @@ export const CardPrimaryInfoStyled = styled.div`
   }
 `;
 
-export const CardVoteStyled = styled.span`
+export const MediaVoteStyled = styled.span`
   align-self: flex-start;
   color: white;
   font-family: 'bebas', sans-serif;
   font-size: 1.2rem;
 `;
 
-export const CardRealeaseStyled = styled.span`
+export const MediaRealeaseStyled = styled.span`
   align-self: flex-start;
   color: white;
   font-family: 'bebas', sans-serif;
   font-size: 1.1rem;
 `;
 
-export const CardCategoryStyled = styled.div`
+export const MediaCategoryStyled = styled.div`
   align-self: flex-start;
   color: white;
   display: flex;
@@ -67,7 +67,7 @@ export const CardCategoryStyled = styled.div`
   }
 `;
 
-export const CardRevenueStyled = styled.div`
+export const MediaRevenueStyled = styled.div`
   align-self: flex-start;
   color: white;
   display: flex;
@@ -93,7 +93,7 @@ export const CardRevenueStyled = styled.div`
   }
 `;
 
-export const CardCompanieStyled = styled.div`
+export const MediaCompanieStyled = styled.div`
   align-self: flex-start;
   display: flex;
   flex-direction: column;
@@ -117,7 +117,7 @@ export const CardCompanieStyled = styled.div`
   }
 `;
 
-export const CardProviderStyled = styled.div`
+export const MediaProviderStyled = styled.div`
   align-self: flex-start;
   display: flex;
   color: white;
