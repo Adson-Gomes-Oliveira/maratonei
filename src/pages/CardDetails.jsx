@@ -3,7 +3,7 @@ import {useParams, useLocation} from 'react-router-dom';
 import MovieDetailsLeftSide from '../components/MovieDetailsLeftSide';
 import CastAndCrew from '../components/CastAndCrew';
 import MovieReviews from '../components/MovieReviews';
-import MovieDetailsCenter from '../components/MovieDetailsCenter';
+import MediaDetailsCenter from '../components/MediaDetailsCenter';
 import AlternativeHeader from '../components/AlternativeHeader';
 import Advertising from '../components/Advertising';
 import Footer from '../components/Footer';
@@ -11,7 +11,7 @@ import {useDetailsAPI} from '../hooks/useRequestAPI';
 import {
   CardDetailStyled,
   CardsSectionStyled,
-  CardCenterStyled,
+  MediaCenterStyled,
   CardPrimaryInfoStyled,
 } from '../styles/cardDetails';
 
@@ -38,12 +38,12 @@ function CardDetails() {
 
           </CardPrimaryInfoStyled>
 
-          <CardCenterStyled>
+          <MediaCenterStyled>
 
-            <MovieDetailsCenter detailsData={result} />
+            <MediaDetailsCenter detailsData={result} />
             <MovieReviews detailsData={result} />
 
-          </CardCenterStyled>
+          </MediaCenterStyled>
 
         </CardsSectionStyled>
 

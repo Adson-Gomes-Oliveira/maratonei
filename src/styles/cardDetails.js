@@ -143,12 +143,12 @@ export const CardProviderStyled = styled.div`
 `;
 
 // --------- Center Side --------- //
-export const CardCenterStyled = styled.div`
+export const MediaCenterStyled = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-export const CardHeadlineStyled = styled.div`
+export const MediaHeadlineStyled = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: var(--sizing-4x);
@@ -174,7 +174,7 @@ export const CardHeadlineStyled = styled.div`
   }
 `;
 
-export const CardVideoStyled = styled.div`
+export const MediaVideoStyled = styled.div`
   align-items: center;
   align-self: center;
   display: flex;
@@ -190,7 +190,7 @@ export const CardVideoStyled = styled.div`
   }
 `;
 
-export const CardRecomendationStyled = styled.div`
+export const MediaRecomendationStyled = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: var(--sizing-5x);

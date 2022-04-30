@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import {useNavigate} from 'react-router-dom';
 import ReactPlayer from 'react-player/youtube';
 import {
-  CardHeadlineStyled,
-  CardVideoStyled,
-  CardRecomendationStyled,
+  MediaHeadlineStyled,
+  MediaVideoStyled,
+  MediaRecomendationStyled,
 } from '../styles/cardDetails';
 
-function MovieDetailsCenter({detailsData}) {
+function MediaDetailsCenter({detailsData}) {
   const navigate = useNavigate();
 
   const {
@@ -25,13 +25,13 @@ function MovieDetailsCenter({detailsData}) {
 
   return (
     <>
-      <CardHeadlineStyled>
+      <MediaHeadlineStyled>
         <h2>{title}</h2>
         <span>{tagline}</span>
         <p>{overview}</p>
-      </CardHeadlineStyled>
+      </MediaHeadlineStyled>
 
-      <CardVideoStyled>
+      <MediaVideoStyled>
         {trailer ? (
           <>
             <h3>{trailer.name}</h3>
@@ -44,9 +44,9 @@ function MovieDetailsCenter({detailsData}) {
         ) : (
           <h3>Trailer do filme não disponível</h3>
         )}
-      </CardVideoStyled>
+      </MediaVideoStyled>
 
-      <CardRecomendationStyled>
+      <MediaRecomendationStyled>
         <h3>Recomendações Similares</h3>
         <div>
           {recomendations.map((rec) => {
@@ -63,13 +63,13 @@ function MovieDetailsCenter({detailsData}) {
             );
           })}
         </div>
-      </CardRecomendationStyled>
+      </MediaRecomendationStyled>
     </>
   );
 }
 
-MovieDetailsCenter.propTypes = {
+MediaDetailsCenter.propTypes = {
   detailsData: PropTypes.object,
 };
 
-export default MovieDetailsCenter;
+export default MediaDetailsCenter;
