@@ -358,7 +358,7 @@ export const PersonStyled = styled.div`
 `;
 
 // --------- Reviews Styles --------- //
-export const MovieReviewStyled = styled.div`
+export const MediaReviewStyled = styled.div`
   color: white;
   display: flex;
   flex-direction: column;
