@@ -9,13 +9,13 @@ import Advertising from '../components/Advertising';
 import Footer from '../components/Footer';
 import {useDetailsAPI} from '../hooks/useRequestAPI';
 import {
-  CardDetailStyled,
+  MediaDetailStyled,
   MediaSectionStyled,
   MediaCenterStyled,
   MediaPrimaryInfoStyled,
 } from '../styles/cardDetails';
 
-function CardDetails() {
+function MediaDetails() {
   const {id} = useParams();
   const {pathname} = useLocation();
   const [result, setShowId] = useDetailsAPI(pathname);
@@ -28,7 +28,7 @@ function CardDetails() {
     <>
       <AlternativeHeader />
       <Advertising />
-      <CardDetailStyled>
+      <MediaDetailStyled>
 
         <MediaSectionStyled>
 
@@ -49,10 +49,10 @@ function CardDetails() {
 
         <CastAndCrew detailsData={result} />
 
-      </CardDetailStyled>
+      </MediaDetailStyled>
       <Footer />
     </>
   );
 }
 
-export default CardDetails;
+export default MediaDetails;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CardDetailStyled = styled.section`
+export const MediaDetailStyled = styled.section`
   display: flex;
 `;
 

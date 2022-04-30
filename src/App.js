@@ -1,6 +1,6 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
-import CardDetails from './pages/CardDetails';
+import MediaDetails from './pages/MediaDetails';
 import Homepage from './pages/Homepage';
 import Login from './pages/Login';
 import Shows from './pages/Shows';
@@ -13,7 +13,7 @@ function App() {
       <Route path="/" element={<Homepage />} />
       <Route path="/movies" element={<Shows />} />
       <Route path="/series" element={<Shows />} />
-      <Route path="/movies/:id" element={<CardDetails />} />
+      <Route path="/movies/:id" element={<MediaDetails />} />
       <Route path="/series/:id" element={<h1>oi</h1>} />
       <Route path="/streamings" element={<Streamings />} />
       <Route path="/streamings/:id" element={<StreamingsResults />} />
