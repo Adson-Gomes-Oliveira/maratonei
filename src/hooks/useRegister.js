@@ -1,20 +1,17 @@
 import {useState, useEffect} from 'react';
 
 function useRegister() {
-  const [infos, setInfos] = useState({
-    username: '',
-    password: '',
-  });
+  const [register, setRegister] = useState({});
 
   useEffect(() => {
     const storage = () => {
-      return localStorage.setItem('user-register', JSON.stringify(infos));
+      return localStorage.setItem('user-register', JSON.stringify(register));
     };
 
     storage();
-  }, [infos]);
+  }, [register]);
 
-  return setInfos;
+  return setRegister;
 }
 
 export default useRegister;

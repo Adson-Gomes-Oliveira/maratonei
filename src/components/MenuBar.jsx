@@ -10,8 +10,9 @@ function MenuBar() {
 
   useEffect(() => {
     const userExists = JSON.parse(localStorage.getItem('user-register'));
+    console.log(userExists);
     if (userExists !== null) {
-      if (userExists.username !== '') {
+      if (userExists.profile.accountCredentials.username !== '') {
         setProfileEnter(true);
       }
     };
@@ -23,7 +24,7 @@ function MenuBar() {
       <Link to="/movies">FILMES</Link>
       <Link to="/series">SERIES</Link>
       <Link to="/providers">STREAMINGS</Link>
-      <Link to="/library">BIBLIOTECA</Link>
+      <Link to="/library">MINHA COLEÇÃO</Link>
       <MenuLoginStyled>
         <Link to={ProfileEnter ? '/profile' : '/sign-in'}>
           <span>{ProfileEnter ? 'ACESSAR PERFIL' : 'ENTRAR'}</span>

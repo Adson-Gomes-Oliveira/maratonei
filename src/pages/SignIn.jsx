@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
 import Logo from '../images/svg/logotipo.svg';
 import useRegister from '../hooks/useRegister';
+import MaratoneiContext from '../context/MaratoneiContext';
 import {
   LoginStyled,
   LeftSideStyled,
@@ -13,32 +14,40 @@ import {
 
 function Login() {
   const navigate = useNavigate();
-  const setInfos = useRegister();
-  const [login, setLogin] = useState({
-    username: '',
-    password: '',
-    isButtonDisabled: true,
-  });
+  const setRegister = useRegister();
+  const {profile, setProfile} = useContext(MaratoneiContext);
 
   useEffect(() => { // Login validation
-    setLogin({...login, isButtonDisabled: true});
-    if (
-      login.username.length > 3 &&
-      login.password.length > 7) {
-      setLogin({...login, isButtonDisabled: false});
+    setProfile({
+      ...profile,
+      accountCredentials: {
+        ...profile.accountCredentials,
+        isButtonDisabled: true,
+      }});
+
+    if (profile.accountCredentials.username.length > 3 &&
+      profile.accountCredentials.password.length > 7) {
+      setProfile({
+        ...profile,
+        accountCredentials: {
+          ...profile.accountCredentials,
+          isButtonDisabled: false,
+        }});
     }
-  }, [login]);
+  }, [profile.accountCredentials]);
 
   const handleLogin = ({target}) => {
     const {name, value} = target;
-    setLogin({...login, [name]: value});
+    setProfile({
+      ...profile,
+      accountCredentials: {
+        ...profile.accountCredentials,
+        [name]: value,
+      }});
   };
 
   const handleSignIn = () => {
-    setInfos({
-      username: login.username,
-      password: login.password,
-    });
+    setRegister({profile});
 
     setTimeout(() => {
       navigate('/');
@@ -63,7 +72,7 @@ function Login() {
               name="username"
               type="text"
               onChange={handleLogin}
-              value={login.username}
+              value={profile.accountCredentials.username}
               placeholder="Digite seu nome de usuário"
               autoComplete="off"
             />
@@ -75,7 +84,7 @@ function Login() {
               name="password"
               type="password"
               onChange={handleLogin}
-              value={login.password}
+              value={profile.accountCredentials.password}
               placeholder="Digite sua senha"
             />
             <span>Digite uma senha valida</span>
@@ -84,7 +93,7 @@ function Login() {
           <LoginButtons>
             <button
               type="button"
-              disabled={login.isButtonDisabled}
+              disabled={profile.accountCredentials.isButtonDisabled}
               onClick={handleSignIn}
             >
               Login
