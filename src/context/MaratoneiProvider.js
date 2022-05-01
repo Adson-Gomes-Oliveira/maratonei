@@ -18,6 +18,28 @@ function MaratoneiProvider({children}) {
       country: '',
       profileImg: '',
       profileAbout: '',
+      socialMedia: [
+        {
+          name: 'Instagram',
+          link: '',
+          icon: '',
+        },
+        {
+          name: 'Facebook',
+          link: '',
+          icon: '',
+        },
+        {
+          name: 'Twitter',
+          link: '',
+          icon: '',
+        },
+        {
+          name: 'Youtube',
+          link: '',
+          icon: '',
+        },
+      ],
     },
     accountFavorites: {
       movies: [],
@@ -31,6 +53,7 @@ function MaratoneiProvider({children}) {
     },
     accountBadges: {},
   });
+
   return (
     <MaratoneiContext.Provider value={ {
       profile,
