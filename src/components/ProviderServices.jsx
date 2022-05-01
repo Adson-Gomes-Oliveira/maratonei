@@ -9,11 +9,11 @@ import Star from '../images/star-logo.webp';
 import Crunch from '../images/crunch-logo.webp';
 import Hulu from '../images/hulu-logo.webp';
 import Vudu from '../images/vudu-logo.webp';
-import {StreamingsStyled} from '../styles/index';
+import {ProvidersStyled} from '../styles/index';
 
-function StreamingServices() {
+function ProviderServices() {
   return (
-    <StreamingsStyled>
+    <ProvidersStyled>
       <img src={Netflix} alt="Netflix Logo" data-testid="streaming-logo"/>
       <img src={Prime} alt="Prime Logo" data-testid="streaming-logo"/>
       <img src={Disney} alt="Disney Logo" data-testid="streaming-logo"/>
@@ -24,8 +24,8 @@ function StreamingServices() {
       <img src={Crunch} alt="Crunch Logo" data-testid="streaming-logo"/>
       <img src={Hulu} alt="Hulu Logo" data-testid="streaming-logo"/>
       <img src={Vudu} alt="Vudu Logo" data-testid="streaming-logo"/>
-    </StreamingsStyled>
+    </ProvidersStyled>
   );
 }
 
-export default StreamingServices;
+export default ProviderServices;

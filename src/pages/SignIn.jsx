@@ -1,16 +1,49 @@
-import React, {useContext} from 'react';
+import React, {useState, useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 import Logo from '../images/svg/logotipo.svg';
-import MaratoneiContext from '../context/MaratoneiContext';
+import useRegister from '../hooks/useRegister';
 import {
   LoginStyled,
   LeftSideStyled,
   RightSideStyled,
   LoginForm,
   LoginButtons,
-} from '../styles/loginAndSignUp';
+  LoginDisclaimer,
+} from '../styles/signInUp';
 
 function Login() {
-  const {login, handleLogin} = useContext(MaratoneiContext);
+  const navigate = useNavigate();
+  const setInfos = useRegister();
+  const [login, setLogin] = useState({
+    username: '',
+    password: '',
+    isButtonDisabled: true,
+  });
+
+  useEffect(() => { // Login validation
+    setLogin({...login, isButtonDisabled: true});
+    if (
+      login.username.length > 3 &&
+      login.password.length > 7) {
+      setLogin({...login, isButtonDisabled: false});
+    }
+  }, [login]);
+
+  const handleLogin = ({target}) => {
+    const {name, value} = target;
+    setLogin({...login, [name]: value});
+  };
+
+  const handleSignIn = () => {
+    setInfos({
+      username: login.username,
+      password: login.password,
+    });
+
+    setTimeout(() => {
+      navigate('/');
+    }, 0);
+  };
 
   return (
     <LoginStyled>
@@ -19,6 +52,11 @@ function Login() {
       <RightSideStyled>
         <LoginForm>
           <img src={Logo} alt="Logotipo Maratonei" />
+          <LoginDisclaimer>
+              *Funcionalidade de cadastro ainda não desenvolvida,
+              digite qualquer nome de usuario e uma senha, que as
+              funcionalidades adicionais serão desbloqueadas.
+          </LoginDisclaimer>
           <label htmlFor="username">
             <input
               id="username"
@@ -27,6 +65,7 @@ function Login() {
               onChange={handleLogin}
               value={login.username}
               placeholder="Digite seu nome de usuário"
+              autoComplete="off"
             />
             <span>Digite um usuário valido</span>
           </label>
@@ -46,13 +85,15 @@ function Login() {
             <button
               type="button"
               disabled={login.isButtonDisabled}
+              onClick={handleSignIn}
             >
               Login
             </button>
             <button
               type="button"
+              disabled={true}
             >
-              Cadastre-se
+                Cadastre-se
             </button>
           </LoginButtons>
         </LoginForm>

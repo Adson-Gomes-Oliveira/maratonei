@@ -1,21 +1,22 @@
 import React, {useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import AlternativeHeader from '../components/AlternativeHeader';
-import Advisor from '../components/Advisor';
-import MoviesCards from '../components/MoviesCards';
+import Advertising from '../components/Advertising';
+import MediaCards from '../components/MediaCards';
 import GeekArticles from '../components/GeekArticles';
 import Footer from '../components/Footer';
 import {useProvidersAPI} from '../hooks/useRequestAPI';
 import {
-  MoviesAndSeriesStyled,
-  SectionStyled,
-  ContentStyled,
-  CardsToShow,
-  DisclaimerResults,
-} from '../styles/moviesAndSeries';
+  MediaStyled,
+  MediaSectionStyled,
+  MediaContentStyled,
+  MediaToShow,
+  MediaDisclaimer,
+} from '../styles/media';
 import '../styles/cssAnimations.css';
 
-function StreamingsResults() {
+function ProviderResults() {
+  console.log('render');
   const {id} = useParams();
   const {setProviderId, providerResult} = useProvidersAPI();
 
@@ -26,33 +27,33 @@ function StreamingsResults() {
   return (
     <>
       <AlternativeHeader />
-      <Advisor />
-      <MoviesAndSeriesStyled>
+      <Advertising />
+      <MediaStyled>
 
-        <SectionStyled>
+        <MediaSectionStyled>
 
-          <ContentStyled>
+          <MediaContentStyled>
 
-            <CardsToShow>
+            <MediaToShow>
               <h3>FILMES MAIS POPULARES DO STREAMING</h3>
-              <MoviesCards data={providerResult} />
-            </CardsToShow>
+              <MediaCards data={providerResult} />
+            </MediaToShow>
 
-            <DisclaimerResults>
+            <MediaDisclaimer>
               * Resultados limitados de 20 a 40 por busca,
               para mais resultados utilize a caixa de pesquisa
               ou os filtros disponiveis no site.
-            </DisclaimerResults>
+            </MediaDisclaimer>
 
-          </ContentStyled>
+          </MediaContentStyled>
 
           <GeekArticles />
 
-        </SectionStyled>
-      </MoviesAndSeriesStyled>
+        </MediaSectionStyled>
+      </MediaStyled>
       <Footer />
     </>
   );
 }
 
-export default StreamingsResults;
+export default ProviderResults;

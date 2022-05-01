@@ -1,23 +1,23 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
-import CardDetails from './pages/CardDetails';
+import MediaDetails from './pages/MediaDetails';
 import Homepage from './pages/Homepage';
-import Login from './pages/Login';
-import Shows from './pages/Shows';
-import Streamings from './pages/Streamings';
-import StreamingsResults from './pages/StreamingsResults';
+import SignIn from './pages/SignIn';
+import Media from './pages/Media';
+import Providers from './pages/Providers';
+import ProviderResults from './pages/ProviderResults';
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Homepage />} />
-      <Route path="/movies" element={<Shows />} />
-      <Route path="/series" element={<Shows />} />
-      <Route path="/movies/:id" element={<CardDetails />} />
+      <Route path="/movies" element={<Media />} />
+      <Route path="/series" element={<Media />} />
+      <Route path="/movies/:id" element={<MediaDetails />} />
       <Route path="/series/:id" element={<h1>oi</h1>} />
-      <Route path="/streamings" element={<Streamings />} />
-      <Route path="/streamings/:id" element={<StreamingsResults />} />
-      <Route path="/sign-in" element={<Login />} />
+      <Route path="/providers" element={<Providers />} />
+      <Route path="/providers/:id" element={<ProviderResults />} />
+      <Route path="/sign-in" element={<SignIn />} />
       <Route path="*" element={<h1>oi</h1>} />
     </Routes>
   );

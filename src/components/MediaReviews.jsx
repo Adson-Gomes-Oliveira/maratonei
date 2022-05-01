@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {v4 as uuidv4} from 'uuid';
-import {MovieReviewStyled, ReviewStyled} from '../styles';
+import {MediaReviewStyled, ReviewStyled} from '../styles/reviews';
 
-function MovieReviews({detailsData}) {
+function MediaReviews({detailsData}) {
   const {reviews} = detailsData;
 
   return (
-    <MovieReviewStyled>
+    <MediaReviewStyled>
       {reviews.length > 0 && (
         <>
           <h3>Avaliações dos Usuários</h3>
@@ -41,12 +41,12 @@ function MovieReviews({detailsData}) {
           </ReviewStyled>
         </>
       )}
-    </MovieReviewStyled>
+    </MediaReviewStyled>
   );
 }
 
-MovieReviews.propTypes = {
+MediaReviews.propTypes = {
   detailsData: PropTypes.object,
 };
 
-export default MovieReviews;
+export default MediaReviews;

@@ -5,12 +5,13 @@ import requestProviders from '../services/requestProviders';
 import requestByProvider from '../services/requestByProvider';
 import requestDetails from '../services/requestDetails';
 
-export const useQueryAPI = (request, setResult) => {
+export const useQueryAPI = (path) => {
   const [filter, setFilterQuery] = useState({search: '', year: ''});
+  const [result, setResult] = useState([]);
 
   useEffect(() => {
     const requestAPI = async () => {
-      const data = await requestByQuery(request, filter.search, filter.year);
+      const data = await requestByQuery(path, filter.search, filter.year);
 
       setResult(data);
     };
@@ -18,7 +19,7 @@ export const useQueryAPI = (request, setResult) => {
     requestAPI();
   }, [filter]);
 
-  return setFilterQuery;
+  return [result, setFilterQuery];
 };
 
 export const useProvidersAPI = () => {

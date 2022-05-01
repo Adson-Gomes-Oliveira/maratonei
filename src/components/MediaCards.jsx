@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useLocation} from 'react-router-dom';
-import {Link} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid';
-import {CardsStyled, CardStyled, CardTitle} from '../styles';
 import {ZERO} from '../data';
+import {CardsStyled, CardStyled, CardTitle} from '../styles/mediaCards';
 
 export function starsGenerator(amount) {
   const starsNoChecked = ['star_border', 'star_border',
@@ -28,7 +27,7 @@ export function starsGenerator(amount) {
   );
 }
 
-function MoviesCards({data}) {
+function MediaCards({data}) {
   const {pathname} = useLocation();
 
   return (
@@ -46,14 +45,14 @@ function MoviesCards({data}) {
         const ptBrTitle = title || name;
         return (
           <CardStyled key={uuidv4()}>
-            {pathname === '/movies' ? (
-              <Link to={`/movies/${id}`}>
-                <img src={thumb} alt="" />
-                <CardTitle>{ptBrTitle}</CardTitle>
-                {starsGenerator(starsNumber)}
-              </Link>
+            {pathname === '/movies' || pathname.includes('providers') ? (
+             <Link to={`/movies/${id}`}>
+               <img src={thumb} alt="" />
+               <CardTitle>{ptBrTitle}</CardTitle>
+               {starsGenerator(starsNumber)}
+             </Link>
             ) : (
-              <Link to={`/series`}>
+              <Link to="/series">
                 <img src={thumb} alt="" />
                 <CardTitle>{ptBrTitle}</CardTitle>
                 {starsGenerator(starsNumber)}
@@ -66,8 +65,8 @@ function MoviesCards({data}) {
   );
 };
 
-MoviesCards.propTypes = {
+MediaCards.propTypes = {
   data: PropTypes.array,
 };
 
-export default MoviesCards;
+export default MediaCards;
