@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import Logo from '../images/svg/logotipo.svg';
+import useRegister from '../hooks/useRegister';
 import {
   LoginStyled,
   LeftSideStyled,
@@ -12,20 +13,18 @@ import {
 
 function Login() {
   const navigate = useNavigate();
+  const setInfos = useRegister();
   const [login, setLogin] = useState({
     username: '',
     password: '',
     isButtonDisabled: true,
   });
 
-  const handleClickSignUp = () => {
-    return navigate('/sign-up');
-  };
-
   useEffect(() => { // Login validation
     setLogin({...login, isButtonDisabled: true});
-    if (login.username.length > 3 &&
-    login.password.length > 7) {
+    if (
+      login.username.length > 3 &&
+      login.password.length > 7) {
       setLogin({...login, isButtonDisabled: false});
     }
   }, [login]);
@@ -33,6 +32,17 @@ function Login() {
   const handleLogin = ({target}) => {
     const {name, value} = target;
     setLogin({...login, [name]: value});
+  };
+
+  const handleSignIn = () => {
+    setInfos({
+      username: login.username,
+      password: login.password,
+    });
+
+    setTimeout(() => {
+      navigate('/');
+    }, 0);
   };
 
   return (
@@ -75,13 +85,13 @@ function Login() {
             <button
               type="button"
               disabled={login.isButtonDisabled}
+              onClick={handleSignIn}
             >
               Login
             </button>
             <button
               type="button"
-              disabled={login.isButtonDisabled}
-              onClick={handleClickSignUp}
+              disabled={true}
             >
                 Cadastre-se
             </button>

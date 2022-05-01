@@ -1,4 +1,9 @@
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
+
+const focusOnHover = keyframes`
+  0% {transform: scale(1)}
+  100% {transform: scale(1.5)}
+`;
 
 export const ProvidersPageStyled = styled.section`
   align-items: center;
