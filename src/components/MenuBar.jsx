@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import {
   MenuStyled,
@@ -6,28 +6,15 @@ import {
 } from '../styles/menu';
 
 function MenuBar() {
-  const [ProfileEnter, setProfileEnter] = useState(false);
-
-  useEffect(() => {
-    const userExists = JSON.parse(localStorage.getItem('user-register'));
-    console.log(userExists);
-    if (userExists !== null) {
-      if (userExists.profile.accountCredentials.username !== '') {
-        setProfileEnter(true);
-      }
-    };
-  }, []);
-
   return (
     <MenuStyled aria-label="main-menu">
       <Link to="/">INICIO</Link>
       <Link to="/movies">FILMES</Link>
       <Link to="/series">SERIES</Link>
       <Link to="/providers">STREAMINGS</Link>
-      <Link to="/library">MINHA COLEÇÃO</Link>
       <MenuLoginStyled>
-        <Link to={ProfileEnter ? '/profile' : '/sign-in'}>
-          <span>{ProfileEnter ? 'ACESSAR PERFIL' : 'ENTRAR'}</span>
+        <Link to='/enter'>
+          <span>ENTRAR</span>
           <span className="material-icons-outlined">login</span>
         </Link>
       </MenuLoginStyled>
