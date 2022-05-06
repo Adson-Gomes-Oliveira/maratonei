@@ -3,70 +3,15 @@ import PropTypes from 'prop-types';
 import MaratoneiContext from './MaratoneiContext';
 
 function MaratoneiProvider({children}) {
-  const [profile, setProfile] = useState({
-    accountCredentials: {
-      username: '',
-      password: '',
-      isButtonDisabled: true,
-    },
-    // accountProfile: {
-    //   id: '',
-    //   email: '',
-    //   firstName: '',
-    //   lastName: '',
-    //   age: '',
-    //   country: '',
-    //   profileImg: '',
-    //   profileAbout: '',
-    //   socialMedia: [
-    //     {
-    //       name: 'Instagram',
-    //       link: '',
-    //       icon: '',
-    //     },
-    //     {
-    //       name: 'Facebook',
-    //       link: '',
-    //       icon: '',
-    //     },
-    //     {
-    //       name: 'Twitter',
-    //       link: '',
-    //       icon: '',
-    //     },
-    //     {
-    //       name: 'Youtube',
-    //       link: '',
-    //       icon: '',
-    //     },
-    //   ],
-    // },
-    // accountFavorites: {
-    //   movies: [],
-    //   tvShows: [],
-    // },
-    // accountWatch: {
-    //   toWatch: {},
-    //   watching: {},
-    //   notWatched: {},
-    //   timeWatched: {},
-    // },
-    // accountBadges: {},
-  });
-
-  // useEffect(() => {
-  //   const accounts = JSON.parse(localStorage.getItem('user-register'));
-  //   if (accounts !== null) {
-  //     if (accounts.profile.accountCredentials.logged === 'on') {
-
-  //     }
-  //   }
-  // }, []);
+  const [profile, setProfile] = useState({});
+  const [userDB, setUserDB] = useState({});
 
   return (
     <MaratoneiContext.Provider value={ {
       profile,
       setProfile,
+      userDB,
+      setUserDB,
     } }>
       {children}
     </MaratoneiContext.Provider>
