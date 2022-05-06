@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import blackLogo from '../images/black-logotipo.webp';
 import useValidate from '../hooks/useValidate';
+import MaratoneiContext from '../context/MaratoneiContext';
 import {
   LoginStyled,
   LoginForm,
@@ -14,13 +15,20 @@ function Login({section, stateController}) {
   const navigate = useNavigate();
   const [isButtonDisabled] = useState(false);
   const [authorized, setLogin] = useValidate();
+  const {setProfile} = useContext(MaratoneiContext);
   const [formState, setFormState] = useState({
     inputEmail: '',
     inputPassword: '',
   });
 
   useEffect(() => {
-    if (authorized) navigate('/');
+    if (authorized) {
+      const recoverUser = JSON.parse(localStorage.getItem('user-register'));
+      if (recoverUser) {
+        setProfile(recoverUser[0]);
+      }
+      navigate('/');
+    }
   }, [authorized]);
 
   const handleChange = ({target}) => {
