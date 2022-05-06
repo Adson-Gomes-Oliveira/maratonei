@@ -4,7 +4,6 @@ import blackBg from '../images/bg-signup.webp';
 
 export const EnterStyled = styled.section`
   display: flex;
-  height: 100vh;
 `;
 
 // ----------> Login Styles <---------- //
@@ -104,6 +103,7 @@ export const RegisterStyled = styled.div`
 export const RegisterForm = styled.form`
   display: flex;
   flex-direction: column;
+  margin-top: var(--sizing-5x);
   visibility: ${(props) => {
     if (props.sectionOnStage === 'sign-in') {
       return 'hidden';
@@ -135,6 +135,14 @@ export const RegisterLabel = styled.label`
   font-family: 'bebas', sans-serif;
   font-size: 1.1rem;
   margin: var(--sizing-3x) 0;
+
+  img {
+    max-width: var(--sizing-8x);
+    max-height: 8rem;
+    min-height: 8rem;
+    margin-left: var(--sizing-3x);
+    border: 0.15rem solid white;
+  }
 
   input {
     height: var(--sizing-5x);
@@ -185,9 +193,9 @@ export const RegisterLabel = styled.label`
     }
   }
 `;
-export const RegisterProfileImage = styled.img``;
 export const RegisterButtons = styled.div`
   align-self: center;
+  margin-bottom: var(--sizing-4x);
 `;
 export const Button = styled.button`
   background-color: var(--yellow-project-color);

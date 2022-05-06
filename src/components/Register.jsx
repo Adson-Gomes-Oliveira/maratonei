@@ -5,11 +5,11 @@ import {
   RegisterStyled,
   RegisterForm,
   RegisterLabel,
-  RegisterProfileImage,
   RegisterButtons,
   Button,
 } from '../styles/enter';
 import requestCountrys from '../services/requestCountrys';
+import useRegister from '../hooks/useRegister';
 
 function Register({section, stateController}) {
   const [formState, setFormState] = useState({
@@ -17,18 +17,31 @@ function Register({section, stateController}) {
     inputPassword: '',
     inputName: '',
     selectCountry: '',
+    inputSocial: '',
   });
   const [countrys, setCountrys] = useState([]);
+  const [isButtonDisabled, setDisabled] = useState(true);
+  const setRegister = useRegister();
 
   useEffect(() => {
     const requestCountryNames = async () => {
       const data = await requestCountrys();
-      console.log(data);
       setCountrys(data);
     };
 
     requestCountryNames();
   }, []);
+
+  useEffect(() => {
+    setDisabled(true);
+    const {inputEmail, inputPassword, inputName} = formState;
+    const emailVal = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+        .test(inputEmail);
+    const passVal = inputPassword.length > 7;
+    const nameVal = inputName.length > 2;
+
+    if (emailVal && passVal && nameVal) setDisabled(false);
+  }, [formState]);
 
   const handleChange = ({target}) => {
     const {name, value} = target;
@@ -38,7 +51,7 @@ function Register({section, stateController}) {
   const handleClick = ({target}) => {
     const {name} = target;
 
-    if (name === 'enter') {};
+    if (name === 'register') setRegister(formState);
     if (name === 'login') stateController('sign-in');
   };
 
@@ -81,7 +94,7 @@ function Register({section, stateController}) {
               onChange={handleChange}
               value={formState.inputPhoto}
             />
-            <RegisterProfileImage src={formState.inputPhoto} />
+            <img src={formState.inputPhoto} alt="Imagem de Perfil"/>
           </div>
           <span>
             Dê preferência a imagens de 500 x 500
@@ -132,7 +145,9 @@ function Register({section, stateController}) {
         <RegisterButtons>
           <Button
             type="button"
-            disabled={true}
+            name="register"
+            disabled={isButtonDisabled}
+            onClick={handleClick}
           >
             Cadastrar
           </Button>

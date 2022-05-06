@@ -9,11 +9,11 @@ import {
 } from '../styles/enter';
 
 function Login({section, stateController}) {
+  const [isButtonDisabled] = useState(true);
   const [formState, setFormState] = useState({
     inputEmail: '',
     inputPassword: '',
   });
-  const [isButtonDisabled] = useState(true);
 
   const handleChange = ({target}) => {
     const {name, value} = target;

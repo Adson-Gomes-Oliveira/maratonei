@@ -4,11 +4,24 @@ function useRegister() {
   const [register, setRegister] = useState({});
 
   useEffect(() => {
-    const storage = () => {
-      return localStorage.setItem('user-register', JSON.stringify(register));
-    };
+    if (Object.keys(register).length > 0) {
+      const profileRegister = {
+        accountCredentials: {
+          email: register.inputEmail,
+          password: register.inputPassword,
+          name: register.inputName,
+          country: register.selectCountry,
+          social: register.inputSocial,
+        },
+      };
+      const storage = () => {
+        return localStorage.setItem(
+            'user-register', JSON.stringify(profileRegister),
+        );
+      };
 
-    storage();
+      storage();
+    }
   }, [register]);
 
   return setRegister;
