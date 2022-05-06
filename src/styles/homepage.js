@@ -16,7 +16,7 @@ export const HeroBrandingStyled = styled.div`
   color: white;
   display: flex;
   flex-direction: column;
-  height: 45%;
+  height: 40%;
   justify-content: center;
 
   span:nth-child(1) {

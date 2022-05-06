@@ -1,10 +1,6 @@
-import NetflixBanner from '../images/netflix-banner-ad.webp';
-import PrimeBanner from '../images/prime-banner-ad.webp';
-import DisneyBanner from '../images/disney-banner-ad.webp';
-import HBOBanner from '../images/hbo-banner-ad.webp';
-import ParamountBanner from '../images/paramount-banner-ad.webp';
-import TmdbBanner from '../images/tmdb-banner-ad.webp';
-import TelecineBanner from '../images/telecine-banner-ad.webp';
+import TmdbBanner from '../images/tmdb-banner.webp';
+import GithubBanner from '../images/github-banner.webp';
+import LinkedInBanner from '../images/linkedin-banner.webp';
 
 export const ZERO = 0;
 export const EXCLUDE_LINK_INDEX = 3;
@@ -21,39 +17,15 @@ export const ads = [
     adLink: 'https://www.themoviedb.org/',
   },
   {
-    copy: 'ASSINE NETFLIX | FILMES, SERIES, E MUITO MAIS, SEM LIMITES',
-    bgImage: NetflixBanner,
+    copy: 'GITHUB | Acesse para ver mais projetos interessantes!',
+    bgImage: GithubBanner,
     freeTrial: 'no',
-    adLink: 'https://www.netflix.com/',
+    adLink: 'https://github.com/Adson-Gomes-Oliveira',
   },
   {
-    copy: 'ASSINE PRIME VIDEO | TESTE 30 DIAS GRÁTIS!',
-    bgImage: PrimeBanner,
+    copy: 'LINKEDIN | Vamos nos conectar!',
+    bgImage: LinkedInBanner,
     freeTrial: 'no',
-    adLink: 'https://www.primevideo.com/',
-  },
-  {
-    copy: 'ASSINE HBO | O MELHOR DO ENTRETENIMENTO',
-    bgImage: HBOBanner,
-    freeTrial: 'no',
-    adLink: 'https://www.hbomax.com/',
-  },
-  {
-    copy: 'ASSINE DISNEY | DESCUBRA UMA NOVA HISTÓRIA TODOS OS DIAS',
-    bgImage: DisneyBanner,
-    freeTrial: 'no',
-    adLink: 'https://www.disneyplus.com/',
-  },
-  {
-    copy: 'ASSINE PARAMOUNT | MILHARES DE HORAS DAS MELHORES HISTÓRIAS',
-    bgImage: ParamountBanner,
-    freeTrial: 'no',
-    adLink: 'https://www.paramountplus.com/',
-  },
-  {
-    copy: 'ASSINE TELECINE | O MELHOR DO STREAMING TA AQUI',
-    bgImage: TelecineBanner,
-    freeTrial: 'no',
-    adLink: 'https://www.telecine.com/',
+    adLink: 'https://www.linkedin.com/in/adson-gomes-oliveira/',
   },
 ];

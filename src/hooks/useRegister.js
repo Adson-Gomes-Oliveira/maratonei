@@ -1,20 +1,31 @@
 import {useState, useEffect} from 'react';
 
 function useRegister() {
-  const [infos, setInfos] = useState({
-    username: '',
-    password: '',
-  });
+  const [register, setRegister] = useState({});
 
   useEffect(() => {
-    const storage = () => {
-      return localStorage.setItem('user-register', JSON.stringify(infos));
-    };
+    if (Object.keys(register).length > 0) {
+      const profileRegister = {
+        accountCredentials: {
+          email: register.inputEmail,
+          password: register.inputPassword,
+          name: register.inputName,
+          country: register.selectCountry,
+          social: register.inputSocial,
+        },
+      };
 
-    storage();
-  }, [infos]);
+      const storage = () => {
+        return localStorage.setItem(
+            'user-register', JSON.stringify([profileRegister]),
+        );
+      };
 
-  return setInfos;
+      storage();
+    }
+  }, [register]);
+
+  return setRegister;
 }
 
 export default useRegister;
