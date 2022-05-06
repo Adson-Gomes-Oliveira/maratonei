@@ -14,9 +14,10 @@ function useRegister() {
           social: register.inputSocial,
         },
       };
+
       const storage = () => {
         return localStorage.setItem(
-            'user-register', JSON.stringify(profileRegister),
+            'user-register', JSON.stringify([profileRegister]),
         );
       };
 

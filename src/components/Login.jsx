@@ -1,6 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import blackLogo from '../images/black-logotipo.webp';
+import useValidate from '../hooks/useValidate';
 import {
   LoginStyled,
   LoginForm,
@@ -9,11 +11,17 @@ import {
 } from '../styles/enter';
 
 function Login({section, stateController}) {
-  const [isButtonDisabled] = useState(true);
+  const navigate = useNavigate();
+  const [isButtonDisabled] = useState(false);
+  const [authorized, setLogin] = useValidate();
   const [formState, setFormState] = useState({
     inputEmail: '',
     inputPassword: '',
   });
+
+  useEffect(() => {
+    if (authorized) navigate('/');
+  }, [authorized]);
 
   const handleChange = ({target}) => {
     const {name, value} = target;
@@ -23,7 +31,7 @@ function Login({section, stateController}) {
   const handleClick = ({target}) => {
     const {name} = target;
 
-    if (name === 'enter') {};
+    if (name === 'enter') setLogin(formState);
     if (name === 'register') stateController('sign-up');
   };
 
