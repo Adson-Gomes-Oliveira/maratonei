@@ -137,8 +137,8 @@ export const MediaProviderStyled = styled.div`
 
   img {
     border: none;
-    margin: 1rem;
-    width: 4rem;
+    margin: 0.2rem;
+    width: 6rem;
   }
 `;
 

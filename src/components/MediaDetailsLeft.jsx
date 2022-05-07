@@ -33,6 +33,8 @@ function MediaDetailsLeft({detailsData}) {
   const thumb = `https://image.tmdb.org/t/p/w500/${thumbNail}`;
   const starsNumber = Math.round(voteAverage / 2);
   const stars = starsGenerator(starsNumber);
+
+  console.log(providers);
   return (
     <>
       <img src={thumb} alt="" />
