@@ -16,7 +16,7 @@ export const HeroBrandingStyled = styled.div`
   color: white;
   display: flex;
   flex-direction: column;
-  height: 40%;
+  height: 50%;
   justify-content: center;
 
   span:nth-child(1) {
@@ -27,30 +27,5 @@ export const HeroBrandingStyled = styled.div`
   span:nth-child(2) {
     font-family: 'Arial', sans-serif;
     font-size: var(--sizing-3x);
-  }
-`;
-
-export const HomepageButtonsStyled = styled.div`
-  align-self: center;
-  display: flex;
-
-  button {
-    background-color: var(--black-project-color);
-    border-radius: var(--sizing-2x);
-    border: 0.18rem solid var(--yellow-project-color);
-    color: white;
-    cursor: pointer;
-    font-family: 'Bebas', sans-serif;
-    font-size: 1.5rem;
-    margin: 0 var(--sizing-1x);
-    min-width: 18.75rem;
-    padding: var(--sizing-3x) 0;
-    transition: ease 0.2s;
-  }
-
-  button:hover {
-    background-color: var(--yellow-project-color);
-    color: black;
-    transition: ease 0.2s;
   }
 `;
