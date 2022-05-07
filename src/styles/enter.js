@@ -88,6 +88,11 @@ export const LoginButton = styled.button`
     background-color: var(--black-project-color);
     cursor: default;
   }
+
+  :hover {
+    background-color: var(--black-project-color);
+    transition: 0.2s;
+  }
 `;
 
 // ----------> Register Styles <---------- //
@@ -212,5 +217,10 @@ export const Button = styled.button`
   :disabled {
     background-color: var(--black-project-color);
     cursor: default;
+  }
+
+  :hover {
+    background-color: var(--black-project-color);
+    transition: 0.2s;
   }
 `;

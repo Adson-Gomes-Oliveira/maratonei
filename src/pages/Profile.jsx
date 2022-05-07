@@ -1,23 +1,18 @@
-import React, {useState, useContext} from 'react';
-import MaratoneiContext from '../context/MaratoneiContext';
+import React, {useContext} from 'react';
 import AlternativeHeader from '../components/AlternativeHeader';
 import Advertising from '../components/Advertising';
+import MaratoneiContext from '../context/MaratoneiContext';
+import Infos from '../components/profile/Infos';
 import {
   ProfileStyled,
   ProfileInfos,
   ProfilePanel,
-  FirstInfo,
+  ProfilePanelBox,
   NoProfileStyled,
 } from '../styles/profile';
 
 function Profile() {
-  const [edit, setEdit] = useState(false);
   const {profile} = useContext(MaratoneiContext);
-
-  const handleClick = () => {
-    setEdit(true);
-    console.log(edit);
-  };
 
   if (!profile.accountCredentials) {
     return (
@@ -36,32 +31,74 @@ function Profile() {
       <Advertising />
       <ProfileStyled>
         <ProfileInfos>
-          <img
-            src={profile.accountCredentials.photo}
-            alt="Imagem de Perfil"
-          />
-          <FirstInfo>
-            <button
-              type="button"
-              onClick={handleClick}
-            >
-              Editar Perfil
-            </button>
-            <span>{profile.accountCredentials.name}</span>
-            <div>
-              <span>Descrição</span>
-              {profile.accountDesc ? (
-                <p>{profile.accountDesc}</p>
-              ) : (
-                <span>Sem Descrição</span>
-              )}
-              <span>{profile.accountCredentials.email}</span>
-              <span>{profile.accountCredentials.country}</span>
-            </div>
-          </FirstInfo>
+          <Infos />
         </ProfileInfos>
         <ProfilePanel>
-
+          <ProfilePanelBox>
+            <div>
+              <span>Insígnias</span>
+              <button
+                type="button"
+              >
+                <span className="material-icons-outlined">
+                  arrow_drop_down
+                </span>
+              </button>
+            </div>
+            {/* {profile.accountFavorites.map} */}
+          </ProfilePanelBox>
+          <ProfilePanelBox>
+            <div>
+              <span>Favoritos</span>
+              <button
+                type="button"
+              >
+                <span className="material-icons-outlined">
+                  arrow_drop_down
+                </span>
+              </button>
+            </div>
+            {/* {profile.accountFavorites.map} */}
+          </ProfilePanelBox>
+          <ProfilePanelBox>
+            <div>
+              <span>Para Assistir</span>
+              <button
+                type="button"
+              >
+                <span className="material-icons-outlined">
+                  arrow_drop_down
+                </span>
+              </button>
+            </div>
+            {/* {profile.accountFavorites.map} */}
+          </ProfilePanelBox>
+          <ProfilePanelBox>
+            <div>
+              <span>Assistindo</span>
+              <button
+                type="button"
+              >
+                <span className="material-icons-outlined">
+                  arrow_drop_down
+                </span>
+              </button>
+            </div>
+            {/* {profile.accountFavorites.map} */}
+          </ProfilePanelBox>
+          <ProfilePanelBox>
+            <div>
+              <span>Já vistos</span>
+              <button
+                type="button"
+              >
+                <span className="material-icons-outlined">
+                  arrow_drop_down
+                </span>
+              </button>
+            </div>
+            {/* {profile.accountFavorites.map} */}
+          </ProfilePanelBox>
         </ProfilePanel>
       </ProfileStyled>
     </>

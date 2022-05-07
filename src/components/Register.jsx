@@ -16,7 +16,7 @@ function Register({section, stateController}) {
     inputEmail: '',
     inputPassword: '',
     inputName: '',
-    selectCountry: '',
+    selectCountry: 'Afheganistan',
     inputSocial: '',
     inputPhoto: '',
   });

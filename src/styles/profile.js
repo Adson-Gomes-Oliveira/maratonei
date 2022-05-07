@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const ProfileStyled = styled.section`
   display: flex;
 `;
-
 export const NoProfileStyled = styled.section`
   display: flex;
   justify-content: center;
@@ -13,11 +12,10 @@ export const NoProfileStyled = styled.section`
   font-size: var(--sizing-5x);
   color: white;
 `;
-
 export const ProfileInfos = styled.div`
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: var(--sizing-5x) var(--sizing-5x);
   width: 30%;
 
@@ -35,6 +33,7 @@ export const FirstInfo = styled.div`
 
   button {
     color: white;
+    cursor: pointer;
     background: none;
     border: none;
     font-family: 'bebas', sans-serif;
@@ -70,4 +69,33 @@ export const FirstInfo = styled.div`
     }
   }
 `;
-export const ProfilePanel = styled.div``;
+export const ProfilePanel = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: var(--sizing-5x) 0;
+  width: 68%;
+`;
+
+export const ProfilePanelBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    background-color: var(--black-darken-project-color);
+    color: white;
+    font-family: 'bebas', sans-serif;
+    font-size: var(--sizing-5x);
+    padding: var(--sizing-3x) var(--sizing-3x);
+    margin-bottom: var(--sizing-5x);
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: white;
+        font-size: var(--sizing-5x);
+      }
+    }
+`;
