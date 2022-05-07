@@ -52,7 +52,7 @@ function MediaCards({data}) {
                {starsGenerator(starsNumber)}
              </Link>
             ) : (
-              <Link to="/series">
+              <Link to={`/series/${id}`}>
                 <img src={thumb} alt="" />
                 <CardTitle>{ptBrTitle}</CardTitle>
                 {starsGenerator(starsNumber)}

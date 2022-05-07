@@ -15,7 +15,7 @@ function App() {
       <Route path="/movies" element={<Media />} />
       <Route path="/series" element={<Media />} />
       <Route path="/movies/:id" element={<MediaDetails />} />
-      <Route path="/series/:id" element={<h1>oi</h1>} />
+      <Route path="/series/:id" element={<MediaDetails />} />
       <Route path="/providers" element={<Providers />} />
       <Route path="/providers/:id" element={<ProviderResults />} />
       <Route path="/enter" element={<Enter />} />
