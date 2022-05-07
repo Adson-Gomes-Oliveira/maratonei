@@ -12,7 +12,15 @@ function useRegister() {
           name: register.inputName,
           country: register.selectCountry,
           social: register.inputSocial,
+          photo: register.inputPhoto,
         },
+        accountFavorites: {},
+        accountWatch: {
+          toWatch: {},
+          watch: {},
+          watched: {},
+        },
+        accountBadges: {},
       };
 
       const storage = () => {

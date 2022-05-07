@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useLocation} from 'react-router-dom';
 import ReactPlayer from 'react-player/youtube';
 import {
   MediaHeadlineStyled,
@@ -9,6 +9,7 @@ import {
 } from '../styles/mediaDetails';
 
 function MediaDetailsCenter({detailsData}) {
+  const {pathname} = useLocation();
   const navigate = useNavigate();
 
   const {
@@ -20,7 +21,8 @@ function MediaDetailsCenter({detailsData}) {
   } = detailsData;
 
   const redirectToDetails = (id) => {
-    return navigate(`/movies/${id}`);
+    const redirectPath = pathname.split('/', 2)[1];
+    return navigate(`/${redirectPath}/${id}`);
   };
 
   return (

@@ -16,8 +16,9 @@ function Register({section, stateController}) {
     inputEmail: '',
     inputPassword: '',
     inputName: '',
-    selectCountry: '',
+    selectCountry: 'Afheganistan',
     inputSocial: '',
+    inputPhoto: '',
   });
   const [countrys, setCountrys] = useState([]);
   const [isButtonDisabled, setDisabled] = useState(true);
@@ -52,7 +53,7 @@ function Register({section, stateController}) {
     const {name} = target;
 
     if (name === 'register') setRegister(formState);
-    if (name === 'login') stateController('sign-in');
+    stateController('sign-in');
   };
 
   return (

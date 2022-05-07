@@ -9,12 +9,12 @@ import {
 
 function CastAndCrew({detailsData}) {
   const {cast_and_crew: cast} = detailsData;
-
+  console.log(cast);
   return (
     <CastAndCrewStyled>
       <h2>Quem ta participando?</h2>
       <CastStyled>
-        {cast.map((person) => {
+        {cast[0] !== undefined && cast.map((person) => {
           const {
             name,
             character,
