@@ -41,7 +41,7 @@ Funcionalidades:
 - ✔️ Procurar titulos, onde assistir, ver informações dos titulos
 - ✔️ Cadastro / Login
 - :hourglass_flowing_sand: Salvar titulos favoritos
-- :hourglass_flowing_sand: Perfil
+- ✔️ Perfil
 - :hourglass_flowing_sand: Badges de acordo com o perfil
 - :hourglass_flowing_sand: Comentários
 
