@@ -1,12 +1,14 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useContext} from 'react';
 import {useLocation} from 'react-router-dom';
 import useRequestAPI from '../hooks/useRequestAPI';
+import Loading from '../components/Loading';
 import AlternativeHeader from '../components/AlternativeHeader';
 import Advertising from '../components/Advertising';
 import SearchArea from '../components/SearchArea';
 import MediaCards from '../components/MediaCards';
 import GeekArticles from '../components/GeekArticles';
 import Footer from '../components/Footer';
+import MaratoneiContext from '../context/MaratoneiContext';
 import {
   MediaStyled,
   MediaSectionStyled,
@@ -18,6 +20,18 @@ import {
 function Media() {
   const {pathname} = useLocation();
   const {result, setRequest, setResult} = useRequestAPI();
+  const {loading, setLoading} = useContext(MaratoneiContext);
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [pathname]);
 
   useEffect(() => {
     setRequest(pathname);
@@ -25,6 +39,7 @@ function Media() {
 
   return (
     <>
+      {loading && <Loading />}
       <AlternativeHeader />
       <Advertising />
       <MediaStyled>

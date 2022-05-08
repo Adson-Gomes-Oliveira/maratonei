@@ -1,10 +1,12 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useContext} from 'react';
 import {useParams} from 'react-router-dom';
+import Loading from '../components/Loading';
 import AlternativeHeader from '../components/AlternativeHeader';
 import Advertising from '../components/Advertising';
 import MediaCards from '../components/MediaCards';
 import GeekArticles from '../components/GeekArticles';
 import Footer from '../components/Footer';
+import MaratoneiContext from '../context/MaratoneiContext';
 import {useProvidersAPI} from '../hooks/useRequestAPI';
 import {
   MediaStyled,
@@ -16,9 +18,20 @@ import {
 import '../styles/cssAnimations.css';
 
 function ProviderResults() {
-  console.log('render');
   const {id} = useParams();
   const {setProviderId, providerResult} = useProvidersAPI();
+  const {loading, setLoading} = useContext(MaratoneiContext);
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
 
   useEffect(() => {
     setProviderId(id);
@@ -26,6 +39,7 @@ function ProviderResults() {
 
   return (
     <>
+      {loading && <Loading />}
       <AlternativeHeader />
       <Advertising />
       <MediaStyled>

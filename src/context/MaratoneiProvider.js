@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import MaratoneiContext from './MaratoneiContext';
 
 function MaratoneiProvider({children}) {
+  const [loading, setLoading] = useState(true);
   const [profile, setProfile] = useState({});
   const [userDB, setUserDB] = useState({});
 
@@ -12,6 +13,8 @@ function MaratoneiProvider({children}) {
       setProfile,
       userDB,
       setUserDB,
+      loading,
+      setLoading,
     } }>
       {children}
     </MaratoneiContext.Provider>
