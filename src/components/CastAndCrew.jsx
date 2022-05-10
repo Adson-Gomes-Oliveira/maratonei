@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {useLocation} from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid';
 import {
   CastAndCrewStyled,
@@ -9,7 +10,10 @@ import {
 
 function CastAndCrew({detailsData}) {
   const {cast_and_crew: cast} = detailsData;
-  console.log(cast);
+  const {pathname} = useLocation();
+  const path = pathname.split('/', 2)[1];
+
+  if (path === 'series') return (null);
   return (
     <CastAndCrewStyled>
       <h2>Quem ta participando?</h2>

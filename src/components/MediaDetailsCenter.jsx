@@ -44,7 +44,7 @@ function MediaDetailsCenter({detailsData}) {
             />
           </>
         ) : (
-          <h3>Trailer do filme não disponível</h3>
+          <h3>Trailer não disponível</h3>
         )}
       </MediaVideoStyled>
 

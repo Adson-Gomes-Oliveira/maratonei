@@ -101,8 +101,10 @@ export const MediaCompanieStyled = styled.div`
   color: white;
 
   img {
+    background-color: white;
     border: none;
     margin: var(--sizing-5x) 0;
+    padding: 0.5rem;
     width: 10rem;
   }
 
