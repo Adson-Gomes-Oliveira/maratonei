@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 import AlternativeHeader from '../components/AlternativeHeader';
 import Advertising from '../components/Advertising';
 import Infos from '../components/profile/Infos';
@@ -11,12 +12,23 @@ import {
 } from '../styles/profile';
 
 function Profile() {
+  const navigate = useNavigate();
   const [logged, setLogged] = useState(false);
+  const [profile, setProfile] = useState({
+    accountFavorites: [],
+  });
 
   useEffect(() => {
     const recoverUserDB = JSON.parse(localStorage.getItem('user-register'));
-    if (recoverUserDB) setLogged(true);
+    if (recoverUserDB) {
+      setLogged(true);
+      setProfile(recoverUserDB[0]);
+    };
   }, []);
+
+  const redirectToDetails = (id, path) => {
+    return navigate(`/${path}/${id}`);
+  };
 
   if (!logged) {
     return (
@@ -62,7 +74,23 @@ function Profile() {
                 </span>
               </button>
             </div>
-            {/* {profile.accountFavorites.map} */}
+            {profile.accountFavorites.map((show) => {
+              const {id, poster_path: thumbNail, title} = show;
+              const thumb = `https://image.tmdb.org/t/p/w500/${thumbNail}`;
+              let path = 'movies';
+              if (show.first_air_date) {
+                path = 'series';
+              }
+
+              return (
+                <img
+                  key={title}
+                  src={thumb}
+                  alt={title}
+                  onClick={() => redirectToDetails(id, path)}
+                />
+              );
+            })}
           </ProfilePanelBox>
           <ProfilePanelBox>
             <div>
