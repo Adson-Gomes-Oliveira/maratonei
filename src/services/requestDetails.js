@@ -36,7 +36,7 @@ async function fetchMovieDetail(showId) {
     requestMovieDetails['cast_and_crew'] = castAndCrew;
     requestMovieDetails.production_companies = requestMovieDetails
         .production_companies.filter((comp) => comp.logo_path !== null);
-    console.log(requestMovieDetails);
+
     return requestMovieDetails;
   } catch (error) {
     console.log(error);
@@ -79,7 +79,7 @@ async function fetchSerieDetail(showId) {
     requestMovieDetails['cast_and_crew'] = castAndCrew;
     requestMovieDetails.production_companies = requestMovieDetails
         .production_companies.filter((comp) => comp.logo_path !== null);
-    console.log(requestMovieDetails);
+
     return requestMovieDetails;
   } catch (error) {
     console.log(error);

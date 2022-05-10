@@ -1,9 +1,21 @@
-import React, {useContext} from 'react';
-import MaratoneiContext from '../../context/MaratoneiContext';
+import React, {useState, useEffect} from 'react';
 import {FirstInfo} from '../../styles/profile';
 
 function Infos() {
-  const {profile} = useContext(MaratoneiContext);
+  const [profile, setProfile] = useState({
+    accountCredentials: {
+      name: '',
+      photo: '',
+      email: '',
+      country: '',
+    },
+    accountDesc: '',
+  });
+
+  useEffect(() => {
+    const recoverUserDB = JSON.parse(localStorage.getItem('user-register'));
+    if (recoverUserDB) setProfile(recoverUserDB[0]);
+  }, []);
 
   return (
     <>

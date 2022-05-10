@@ -1,7 +1,6 @@
-import React, {useContext} from 'react';
+import React, {useState, useEffect} from 'react';
 import AlternativeHeader from '../components/AlternativeHeader';
 import Advertising from '../components/Advertising';
-import MaratoneiContext from '../context/MaratoneiContext';
 import Infos from '../components/profile/Infos';
 import {
   ProfileStyled,
@@ -12,9 +11,14 @@ import {
 } from '../styles/profile';
 
 function Profile() {
-  const {profile} = useContext(MaratoneiContext);
+  const [logged, setLogged] = useState(false);
 
-  if (!profile.accountCredentials) {
+  useEffect(() => {
+    const recoverUserDB = JSON.parse(localStorage.getItem('user-register'));
+    if (recoverUserDB) setLogged(true);
+  }, []);
+
+  if (!logged) {
     return (
       <>
         <AlternativeHeader />

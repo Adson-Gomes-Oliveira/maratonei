@@ -155,11 +155,28 @@ export const MediaHeadlineStyled = styled.div`
   flex-direction: column;
   margin-left: var(--sizing-4x);
 
+  div {
+    display: flex;
+    justify-content: space-between;
+    
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      span {
+        font-family: 'Material Icons Outlined';
+        font-size: var(--sizing-5x);
+      }
+    }
+  }
+
   h2 {
     color: white;
     font-family: 'bebas', sans-serif;
     font-weight: 500;
   }
+
 
   span {
     color: white;
