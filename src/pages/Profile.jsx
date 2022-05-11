@@ -9,6 +9,8 @@ import {
   ProfilePanel,
   ProfilePanelBox,
   NoProfileStyled,
+  ProfileCards,
+  HeadingBox,
 } from '../styles/profile';
 
 function Profile() {
@@ -51,7 +53,7 @@ function Profile() {
         </ProfileInfos>
         <ProfilePanel>
           <ProfilePanelBox>
-            <div>
+            <HeadingBox>
               <span>Insígnias</span>
               <button
                 type="button"
@@ -60,11 +62,11 @@ function Profile() {
                   arrow_drop_down
                 </span>
               </button>
-            </div>
+            </HeadingBox>
             {/* {profile.accountFavorites.map} */}
           </ProfilePanelBox>
           <ProfilePanelBox>
-            <div>
+            <HeadingBox>
               <span>Favoritos</span>
               <button
                 type="button"
@@ -73,27 +75,29 @@ function Profile() {
                   arrow_drop_down
                 </span>
               </button>
-            </div>
-            {profile.accountFavorites.map((show) => {
-              const {id, poster_path: thumbNail, title} = show;
-              const thumb = `https://image.tmdb.org/t/p/w500/${thumbNail}`;
-              let path = 'movies';
-              if (show.first_air_date) {
-                path = 'series';
-              }
+            </HeadingBox>
+            <ProfileCards>
+              {profile.accountFavorites.map((show) => {
+                const {id, poster_path: thumbNail, title} = show;
+                const thumb = `https://image.tmdb.org/t/p/w500/${thumbNail}`;
+                let path = 'movies';
+                if (show.first_air_date) {
+                  path = 'series';
+                }
 
-              return (
-                <img
-                  key={title}
-                  src={thumb}
-                  alt={title}
-                  onClick={() => redirectToDetails(id, path)}
-                />
-              );
-            })}
+                return (
+                  <img
+                    key={title}
+                    src={thumb}
+                    alt={title}
+                    onClick={() => redirectToDetails(id, path)}
+                  />
+                );
+              })}
+            </ProfileCards>
           </ProfilePanelBox>
           <ProfilePanelBox>
-            <div>
+            <HeadingBox>
               <span>Para Assistir</span>
               <button
                 type="button"
@@ -102,11 +106,11 @@ function Profile() {
                   arrow_drop_down
                 </span>
               </button>
-            </div>
+            </HeadingBox>
             {/* {profile.accountFavorites.map} */}
           </ProfilePanelBox>
           <ProfilePanelBox>
-            <div>
+            <HeadingBox>
               <span>Assistindo</span>
               <button
                 type="button"
@@ -115,11 +119,11 @@ function Profile() {
                   arrow_drop_down
                 </span>
               </button>
-            </div>
+            </HeadingBox>
             {/* {profile.accountFavorites.map} */}
           </ProfilePanelBox>
           <ProfilePanelBox>
-            <div>
+            <HeadingBox>
               <span>Já vistos</span>
               <button
                 type="button"
@@ -128,7 +132,7 @@ function Profile() {
                   arrow_drop_down
                 </span>
               </button>
-            </div>
+            </HeadingBox>
             {/* {profile.accountFavorites.map} */}
           </ProfilePanelBox>
         </ProfilePanel>

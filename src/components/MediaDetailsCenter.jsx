@@ -30,9 +30,10 @@ function MediaDetailsCenter({detailsData}) {
       const verifyFavorite = recoverUserDB[0].accountFavorites
           .some((favorite) => favorite.id == id);
 
+      setIsFavorite(false);
       if (verifyFavorite) setIsFavorite(true);
     }
-  }, []);
+  }, [id]);
 
   const notFavoriteShow = () => {
     setShowId(detailsData.id);

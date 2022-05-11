@@ -75,7 +75,6 @@ export const ProfilePanel = styled.div`
   margin: var(--sizing-5x) 0;
   width: 68%;
 `;
-
 export const ProfilePanelBox = styled.div`
     display: flex;
     flex-direction: column;
@@ -85,17 +84,26 @@ export const ProfilePanelBox = styled.div`
     font-size: var(--sizing-5x);
     padding: var(--sizing-3x) var(--sizing-3x);
     margin-bottom: var(--sizing-5x);
+`;
+export const HeadingBox = styled.div`
+  display: flex;
+  justify-content: space-between;
 
-    div {
-      display: flex;
-      justify-content: space-between;
-      
-      button {
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: white;
-        font-size: var(--sizing-5x);
-      }
-    }
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: var(--sizing-5x);
+  }
+`;
+export const ProfileCards = styled.div`
+  display: flex;
+  overflow-x: scroll;
+
+  img {
+    cursor: pointer;
+    margin: var(--sizing-3x) var(--sizing-2x);
+    width: var(--sizing-8x);
+  }
 `;
