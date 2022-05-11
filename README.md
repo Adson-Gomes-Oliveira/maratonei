@@ -30,6 +30,8 @@ Termine com um exemplo de como obter dados do sistema ou como usá-los para uma 
 Google ESLinter utilizado como Code Pattern.
 ---------------------------------------------
 
+Aplicação desenvolvida em pt-BR
+
 :white_large_square: Mobile Version
 
 :white_large_square: Middle Version
@@ -40,7 +42,7 @@ Funcionalidades:
 
 - ✔️ Procurar titulos, onde assistir, ver informações dos titulos
 - ✔️ Cadastro / Login
-- :hourglass_flowing_sand: Salvar titulos favoritos
+- ✔️ Salvar titulos favoritos
 - ✔️ Perfil
 - :hourglass_flowing_sand: Badges de acordo com o perfil
 - :hourglass_flowing_sand: Comentários
@@ -48,6 +50,8 @@ Funcionalidades:
 Pendências:
 
 - Correção de Bugs CSS
+- Remover favoritos a partir do perfil
+- Funcionalidades Extras (Para assistir, assistindo, já vistos)
 
 ## 🛠️ Construído com
 
