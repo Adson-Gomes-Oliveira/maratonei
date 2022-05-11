@@ -1,16 +1,32 @@
-import React from 'react';
+import React, {useEffect, useContext} from 'react';
 import {Link} from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid';
+import Loading from '../components/Loading';
 import Advertising from '../components/Advertising';
 import AlternativeHeader from '../components/AlternativeHeader';
 import Footer from '../components/Footer';
+import MaratoneiContext from '../context/MaratoneiContext';
 import {useProvidersAPI} from '../hooks/useRequestAPI';
 import {ProvidersPageStyled, ProviderImages} from '../styles/providers';
 
 function Providers() {
   const {result} = useProvidersAPI();
+  const {loading, setLoading} = useContext(MaratoneiContext);
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
   return (
     <>
+      {loading && <Loading />}
       <AlternativeHeader />
       <Advertising />
       <ProvidersPageStyled>

@@ -1,7 +1,7 @@
-import React, {useContext} from 'react';
+import React, {useState, useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 import AlternativeHeader from '../components/AlternativeHeader';
 import Advertising from '../components/Advertising';
-import MaratoneiContext from '../context/MaratoneiContext';
 import Infos from '../components/profile/Infos';
 import {
   ProfileStyled,
@@ -9,12 +9,30 @@ import {
   ProfilePanel,
   ProfilePanelBox,
   NoProfileStyled,
+  ProfileCards,
+  HeadingBox,
 } from '../styles/profile';
 
 function Profile() {
-  const {profile} = useContext(MaratoneiContext);
+  const navigate = useNavigate();
+  const [logged, setLogged] = useState(false);
+  const [profile, setProfile] = useState({
+    accountFavorites: [],
+  });
 
-  if (!profile.accountCredentials) {
+  useEffect(() => {
+    const recoverUserDB = JSON.parse(localStorage.getItem('user-register'));
+    if (recoverUserDB) {
+      setLogged(true);
+      setProfile(recoverUserDB[0]);
+    };
+  }, []);
+
+  const redirectToDetails = (id, path) => {
+    return navigate(`/${path}/${id}`);
+  };
+
+  if (!logged) {
     return (
       <>
         <AlternativeHeader />
@@ -35,68 +53,86 @@ function Profile() {
         </ProfileInfos>
         <ProfilePanel>
           <ProfilePanelBox>
-            <div>
+            <HeadingBox>
               <span>Insígnias</span>
-              <button
+              {/* <button
                 type="button"
               >
                 <span className="material-icons-outlined">
                   arrow_drop_down
                 </span>
-              </button>
-            </div>
+              </button> */}
+            </HeadingBox>
             {/* {profile.accountFavorites.map} */}
           </ProfilePanelBox>
           <ProfilePanelBox>
-            <div>
+            <HeadingBox>
               <span>Favoritos</span>
-              <button
+              {/* <button
                 type="button"
               >
                 <span className="material-icons-outlined">
                   arrow_drop_down
                 </span>
-              </button>
-            </div>
-            {/* {profile.accountFavorites.map} */}
+              </button> */}
+            </HeadingBox>
+            <ProfileCards>
+              {profile.accountFavorites.map((show) => {
+                const {id, poster_path: thumbNail, title} = show;
+                const thumb = `https://image.tmdb.org/t/p/w500/${thumbNail}`;
+                let path = 'movies';
+                if (show.first_air_date) {
+                  path = 'series';
+                }
+
+                return (
+                  <img
+                    key={title}
+                    src={thumb}
+                    alt={title}
+                    onClick={() => redirectToDetails(id, path)}
+                  />
+                );
+              })}
+            </ProfileCards>
           </ProfilePanelBox>
           <ProfilePanelBox>
-            <div>
+            <HeadingBox>
               <span>Para Assistir</span>
-              <button
+              {/* <button
                 type="button"
               >
                 <span className="material-icons-outlined">
                   arrow_drop_down
                 </span>
-              </button>
-            </div>
+              </button> */}
+            </HeadingBox>
             {/* {profile.accountFavorites.map} */}
           </ProfilePanelBox>
           <ProfilePanelBox>
-            <div>
+            <HeadingBox>
               <span>Assistindo</span>
-              <button
+              {/* <button
                 type="button"
               >
                 <span className="material-icons-outlined">
                   arrow_drop_down
                 </span>
-              </button>
-            </div>
+              </button> */}
+            </HeadingBox>
             {/* {profile.accountFavorites.map} */}
           </ProfilePanelBox>
           <ProfilePanelBox>
-            <div>
+            <HeadingBox>
               <span>Já vistos</span>
-              <button
+              {/* <button
                 type="button"
               >
                 <span className="material-icons-outlined">
                   arrow_drop_down
                 </span>
-              </button>
-            </div>
+              </button> */}
+            </HeadingBox>
             {/* {profile.accountFavorites.map} */}
           </ProfilePanelBox>
         </ProfilePanel>

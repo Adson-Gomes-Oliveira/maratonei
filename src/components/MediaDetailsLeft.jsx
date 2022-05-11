@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {useLocation} from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid';
 import {starsGenerator} from '../components/MediaCards';
 import {
@@ -12,6 +13,8 @@ import {
 } from '../styles/mediaDetails';
 
 function MediaDetailsLeft({detailsData}) {
+  const {pathname} = useLocation();
+  const path = pathname.split('/', 2)[1];
   const {
     genres,
     budget,
@@ -34,7 +37,6 @@ function MediaDetailsLeft({detailsData}) {
   const starsNumber = Math.round(voteAverage / 2);
   const stars = starsGenerator(starsNumber);
 
-  console.log(providers);
   return (
     <>
       <img src={thumb} alt="" />
@@ -43,10 +45,11 @@ function MediaDetailsLeft({detailsData}) {
       <MediaVoteStyled>
         {`Nota popular: ${voteAverage}/10`}
       </MediaVoteStyled>
-
-      <MediaRealeaseStyled>
-        {`Data de lançamento: ${releaseDate}`}
-      </MediaRealeaseStyled>
+      {path === 'movies' && (
+        <MediaRealeaseStyled>
+          {`Data de lançamento: ${releaseDate}`}
+        </MediaRealeaseStyled>
+      )}
 
       <MediaCategoryStyled>
         <span>Categorias:</span>
@@ -55,17 +58,19 @@ function MediaDetailsLeft({detailsData}) {
         ))}
       </MediaCategoryStyled>
 
-      <MediaRevenueStyled>
-        <span>Resultados Financeiros</span>
-        <span>
-          <span>Orçamento:</span>
-          {`USD ${movieConvertCurrency(budget)}`}
-        </span>
-        <span>
-          <span>Receita:</span>
-          {`USD ${movieConvertCurrency(revenue)}`}
-        </span>
-      </MediaRevenueStyled>
+      {path === 'movies' && (
+        <MediaRevenueStyled>
+          <span>Resultados Financeiros</span>
+          <span>
+            <span>Orçamento:</span>
+            {`USD ${movieConvertCurrency(budget)}`}
+          </span>
+          <span>
+            <span>Receita:</span>
+            {`USD ${movieConvertCurrency(revenue)}`}
+          </span>
+        </MediaRevenueStyled>
+      )}
 
       <MediaCompanieStyled>
         {companies.map((comp, index) => {

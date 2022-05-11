@@ -1,20 +1,41 @@
-import React from 'react';
+import React, {useEffect, useContext} from 'react';
 import Header from '../components/Header';
+import Loading from '../components/Loading';
 import ProviderServices from '../components/ProviderServices';
 import {HomepageStyled, HeroBrandingStyled} from '../styles/homepage';
+import MaratoneiContext from '../context/MaratoneiContext';
 
 function Homepage() {
+  const {loading, setLoading} = useContext(MaratoneiContext);
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
   return (
-    <HomepageStyled>
-      <Header />
+    <>
+      {loading && <Loading />}
+      <HomepageStyled>
+        <Header />
 
-      <HeroBrandingStyled>
-        <span>SUA WIKI DE FILMES E SERIES</span>
-        <span>SAIBA ONDE ASSISTIR | SALVE SEUS FAVORITOS E MUITO MAIS...</span>
-      </HeroBrandingStyled>
+        <HeroBrandingStyled>
+          <span>SUA WIKI DE FILMES E SERIES</span>
+          <span>
+            SAIBA ONDE ASSISTIR |
+            SALVE SEUS FAVORITOS E MUITO MAIS...
+          </span>
+        </HeroBrandingStyled>
 
-      <ProviderServices />
-    </HomepageStyled>
+        <ProviderServices />
+      </HomepageStyled>
+    </>
   );
 }
 

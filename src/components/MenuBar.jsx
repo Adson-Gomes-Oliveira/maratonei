@@ -1,13 +1,17 @@
-import React, {useContext} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-import MaratoneiContext from '../context/MaratoneiContext';
 import {
   MenuStyled,
   MenuLoginStyled,
 } from '../styles/menu';
 
 function MenuBar() {
-  const {profile} = useContext(MaratoneiContext);
+  const [logged, setLogged] = useState(false);
+
+  useEffect(() => {
+    const recoverUserDB = JSON.parse(localStorage.getItem('user-register'));
+    if (recoverUserDB) setLogged(true);
+  }, []);
 
   return (
     <MenuStyled aria-label="main-menu">
@@ -16,7 +20,7 @@ function MenuBar() {
       <Link to="/series">SERIES</Link>
       <Link to="/providers">STREAMINGS</Link>
       <MenuLoginStyled>
-        {Object.keys(profile).length > 0 ? (
+        {logged ? (
           <Link to='/profile'>
             <span>PERFIL</span>
             <span className="material-icons-outlined">login</span>

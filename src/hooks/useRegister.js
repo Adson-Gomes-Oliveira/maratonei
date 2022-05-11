@@ -14,7 +14,7 @@ function useRegister() {
           social: register.inputSocial,
           photo: register.inputPhoto,
         },
-        accountFavorites: {},
+        accountFavorites: [],
         accountWatch: {
           toWatch: {},
           watch: {},

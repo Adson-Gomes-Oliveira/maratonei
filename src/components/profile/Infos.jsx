@@ -1,9 +1,28 @@
-import React, {useContext} from 'react';
-import MaratoneiContext from '../../context/MaratoneiContext';
+import React, {useState, useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 import {FirstInfo} from '../../styles/profile';
 
 function Infos() {
-  const {profile} = useContext(MaratoneiContext);
+  const navigate = useNavigate();
+  const [profile, setProfile] = useState({
+    accountCredentials: {
+      name: '',
+      photo: '',
+      email: '',
+      country: '',
+    },
+    accountDesc: '',
+  });
+
+  useEffect(() => {
+    const recoverUserDB = JSON.parse(localStorage.getItem('user-register'));
+    if (recoverUserDB) setProfile(recoverUserDB[0]);
+  }, []);
+
+  const handleDelete = () => {
+    localStorage.clear();
+    navigate('/');
+  };
 
   return (
     <>
@@ -17,12 +36,18 @@ function Infos() {
           <span>Descrição</span>
           {profile.accountDesc ? (
             <p>{profile.accountDesc}</p>
-          ) : (
-            <span>Sem Descrição</span>
-          )}
+            ) : (
+              <span>Sem Descrição</span>
+              )}
           <span>{profile.accountCredentials.email}</span>
           <span>{profile.accountCredentials.country}</span>
         </div>
+        <button
+          type="button"
+          onClick={handleDelete}
+        >
+          Deletar Perfil
+        </button>
       </FirstInfo>
     </>
   );
