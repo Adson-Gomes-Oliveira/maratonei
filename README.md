@@ -52,6 +52,8 @@ Pendências:
 - Correção de Bugs CSS
 - Remover favoritos a partir do perfil
 - Funcionalidades Extras (Para assistir, assistindo, já vistos)
+- Edição de perfil
+- Função de Logout
 
 ## 🛠️ Construído com
 
