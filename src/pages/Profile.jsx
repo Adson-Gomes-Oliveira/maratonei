@@ -55,26 +55,26 @@ function Profile() {
           <ProfilePanelBox>
             <HeadingBox>
               <span>Insígnias</span>
-              <button
+              {/* <button
                 type="button"
               >
                 <span className="material-icons-outlined">
                   arrow_drop_down
                 </span>
-              </button>
+              </button> */}
             </HeadingBox>
             {/* {profile.accountFavorites.map} */}
           </ProfilePanelBox>
           <ProfilePanelBox>
             <HeadingBox>
               <span>Favoritos</span>
-              <button
+              {/* <button
                 type="button"
               >
                 <span className="material-icons-outlined">
                   arrow_drop_down
                 </span>
-              </button>
+              </button> */}
             </HeadingBox>
             <ProfileCards>
               {profile.accountFavorites.map((show) => {
@@ -99,39 +99,39 @@ function Profile() {
           <ProfilePanelBox>
             <HeadingBox>
               <span>Para Assistir</span>
-              <button
+              {/* <button
                 type="button"
               >
                 <span className="material-icons-outlined">
                   arrow_drop_down
                 </span>
-              </button>
+              </button> */}
             </HeadingBox>
             {/* {profile.accountFavorites.map} */}
           </ProfilePanelBox>
           <ProfilePanelBox>
             <HeadingBox>
               <span>Assistindo</span>
-              <button
+              {/* <button
                 type="button"
               >
                 <span className="material-icons-outlined">
                   arrow_drop_down
                 </span>
-              </button>
+              </button> */}
             </HeadingBox>
             {/* {profile.accountFavorites.map} */}
           </ProfilePanelBox>
           <ProfilePanelBox>
             <HeadingBox>
               <span>Já vistos</span>
-              <button
+              {/* <button
                 type="button"
               >
                 <span className="material-icons-outlined">
                   arrow_drop_down
                 </span>
-              </button>
+              </button> */}
             </HeadingBox>
             {/* {profile.accountFavorites.map} */}
           </ProfilePanelBox>

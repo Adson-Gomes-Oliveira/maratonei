@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 import {FirstInfo} from '../../styles/profile';
 
 function Infos() {
+  const navigate = useNavigate();
   const [profile, setProfile] = useState({
     accountCredentials: {
       name: '',
@@ -17,6 +19,11 @@ function Infos() {
     if (recoverUserDB) setProfile(recoverUserDB[0]);
   }, []);
 
+  const handleDelete = () => {
+    localStorage.clear();
+    navigate('/');
+  };
+
   return (
     <>
       <img
@@ -29,12 +36,18 @@ function Infos() {
           <span>Descrição</span>
           {profile.accountDesc ? (
             <p>{profile.accountDesc}</p>
-          ) : (
-            <span>Sem Descrição</span>
-          )}
+            ) : (
+              <span>Sem Descrição</span>
+              )}
           <span>{profile.accountCredentials.email}</span>
           <span>{profile.accountCredentials.country}</span>
         </div>
+        <button
+          type="button"
+          onClick={handleDelete}
+        >
+          Deletar Perfil
+        </button>
       </FirstInfo>
     </>
   );
