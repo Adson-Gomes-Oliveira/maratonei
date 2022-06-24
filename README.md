@@ -40,20 +40,7 @@ Aplicação desenvolvida em pt-BR
 
 Funcionalidades:
 
-- ✔️ Procurar titulos, onde assistir, ver informações dos titulos
-- ✔️ Cadastro / Login
-- ✔️ Salvar titulos favoritos
-- ✔️ Perfil
-- :hourglass_flowing_sand: Badges de acordo com o perfil
-- :hourglass_flowing_sand: Comentários
-
-Pendências:
-
-- Correção de Bugs CSS
-- Remover favoritos a partir do perfil
-- Funcionalidades Extras (Para assistir, assistindo, já vistos)
-- Edição de perfil
-- Função de Logout
+- ✔️ Procurar titulos, onde assistir, ver informações dos titulos.
 
 ## 🛠️ Construído com
 
@@ -66,6 +53,3 @@ Pendências:
 ## 📌 Versão
 
 Git utilizado para versionamento de código.
-
----
-Template de Readme desenvolvido com ❤️ por [Armstrong Lohãns](https://gist.github.com/lohhans) 😊
