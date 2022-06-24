@@ -1,8 +1,7 @@
 FROM node:16-alpine
-EXPOSE 3000
 WORKDIR /app
-COPY package.json ./
-COPY package-lock.json ./
+EXPOSE 3000
+COPY ./package*.json ./
 RUN ["npm", "install"]
-COPY . ./
-ENTRYPOINT [ "npm", "start" ]
+COPY . .
+ENTRYPOINT ["npm", "start"]
