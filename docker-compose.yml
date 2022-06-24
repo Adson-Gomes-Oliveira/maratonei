@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  maratonei-front:
+    container_name: "maratonei-front"
+    build: ./
+    ports:
+      - 3000:3000
+    volumes:
+      - /home/ash/Personal-Repo/maratonei/:/app/
+

@@ -5,8 +5,6 @@ import Homepage from './pages/Homepage';
 import Media from './pages/Media';
 import Providers from './pages/Providers';
 import ProviderResults from './pages/ProviderResults';
-import Enter from './pages/Enter';
-import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -18,9 +16,7 @@ function App() {
       <Route path="/series/:id" element={<MediaDetails />} />
       <Route path="/providers" element={<Providers />} />
       <Route path="/providers/:id" element={<ProviderResults />} />
-      <Route path="/enter" element={<Enter />} />
-      <Route path="/profile" element={<Profile />} />
-      <Route path="*" element={<h1>oi</h1>} />
+      <Route path="*" element={<h1>Not Found</h1>} />
     </Routes>
   );
 }
