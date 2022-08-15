@@ -1,55 +1,58 @@
-# Maratonei
+<center><h2> Maratonei! </h2></center>
 
-## 🚀 Começando
+### Sobre o Projeto
+<center>Olá seja bem vindo ou bem vinda ao repositório do site Maratonei!</center>
+<br/>
+Aqui você encontrará o código responsável pela criação do Maratonei! Um projeto que
+visa ajudar o usuário a encontrar detalhes sobres suas series e filmes favoritos,
+alem disso encontrar diversas informações úteis como por exemplo, onde assistir
+aquela série ou aquele filme que todo mundo fala.
+<br/>
+<br/>
+Este código foi desenvolvido por mim, Adson Gomes Oliveira, com finalidade de
+uso não comercial, desenvolvido para agregar valor ao portfólio e demonstrar
+minhas skills enquanto pessoa desenvolvedora.<br/><br/>
 
-Website de Dados e Gerenciamento de Filmes e Séries.
-https://maratonei.vercel.app
+*Obs: Versão mobile ainda não desenvolvida*
 
-Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
+---
 
-### 📋 Pré-requisitos
+### Tecnologias Utilizadas no Desenvolvimento
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![React-Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![Styled-Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-Sistema Operacional: Linux, Windows ou iOS
-Compatibilidade com Node 16
+---
 
-### 🔧 Instalação
+### Instruções
+<details>
+<summary> Como rodar o projeto utilizando a maquina local </summary>
+<br/>
 
-Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
+>Primeiro faça o clone deste repositório em sua maquina.
+```
+git clone ggit@github.com:Adson-Gomes-Oliveira/Maratonei.git
+```
+>Após o clone ser concluído com sucesso, entre no diretório e utilize o comando `npm install`.
 
-Passo-a-passo instalação e execução do Projeto:
+>A API consumida é desenvolvida pelo TMDB https://developers.themoviedb.org/3
 
-1. - Executar o Git Clone: `git clone git@github.com:Adson-Gomes-Oliveira/Maratonei.git`
-- _Projeto desenvolvido com Node na versão 16, certifique-se de que sua versão do Node seja a mesma para garantir a boa execução do projeto_
-2. - Executar a instalação das dependências necessárias para o projeto: `npm install`
-3. - Executar o projeto: `npm start`
+>Para rodar este projeto em sua maquina será necessário que obtenha um token de autenticação.  
+Este token pode ser obtido através do cadastro no TMDB.
 
-Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
+>O projeto acompanha um arquivo .env-default.txt, troque o nome para .env (Após ter realizado o `npm install`)  
+e no campo TMDB_API_TOKEN defina como valor o seu token do TMDB, assim a aplicação vai funcionar normalmente.
 
-## 📦 Desenvolvimento
+>Utilize `npm start` para iniciar a aplicação.
 
-Google ESLinter utilizado como Code Pattern.
----------------------------------------------
+</details>
+<details>
+<summary> Como rodar o projeto utilizando o docker </summary>
+</details>
 
-Aplicação desenvolvida em pt-BR
+---
 
-:white_large_square: Mobile Version
+### Informações adicionais
+Projeto para Desktop completo, versão mobile em desenvolvimento.
 
-:white_large_square: Middle Version
+---
 
-☑️ Desktop Version
-
-Funcionalidades:
-
-- ✔️ Procurar titulos, onde assistir, ver informações dos titulos.
-
-## 🛠️ Construído com
-
-* [ReactJS](https://pt-br.reactjs.org/) - Framework Web
-* [React-Router](https://reactrouter.com/) - Gerenciador de Rotas React
-* [React Testing Library](https://testing-library.com/) - Biblioteca de Testes em React
-* [StyledComponents](https://styled-components.com/) - Biblioteca CSS-in-JS
-* [TMDB-API](https://developers.themoviedb.org/3/getting-started/introduction) - The Movie Database API
-
-## 📌 Versão
-
-Git utilizado para versionamento de código.
+Template desenvolvido com carinho por [AG-Dev](https://www.linkedin.com/in/adson-gomes-oliveira/)
