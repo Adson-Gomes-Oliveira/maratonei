@@ -1,7 +1,6 @@
 import TmdbBanner from '../images/tmdb-banner.webp';
 import GithubBanner from '../images/github-banner.webp';
 import LinkedInBanner from '../images/linkedin-banner.webp';
-require('dotenv').config();
 
 export const ZERO = 0;
 export const EXCLUDE_LINK_INDEX = 3;
