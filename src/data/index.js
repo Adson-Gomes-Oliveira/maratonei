@@ -8,7 +8,7 @@ export const EXCLUDE_LINK_INDEX = 3;
 export const EXCLUDE_LINK_INDEX_MOVIES = 1;
 export const AMOUNT_OF_MENU_LINKS = 6;
 export const AMOUNT_OF_ADS = 6;
-export const TMDB_API_KEY = process.env.TMDB_API_TOKEN;
+export const TMDB_API_KEY = 'db9c402babc1fd076e9e70dc34460d2a';
 
 export const ads = [
   {

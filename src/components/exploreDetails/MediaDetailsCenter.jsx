@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {useNavigate, useLocation, useParams} from 'react-router-dom';
-import useFavorite, {useDeleteFavorite} from '../hooks/useFavorite';
+import useFavorite, {useDeleteFavorite} from '../../hooks/useFavorite';
 import ReactPlayer from 'react-player/youtube';
 import {
   MediaHeadlineStyled,
   MediaVideoStyled,
   MediaRecomendationStyled,
-} from '../styles/mediaDetails';
+} from '../../styles/mediaDetails';
 
 function MediaDetailsCenter({detailsData}) {
   const [isFavorite, setIsFavorite] = useState(false);

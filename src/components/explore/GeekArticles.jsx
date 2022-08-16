@@ -6,7 +6,7 @@ import {
   SummaryArticle,
   ArticleLink,
   DisclaimerArticle,
-} from '../styles/geekArticles';
+} from '../../styles/geekArticles';
 
 function GeekArticles() {
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {useLocation} from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid';
-import {starsGenerator} from '../components/MediaCards';
+import {starsGenerator} from '../explore/MediaCards';
 import {
   MediaVoteStyled,
   MediaRealeaseStyled,
@@ -10,7 +10,7 @@ import {
   MediaRevenueStyled,
   MediaCompanieStyled,
   MediaProviderStyled,
-} from '../styles/mediaDetails';
+} from '../../styles/mediaDetails';
 
 function MediaDetailsLeft({detailsData}) {
   const {pathname} = useLocation();

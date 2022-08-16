@@ -1,13 +1,13 @@
 import React, {useEffect, useContext} from 'react';
 import {useLocation} from 'react-router-dom';
 import useRequestAPI from '../hooks/useRequestAPI';
-import Loading from '../components/Loading';
-import AlternativeHeader from '../components/AlternativeHeader';
-import Advertising from '../components/Advertising';
-import SearchArea from '../components/SearchArea';
-import MediaCards from '../components/MediaCards';
-import GeekArticles from '../components/GeekArticles';
-import Footer from '../components/Footer';
+import Loading from '../components/general/Loading';
+import AlternativeHeader from '../components/general/AlternativeHeader';
+import Advertising from '../components/general/Advertising';
+import SearchArea from '../components/explore/SearchArea';
+import MediaCards from '../components/explore/MediaCards';
+import GeekArticles from '../components/explore/GeekArticles';
+import Footer from '../components/general/Footer';
 import MaratoneiContext from '../context/MaratoneiContext';
 import {
   MediaStyled,

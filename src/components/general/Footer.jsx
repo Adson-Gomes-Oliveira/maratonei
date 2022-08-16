@@ -1,14 +1,14 @@
 import React from 'react';
-import Logo from '../images/svg/logotipo.svg';
-import github from '../images/github-icon.webp';
-import linkedin from '../images/linkedin-icon.webp';
-import whatsapp from '../images/whatsapp-icon.webp';
+import Logo from '../../images/svg/logotipo.svg';
+import github from '../../images/github-icon.webp';
+import linkedin from '../../images/linkedin-icon.webp';
+import whatsapp from '../../images/whatsapp-icon.webp';
 import {
   FooterStyled,
   SocialMediaStyled,
   DisclaimerStyled,
   DisclaimerText,
-} from '../styles/footer';
+} from '../../styles/footer';
 
 function Footer() {
   return (

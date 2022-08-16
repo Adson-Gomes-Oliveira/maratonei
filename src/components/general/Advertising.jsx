@@ -1,7 +1,7 @@
 import React from 'react';
 import {CarouselProvider, Slider, Slide} from 'pure-react-carousel';
-import {ads} from '../data';
-import {AdStyled} from '../styles';
+import {ads} from '../../data';
+import {AdStyled} from '../../styles';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 function Advertising() {

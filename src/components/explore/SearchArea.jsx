@@ -1,15 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {useLocation} from 'react-router-dom';
-import {useQueryAPI} from '../hooks/useRequestAPI';
+import {useQueryAPI} from '../../hooks/useRequestAPI';
 import {
   SearchLabel,
   SearchInput,
   SearchButton,
   FilterButton,
   FilterStyled,
-} from '../styles/media';
-import '../styles/cssAnimations.css';
+} from '../../styles/media';
+import '../../styles/cssAnimations.css';
 
 function SearchArea({stateUpdate}) {
   const {pathname} = useLocation();

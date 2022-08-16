@@ -1,13 +1,14 @@
 import React, {useEffect, useContext} from 'react';
 import {useParams, useLocation} from 'react-router-dom';
-import Loading from '../components/Loading';
-import AlternativeHeader from '../components/AlternativeHeader';
-import Advertising from '../components/Advertising';
-import MediaDetailsLeft from '../components/MediaDetailsLeft';
-import MediaDetailsCenter from '../components/MediaDetailsCenter';
-import CastAndCrew from '../components/CastAndCrew';
-import MediaReviews from '../components/MediaReviews';
-import Footer from '../components/Footer';
+import Loading from '../components/general/Loading';
+import AlternativeHeader from '../components/general/AlternativeHeader';
+import Advertising from '../components/general/Advertising';
+import MediaDetailsLeft from '../components/exploreDetails/MediaDetailsLeft';
+import MediaDetailsCenter
+  from '../components/exploreDetails/MediaDetailsCenter';
+import CastAndCrew from '../components/exploreDetails/CastAndCrew';
+import MediaReviews from '../components/exploreDetails/MediaReviews';
+import Footer from '../components/general/Footer';
 import MaratoneiContext from '../context/MaratoneiContext';
 import {useDetailsAPI} from '../hooks/useRequestAPI';
 import {

@@ -1,11 +1,11 @@
 import React, {useEffect, useContext} from 'react';
 import {useParams} from 'react-router-dom';
-import Loading from '../components/Loading';
-import AlternativeHeader from '../components/AlternativeHeader';
-import Advertising from '../components/Advertising';
-import MediaCards from '../components/MediaCards';
-import GeekArticles from '../components/GeekArticles';
-import Footer from '../components/Footer';
+import Loading from '../components/general/Loading';
+import AlternativeHeader from '../components/general/AlternativeHeader';
+import Advertising from '../components/general/Advertising';
+import MediaCards from '../components/explore/MediaCards';
+import GeekArticles from '../components/explore/GeekArticles';
+import Footer from '../components/general/Footer';
 import MaratoneiContext from '../context/MaratoneiContext';
 import {useProvidersAPI} from '../hooks/useRequestAPI';
 import {

@@ -6,7 +6,7 @@ import {
   CastAndCrewStyled,
   CastStyled,
   PersonStyled,
-} from '../styles/castAndCrew';
+} from '../../styles/castAndCrew';
 
 function CastAndCrew({detailsData}) {
   const {cast_and_crew: cast} = detailsData;

@@ -1,7 +1,7 @@
 import React, {useEffect, useContext} from 'react';
-import Header from '../components/Header';
-import Loading from '../components/Loading';
-import ProviderServices from '../components/ProviderServices';
+import Header from '../components/general/Header';
+import Loading from '../components/general/Loading';
+import ProviderServices from '../components/streaming/ProviderServices';
 import {HomepageStyled, HeroBrandingStyled} from '../styles/homepage';
 import MaratoneiContext from '../context/MaratoneiContext';
 

@@ -1,10 +1,10 @@
 import React, {useEffect, useContext} from 'react';
 import {Link} from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid';
-import Loading from '../components/Loading';
-import Advertising from '../components/Advertising';
-import AlternativeHeader from '../components/AlternativeHeader';
-import Footer from '../components/Footer';
+import Loading from '../components/general/Loading';
+import Advertising from '../components/general/Advertising';
+import AlternativeHeader from '../components/general/AlternativeHeader';
+import Footer from '../components/general/Footer';
 import MaratoneiContext from '../context/MaratoneiContext';
 import {useProvidersAPI} from '../hooks/useRequestAPI';
 import {ProvidersPageStyled, ProviderImages} from '../styles/providers';
