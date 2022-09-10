@@ -47,4 +47,4 @@ Versão apenas Desktop. Desenvolvido com Node 16 e muita dedicação.
 
 ---
 
-Template developed with :white_heart: by [AG-Dev](https://www.linkedin.com/in/adson-gomes-oliveira/)
+Template developed with :white_heart: by [Devago](https://www.linkedin.com/in/adson-gomes-oliveira/)
