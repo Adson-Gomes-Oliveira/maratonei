@@ -9,7 +9,7 @@
 O Maratonei é um projeto pensado para entregar aos usuários
 informações úteis sobre filmes e séries de todos os tempos,
 informações essas como lucro do filme, casting e em qual streaming asssistir
-entre outras coisas.
+entre outras funcionalidades.
 <br/>
 <br/>
 Este código foi desenvolvido individualmente, utilizando o gerenciador de estado global Context-API, com o Kanban,  
